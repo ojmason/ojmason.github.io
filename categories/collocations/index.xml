@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Collocations on Arguable Intelligence</title>
+    <link>https://ojmason.github.io/categories/collocations/index.xml</link>
+    <description>Recent content in Collocations on Arguable Intelligence</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <atom:link href="https://ojmason.github.io/categories/collocations/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Collocations -- Do we need them?</title>
+      <link>https://ojmason.github.io/blog/collocations----do-we-need-them/</link>
+      <pubDate>Tue, 03 Mar 2009 00:00:00 +0000</pubDate>
+      
+      <guid>https://ojmason.github.io/blog/collocations----do-we-need-them/</guid>
+      <description>
+
+&lt;p&gt;The concept of collocation was introduced in the middle of the last
+century by J.R. Firth with his famous quote “You shall know a word
+by the company it keeps”. Words are not distributed randomly in a
+text, but instead they stick with each other, their ‘company’.
+Starting in the late 1980s, the increased interest in collocation
+by computational linguists and others working in NLP has lead to a
+proliferation of methods and algorithms to extract collocations
+from text corpora.&lt;/p&gt;
+
+&lt;p&gt;Typically one starts with the environment of the target (or node)
+word, and collects all the words that are within a certain distance
+(or span) of the node. Then their frequency in a reference corpus
+is compared with their frequency in the environment of the node,
+and from the ratio of frequencies we determine whether they’re near
+the node by chance or because they’re part of the node’s company.
+A bewildering variety of so-called significance functions exists,
+the oldest probably being the &lt;em&gt;z&lt;/em&gt;-score, used by Berry-Rogghe in 1973;
+later, Church and Hanks (1991) popularised mutual information and
+&lt;em&gt;t&lt;/em&gt;-score, which now seem to have been displaced by log-likelihood
+as the predominant measure of word association.&lt;/p&gt;
+
+&lt;p&gt;The problem is: all these metrics yield different results, and
+nobody knows (or can tell) which are ‘right’. Mutual information,
+for example, favours rare words, while the &lt;em&gt;t&lt;/em&gt;-score promotes words
+which are relatively frequent already. But apart from rules-of-thumb,
+there exists no linguistic justification why one metric is preferable
+to another. It is all rather ad-hoc.&lt;/p&gt;
+
+&lt;p&gt;Part of this is that collocation as a concept is rather underspecified.
+What does it mean for a word to be ‘significantly more common’ near
+the node word as opposed to be there just by chance? In a sense,
+collocations are just diagnostics: we know there are words that are
+to be expected next to &lt;em&gt;bacon&lt;/em&gt;, and we look for collocates and find
+&lt;em&gt;rasher&lt;/em&gt;. Fantastic! Just what we expected. But then we look at &lt;em&gt;fire&lt;/em&gt;,
+and find &lt;em&gt;leafcutter&lt;/em&gt; as a very significant collocate. How can that
+happen? What is the connection between &lt;em&gt;fire&lt;/em&gt; and &lt;em&gt;leafcutter&lt;/em&gt;? The
+answer is: &lt;em&gt;ants&lt;/em&gt;. There are &lt;em&gt;fire ants&lt;/em&gt;, and there are &lt;em&gt;leafcutter ants&lt;/em&gt;,
+and they are sometimes mentioned in the same sentence.&lt;/p&gt;
+
+&lt;p&gt;This leads us to an issue which I believe gets us on the right track
+in the end: the fallacy of using the word as the primary unit of
+analysis. In the latter example, we’re not dealing with &lt;em&gt;fire&lt;/em&gt; and
+&lt;em&gt;leafcutter&lt;/em&gt;, we’re instead concerned with &lt;em&gt;fire ants&lt;/em&gt;. Once we realise
+that, then it is perfectly natural to see &lt;em&gt;leafcutter ants&lt;/em&gt; as a
+collocate, whereas we would be surprised to find &lt;em&gt;engine&lt;/em&gt;, which
+instead is a collocate of the lexical item &lt;em&gt;fire&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;So, phraseology is the clue. If we get away from single words, and
+instead consider multi-word units, then we also have an explanation
+for collocations. Single words form part of larger MWUs, together
+with other single words. So &lt;em&gt;leafcutter&lt;/em&gt; often forms a unit with &lt;em&gt;ants&lt;/em&gt;,
+as does &lt;em&gt;fire&lt;/em&gt;. More generally, MWUs such as &lt;em&gt;parameters of the model&lt;/em&gt;
+are formed of several single words, and here we can observe that
+&lt;em&gt;parameters&lt;/em&gt; and &lt;em&gt;model&lt;/em&gt; occur together. But they form a single unit
+of analysis, and only if we break up this unit by considering single
+words, then we can observe that &lt;em&gt;parameters&lt;/em&gt; and &lt;em&gt;model&lt;/em&gt; commonly occur
+together.&lt;/p&gt;
+
+&lt;p&gt;From this we can define a very simple procedure to compute collocations:
+from a corpus, gather all the MWUs that are associated with a
+particular word. Get a frequency list of all the single word items
+in those MWUs, sort by frequency, and there we are.&lt;/p&gt;
+
+&lt;p&gt;To conclude, &lt;em&gt;collocation is an epiphenomenon of phraseology&lt;/em&gt;, a
+side-effect of words forming larger units. Phraseological units
+contain multiple single words, and those are picked up by collocation
+software, because those are the ones that commonly occur in a text
+together. And the reason for occurring together is that they form
+a single unit. Once we look at text in terms of MWUs, the need for
+collocation disappears. Collocation just picks out the constituent
+elements of multi-word units.&lt;/p&gt;
+
+&lt;p&gt;One could of course argue that this is a circular argument, that
+we are simply replacing a procedure to calculate collocations by
+one that calculates MWUs. But the difference between those two
+procedures is that MWU-recognition does not require complicated
+statistics (which I find hard to see justification for), but instead
+simply looks at recurrent patternings in language. MWUs are re-usable
+chunks of texts, which can be justified on the grounds of usage.
+Collocation is a much harder concept to explain and integrate into
+views of language. And, as it turns out, we don’t really need it
+at all.&lt;/p&gt;
+
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+
+&lt;dl&gt;
+&lt;dt&gt;Berry-Rogghe, G.L.M. (1973)&lt;/dt&gt;
+&lt;dd&gt;“The Computation of Collocations and Their Relevance in Lexical Studies.” in The Computer and Literary Studies. Eds. A.J. Aitken, R.W. Bailey and N. Hamilton-Smith. Edinburgh: Edinburgh University Press, p 103-112.&lt;/dd&gt;
+&lt;dt&gt;Church, K., and Hanks, P. (1991)&lt;/dt&gt;
+&lt;dd&gt;“Word Association Norms, Mutual Information and Lexicography,” Computational Linguistics, Vol 16:1, p 22-29.&lt;/dd&gt;
+&lt;dt&gt;Firth, J. R. (1957)&lt;/dt&gt;
+&lt;dd&gt;“A Synopsis of Linguistic Theory 1930-1955” in Studies in Linguistic Analysis, Oxford: Philological Society.&lt;/dd&gt;
+&lt;/dl&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

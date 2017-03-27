@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+
+
+
+<meta property="twitter:title" content="Collocations -- Do we need them?">
+
+    <meta property="twitter:card" content="summary">
+
+<meta property="twitter:description" content="">
+
+<title>
+
+
+     Arguable Intelligence - Collocations -- Do we need them? 
+
+</title>
+<link rel="canonical" href="https://ojmason.github.io/blog/collocations----do-we-need-them/">
+
+
+<link rel="stylesheet" href="https://ojmason.github.io/css/main.v0.9.1.css">
+<link rel="stylesheet" href="https://ojmason.github.io/css/ionicons.min.css">
+
+
+
+
+
+
+
+
+<link rel="shortcut icon"
+
+    href="https://ojmason.github.io/img/favicon.ico"
+
+>
+
+
+
+
+</head>
+
+
+<body>
+
+
+<section class="header">
+
+    <div class="container">
+        <a href="https://ojmason.github.io/"><img class="logo" src="https://ojmason.github.io/cave.jpg" alt="logo" /></a>
+        <div class="content">
+            <a href="https://ojmason.github.io/"><div class="name"><h1>Arguable Intelligence</h1></div></a>
+            <nav>
+                <ul>
+                    
+                        <a href="https://ojmason.github.io/blog/"><li>Blog</li></a>
+                    
+                    
+                        
+                    
+                        
+                            
+                        
+                    
+                    
+                        
+                            <a href="https://ojmason.github.io/about/"><li>about me</li></a>
+                        
+                    
+                </ul>
+            </nav>
+        </div>
+    </div>
+</section>
+
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
+        <div class="content">
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    Collocations -- Do we need them?
+
+</div>
+
+                </div>
+                <div class="meta">
+                    <div class="date" title="Tue, Mar 3, 2009 00:00:00 GMT">Tue, Mar 3, 2009</div>
+                    <div class="reading-time"><div class="middot"></div>4 minutes read</div>
+                </div>
+            </div>
+            <div class="markdown">
+                
+    
+
+<p>The concept of collocation was introduced in the middle of the last
+century by J.R. Firth with his famous quote “You shall know a word
+by the company it keeps”. Words are not distributed randomly in a
+text, but instead they stick with each other, their ‘company’.
+Starting in the late 1980s, the increased interest in collocation
+by computational linguists and others working in NLP has lead to a
+proliferation of methods and algorithms to extract collocations
+from text corpora.</p>
+
+<p>Typically one starts with the environment of the target (or node)
+word, and collects all the words that are within a certain distance
+(or span) of the node. Then their frequency in a reference corpus
+is compared with their frequency in the environment of the node,
+and from the ratio of frequencies we determine whether they’re near
+the node by chance or because they’re part of the node’s company.
+A bewildering variety of so-called significance functions exists,
+the oldest probably being the <em>z</em>-score, used by Berry-Rogghe in 1973;
+later, Church and Hanks (1991) popularised mutual information and
+<em>t</em>-score, which now seem to have been displaced by log-likelihood
+as the predominant measure of word association.</p>
+
+<p>The problem is: all these metrics yield different results, and
+nobody knows (or can tell) which are ‘right’. Mutual information,
+for example, favours rare words, while the <em>t</em>-score promotes words
+which are relatively frequent already. But apart from rules-of-thumb,
+there exists no linguistic justification why one metric is preferable
+to another. It is all rather ad-hoc.</p>
+
+<p>Part of this is that collocation as a concept is rather underspecified.
+What does it mean for a word to be ‘significantly more common’ near
+the node word as opposed to be there just by chance? In a sense,
+collocations are just diagnostics: we know there are words that are
+to be expected next to <em>bacon</em>, and we look for collocates and find
+<em>rasher</em>. Fantastic! Just what we expected. But then we look at <em>fire</em>,
+and find <em>leafcutter</em> as a very significant collocate. How can that
+happen? What is the connection between <em>fire</em> and <em>leafcutter</em>? The
+answer is: <em>ants</em>. There are <em>fire ants</em>, and there are <em>leafcutter ants</em>,
+and they are sometimes mentioned in the same sentence.</p>
+
+<p>This leads us to an issue which I believe gets us on the right track
+in the end: the fallacy of using the word as the primary unit of
+analysis. In the latter example, we’re not dealing with <em>fire</em> and
+<em>leafcutter</em>, we’re instead concerned with <em>fire ants</em>. Once we realise
+that, then it is perfectly natural to see <em>leafcutter ants</em> as a
+collocate, whereas we would be surprised to find <em>engine</em>, which
+instead is a collocate of the lexical item <em>fire</em>.</p>
+
+<p>So, phraseology is the clue. If we get away from single words, and
+instead consider multi-word units, then we also have an explanation
+for collocations. Single words form part of larger MWUs, together
+with other single words. So <em>leafcutter</em> often forms a unit with <em>ants</em>,
+as does <em>fire</em>. More generally, MWUs such as <em>parameters of the model</em>
+are formed of several single words, and here we can observe that
+<em>parameters</em> and <em>model</em> occur together. But they form a single unit
+of analysis, and only if we break up this unit by considering single
+words, then we can observe that <em>parameters</em> and <em>model</em> commonly occur
+together.</p>
+
+<p>From this we can define a very simple procedure to compute collocations:
+from a corpus, gather all the MWUs that are associated with a
+particular word. Get a frequency list of all the single word items
+in those MWUs, sort by frequency, and there we are.</p>
+
+<p>To conclude, <em>collocation is an epiphenomenon of phraseology</em>, a
+side-effect of words forming larger units. Phraseological units
+contain multiple single words, and those are picked up by collocation
+software, because those are the ones that commonly occur in a text
+together. And the reason for occurring together is that they form
+a single unit. Once we look at text in terms of MWUs, the need for
+collocation disappears. Collocation just picks out the constituent
+elements of multi-word units.</p>
+
+<p>One could of course argue that this is a circular argument, that
+we are simply replacing a procedure to calculate collocations by
+one that calculates MWUs. But the difference between those two
+procedures is that MWU-recognition does not require complicated
+statistics (which I find hard to see justification for), but instead
+simply looks at recurrent patternings in language. MWUs are re-usable
+chunks of texts, which can be justified on the grounds of usage.
+Collocation is a much harder concept to explain and integrate into
+views of language. And, as it turns out, we don’t really need it
+at all.</p>
+
+<h2 id="references">References</h2>
+
+<dl>
+<dt>Berry-Rogghe, G.L.M. (1973)</dt>
+<dd>“The Computation of Collocations and Their Relevance in Lexical Studies.” in The Computer and Literary Studies. Eds. A.J. Aitken, R.W. Bailey and N. Hamilton-Smith. Edinburgh: Edinburgh University Press, p 103-112.</dd>
+<dt>Church, K., and Hanks, P. (1991)</dt>
+<dd>“Word Association Norms, Mutual Information and Lexicography,” Computational Linguistics, Vol 16:1, p 22-29.</dd>
+<dt>Firth, J. R. (1957)</dt>
+<dd>“A Synopsis of Linguistic Theory 1930-1955” in Studies in Linguistic Analysis, Oxford: Philological Society.</dd>
+</dl>
+
+
+                <br>
+                <p><a href="https://ojmason.github.io/blog">Back to posts</a></p>
+            </div>
+            <br>
+            <div class="disqus">
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="footer">
+    <div class="container">
+        <div class="copyright">
+
+        
+
+        </div>
+        <div class="icons">
+
+        
+
+        
+
+        
+
+        
+
+        
+            <a href="https://ojmason.github.io/index.xml">
+                <i class="icon ion-social-rss larger" title="rss"></i>
+            </a>
+        
+
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<script>
+  window.onload = function() {
+    
+    
+  };
+</script>
+
+</body>
+</html>
+

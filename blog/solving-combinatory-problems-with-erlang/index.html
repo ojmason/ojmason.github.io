@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+
+
+
+<meta property="twitter:title" content="Solving Combinatory Problems with Erlang">
+
+    <meta property="twitter:card" content="summary">
+
+<meta property="twitter:description" content="">
+
+<title>
+
+
+     Arguable Intelligence - Solving Combinatory Problems with Erlang 
+
+</title>
+<link rel="canonical" href="https://ojmason.github.io/blog/solving-combinatory-problems-with-erlang/">
+
+
+<link rel="stylesheet" href="https://ojmason.github.io/css/main.v0.9.1.css">
+<link rel="stylesheet" href="https://ojmason.github.io/css/ionicons.min.css">
+
+
+
+
+
+
+
+
+<link rel="shortcut icon"
+
+    href="https://ojmason.github.io/img/favicon.ico"
+
+>
+
+
+
+
+</head>
+
+
+<body>
+
+
+<section class="header">
+
+    <div class="container">
+        <a href="https://ojmason.github.io/"><img class="logo" src="https://ojmason.github.io/cave.jpg" alt="logo" /></a>
+        <div class="content">
+            <a href="https://ojmason.github.io/"><div class="name"><h1>Arguable Intelligence</h1></div></a>
+            <nav>
+                <ul>
+                    
+                        <a href="https://ojmason.github.io/blog/"><li>Blog</li></a>
+                    
+                    
+                        
+                    
+                        
+                            
+                        
+                    
+                    
+                        
+                            <a href="https://ojmason.github.io/about/"><li>about me</li></a>
+                        
+                    
+                </ul>
+            </nav>
+        </div>
+    </div>
+</section>
+
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
+        <div class="content">
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    Solving Combinatory Problems with Erlang
+
+</div>
+
+                </div>
+                <div class="meta">
+                    <div class="date" title="Sun, May 10, 2015 00:00:00 GMT">Sun, May 10, 2015</div>
+                    <div class="reading-time"><div class="middot"></div>2 minutes read</div>
+                </div>
+            </div>
+            <div class="markdown">
+                
+    <p>My daughter had some maths homework the other day:</p>
+
+<blockquote>
+<p>You have 4 bags, each full of the numbers 1, 3, 5, and 7 respectively.
+Take 10 of the numbers that when added up make 37. What numbers are they?</p>
+</blockquote>
+
+<p>So far so good: that sounds easy enough. But a bit of trial and
+error quickly leads nowhere. Something can’t be right. So, let’s
+get the computer to work it out.</p>
+
+<p>As I haven’t done much Erlang recently I thought I’d give it a go.
+And, during a casual glance at Armstrong’s <em>Programming in Erlang</em> I
+thought I’d finally understood list comprehensions, so I wrote the
+following program:</p>
+
+<pre>
+-module(comb).
+-export([result/0]).
+result() ->
+[{A+B+C+D+E+F+G+H+I+J,A,B,C,D,E,F,G,H,I,J}||
+A <- [1,3,5,7],
+B <- [1,3,5,7],
+C <- [1,3,5,7],
+D <- [1,3,5,7],
+E <- [1,3,5,7],
+F <- [1,3,5,7],
+G <- [1,3,5,7],
+H <- [1,3,5,7],
+I <- [1,3,5,7],
+J <- [1,3,5,7],
+A+B+C+D+E+F+G+H+I+J =:= 37].
+</pre>
+
+<p>I declare a module with one function, <code>result/0</code>. This finds me ten
+variables that can take any of the four specified values and add
+up to 37. Simples!</p>
+
+<p>The list comprehension has ten generators, and one filter; it will
+return a tuple with the sum and the individual variables’ values.</p>
+
+<pre>
+Erlang R16B01 (erts-5.10.2) [64-bit] [smp:4:4] [async-threads:10] [hipe] [kernel-poll:false]
+Eshell V5.10.2 (abort with ^G)
+1> comb:result().
+[]
+2>
+</pre>
+
+<p>WTF???! An empty list?! So I try changing the 37 to another value, like 36.</p>
+
+<pre>
+3> comb:result().
+[{36,1,1,1,1,1,3,7,7,7,7},
+{36,1,1,1,1,1,5,5,7,7,7},
+{36,1,1,1,1,1,5,7,5,7,7},
+{36,1,1,1,1,1,5,7,7,5,7},
+{36,1,1,1,1,1,5,7,7,7,5},
+[etc, etc].
+</pre>
+
+<p>So it does work! Only, there doesn’t seem to be an answer to the
+question. And with a bit of logical reasoning it is obvious: when
+adding two odd numbers, you get an even number. So adding ten odd
+numbers also yields an even number, but 37 is odd.</p>
+
+<p>What I learnt from this exercise: thinking about the problem
+beforehand can save you time, as there was no need to write a program
+at all. But then, I did get to use list comprehensions, and have
+learnt how powerful they are. And it neatly shows Erlang’s Prolog
+roots as well.</p>
+
+
+                <br>
+                <p><a href="https://ojmason.github.io/blog">Back to posts</a></p>
+            </div>
+            <br>
+            <div class="disqus">
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="footer">
+    <div class="container">
+        <div class="copyright">
+
+        
+
+        </div>
+        <div class="icons">
+
+        
+
+        
+
+        
+
+        
+
+        
+            <a href="https://ojmason.github.io/index.xml">
+                <i class="icon ion-social-rss larger" title="rss"></i>
+            </a>
+        
+
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<script>
+  window.onload = function() {
+    
+    
+  };
+</script>
+
+</body>
+</html>
+
