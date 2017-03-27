@@ -130,6 +130,204 @@ if I can get Xcode to run them automatically after each compilation…&lt;/li&gt
     </item>
     
     <item>
+      <title>Fast PFNETs in Erlang</title>
+      <link>https://ojmason.github.io/blog/fast-pfnets-in-erlang/</link>
+      <pubDate>Sat, 14 Feb 2009 00:00:00 +0000</pubDate>
+      
+      <guid>https://ojmason.github.io/blog/fast-pfnets-in-erlang/</guid>
+      <description>
+
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://en.wikipedia.org/wiki/Pathfinder_Networks&#34;&gt;Pathfinder Networks&lt;/a&gt;
+(PFNETs) are networks derived from a graph
+representing proximity data.  Basically, each node is connected to
+(almost) every other node by a weighted link, and that makes it
+hard to see what’s going on.  The Pathfinder algorithm prunes the
+graph by removing links which are weighted higher than another path
+between the same nodes.&lt;/p&gt;
+
+&lt;p&gt;For example: A links to B with weight 5.  A also links to C with
+weight 2, and C links to B with weight 2.  Adding up the weights,
+A to B direct is 5, A to C to B is 4.  Result: we remove the link
+from A to B, as the route via C is shorter.  There are different
+ways to calculate the path lengths (using the &lt;a href=&#34;http://en.wikipedia.org/wiki/Minkowski_metric&#34;&gt;Minkowski &lt;em&gt;r&lt;/em&gt;-metric&lt;/a&gt;),
+but you get the general idea.  The resulting PFNET has fewer links
+and is easier to analyse.&lt;/p&gt;
+
+&lt;p&gt;In Schvaneveldt (1990) an algorithm for computing PFNETs is given,
+but it is rather complex and computationally intensive.  There is
+an improved algorithm called Binary Pathfinder, but that is apparently
+more memory intensive.  Not very promising so far, but then along
+comes &lt;em&gt;A new variant of the Pathfinder algorithm to generate large
+visual science maps in cubic time&lt;/em&gt;, by Quirin, Cordón, Santamaría,
+Vargas-Quesada, and Moya-Anegón.  This algorithm is a lot faster
+(by about 450 times), but has one disadvantage: speed is traded in
+for flexibility.  The original Pathfinder algorithm has two parameters,
+r (the value of the Minkowski metric to be used) and q (the maximum
+length of paths to be considered).  The fast algorithm only has r,
+and always uses the maximum value for q (which is n-1).  I know too
+little about the application of PFNETs to say whether this is
+important at all; for the uses I can envisage it does not seem to
+matter.&lt;/p&gt;
+
+&lt;p&gt;As added bonus, the algorithm in pseudo code in Quirin et al. is
+very short and straightforward.  They’re using a different &lt;a href=&#34;http://en.wikipedia.org/wiki/Floyd-Warshall_algorithm&#34;&gt;shortest-path
+algorithm&lt;/a&gt;
+to identify, erm, shorter paths.  And then it’s very
+simple to prune the original network.&lt;/p&gt;
+
+&lt;p&gt;A picture tells more than 1K words, so here instead of 2000 words
+the before and after, graph layout courtesy of the graphviz program:&lt;/p&gt;
+
+&lt;p&gt;A network example (from Schvaneveldt 1990)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://ojmason.github.io/img/pfnet-1.png&#34; caption=&#34;Fig 1: A network example (from Schvaneveldt 1990)&#34;/&gt;&lt;/p&gt;
+
+&lt;p&gt;Here, each node is linked to every other node.  Running the PFNET
+algorith on it, we get the output shown in the second figure.&lt;/p&gt;
+
+&lt;p&gt;A PFNET generated from the previous graph&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://ojmason.github.io/img/pfnet-2.png&#34; caption=&#34;Fig 2: A PFNET generated from the previous graph&#34;/&gt;&lt;/p&gt;
+
+&lt;p&gt;If you compare the output with the actual result from Schvaneveldt’s
+book (p.&lt;sup&gt;6&lt;/sup&gt;&amp;frasl;&lt;sub&gt;7&lt;/sub&gt;), you’ll realise that it is not identical, and the
+reason for that is that the example there limits the path-length,
+using the parameters (&lt;em&gt;r&lt;/em&gt; = 1, &lt;em&gt;q&lt;/em&gt; = 2) rather than (&lt;em&gt;r&lt;/em&gt; = 1, &lt;em&gt;q&lt;/em&gt; = n-1)
+as in the example shown here.  As a consequence, the link from N1
+to N4 (with a weight of 5) disappears, because of the shorter path
+(N1-N2-N3-N4, weight 4).  But that path is too long if &lt;em&gt;q&lt;/em&gt; is just
+2, and so it is kept in Schvaneveldt’s example.&lt;/p&gt;
+
+&lt;h2 id=&#34;implementation&#34;&gt;Implementation&lt;/h2&gt;
+
+&lt;p&gt;It is not possible to implement the pseudo-code given in Quirin &lt;em&gt;et
+al&lt;/em&gt; directly, as they use destructive updates of the link matrix,
+which we obviously cannot do in Erlang.  But the first, naïve
+implementation, is still quite short.  The input graph is represented
+as a matrix (&lt;em&gt;n&lt;/em&gt; x &lt;em&gt;n&lt;/em&gt;) where each value stands for the link weight,
+with zero being used to indicate non-existing links.  I have written
+a function that creates a dot file from a matrix, which is then fed
+into graphviz for generating images as the ones shown above.&lt;/p&gt;
+
+&lt;p&gt;There are basically two steps: creating a matrix of shortest paths
+from the input matrix, and then generating the PFNET by comparing
+the two matrices; if a certain cell has the same value in both
+matrices, then it is a shortest path and is kept, otherwise there
+is a shorter path and it’s pruned. Here is the main function:&lt;/p&gt;
+
+&lt;pre&gt;
+find_path(Matrix) -&gt;
+    Shortest = loop1(1,length(Matrix),Matrix),
+    generate_pfnet(Matrix, Shortest, []).
+&lt;/pre&gt;
+
+&lt;p&gt;Next we have the three loops (hence ‘cubic time’!) of the Floyd-Warshall
+shortest path algorithm to create the shortest path matrix:&lt;/p&gt;
+
+&lt;pre&gt;
+loop1(K,N,Matrix) when K &gt; N -&gt; 
+    Matrix;
+loop1(K,N,Matrix) -&gt;
+    NewMatrix = loop2(K,1,Matrix,
+        Matrix,[]),
+    loop1(K+1,N,NewMatrix).
+
+loop2(_,_,_,[],Acc) -&gt;
+    lists:reverse(Acc);
+loop2(K,I,D,[Row|Rest],Acc) -&gt;
+    NewRow = loop3(K,I,1,D, Row, []),
+    loop2(K,I+1,D,Rest,[NewRow|Acc]).
+
+loop3(_,_,_,_, [], Acc) -&gt;
+    lists:reverse(Acc);
+loop3(K,I,J,D, [X|Rest], Acc) -&gt;
+    loop3(K,I,J+1,D, Rest,
+    [min(X, get(I,K,D) + get(K,J,D))|Acc]).
+&lt;/pre&gt;
+
+&lt;p&gt;The final line implements the Minkowski metric with &lt;em&gt;r&lt;/em&gt; = 1; this
+could be expanded to include other values as well, eg &lt;em&gt;r&lt;/em&gt; = 2 for
+Euclidean, or &lt;em&gt;r&lt;/em&gt; = ∞ (which seem to be the most common values in
+use; the latter means using the maximum weight of any path component
+along the full path).&lt;/p&gt;
+
+&lt;p&gt;And here are two utility methods, one to find the smaller of two
+values, and one to retrieve an element from a matrix (which is a
+list of rows).  There is something of a hack to deal with the fact
+that zero does not mean a very small weight, but refers to a
+non-existing link:&lt;/p&gt;
+
+&lt;pre&gt;
+min(X, Y) when X &lt; Y -&gt; X;
+min(_X, Y) -&gt; Y.
+
+get(Row, Col, Matrix) -&gt;
+    case lists:nth(Col,
+      lists:nth(Row, Matrix)) of
+        0 -&gt; 999999999;
+        X -&gt; X
+    end.
+&lt;/pre&gt;
+
+&lt;p&gt;And finally, generating the PFNET by comparing the two matrices
+(again, awful hack included):&lt;/p&gt;
+
+&lt;pre&gt;
+generate_pfnet([],[],Result) -&gt;
+    lists:reverse(Result);
+generate_pfnet([R1|Rest1], [R2|Rest2], Acc) -&gt;
+    Row = generate_pfrow(R1,R2,[]),
+    generate_pfnet(Rest1, Rest2, [Row|Acc]).
+
+generate_pfrow([],[],Result) -&gt;
+    lists:reverse(Result);
+generate_pfrow([C|Rest1], [C|Rest2], Acc) -&gt;
+    case C of
+        999999999 -&gt; C1 = 0;
+        _ -&gt; C1 = C
+    end,
+    generate_pfrow(Rest1, Rest2, [C1|Acc]);
+generate_pfrow([C1|Rest1], [C2|Rest2], Acc) -&gt;
+    generate_pfrow(Rest1, Rest2, [0|Acc]).
+&lt;/pre&gt;
+
+&lt;h2 id=&#34;discussion&#34;&gt;Discussion&lt;/h2&gt;
+
+&lt;p&gt;So this is the basic code.  It works, but there is scope for improvement.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;it only currently generates PFNETs with (&lt;em&gt;r&lt;/em&gt; = 1, &lt;em&gt;q&lt;/em&gt; = &lt;em&gt;n&lt;/em&gt;-1)&lt;/li&gt;
+&lt;li&gt;there is no parallelism, hence it’s not really making use of Erlang’s strengths.&lt;/li&gt;
+&lt;li&gt;the three loops don’t look very elegant, and could probably be replaced by list comprehensions&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Because of the matrix being updated, it doesn’t look that easy to
+parallelise the processing, but it would work at the level of
+updating the individual rows.  If that can be done in parallel, it
+would probably provide some speed-up (provided the matrix is not
+of a trivial size).  So the first step would be to change the matrix
+processing using &lt;code&gt;lists:map/2&lt;/code&gt;, and replacing this then by &lt;code&gt;pmap&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Once the code is up to scratch with full parallelism, and tested
+on larger matrices I will probably put it up on Google Code in case
+other people are interested in using it.  If you have any suggestions,
+tell me in the comments!&lt;/p&gt;
+
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+
+&lt;dl&gt;
+&lt;dt&gt;Schvaneveldt, R. W. (Ed.) (1990)&lt;/dt&gt;
+&lt;dd&gt;Pathfinder Associative Networks: Studies in Knowledge Organization. Norwood, NJ: Ablex.
+The book is out of print. A copy can be downloaded from the &lt;a href=&#34;http://en.wikipedia.org/wiki/Pathfinder_Networks&#34;&gt;Wikipedia page&lt;/a&gt;&lt;/dd&gt;
+&lt;dt&gt;Quirin, A; Cordón, O; Santamaría, J; Vargas-Quesada, B; Moya-Anegón, F (2008)&lt;/dt&gt;
+&lt;dd&gt;“A new variant of the Pathfinder algorithm to generate large visual science maps in cubic time”, Information Processing and Management, 44, p.1611-1623.&lt;/dd&gt;
+&lt;/dl&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Kids and Computers</title>
       <link>https://ojmason.github.io/blog/kids-and-computers/</link>
       <pubDate>Tue, 08 Jul 2008 00:00:00 +0000</pubDate>
