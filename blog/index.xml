@@ -518,14 +518,14 @@ the before and after, graph layout courtesy of the graphviz program:&lt;/p&gt;
 
 &lt;p&gt;A network example (from Schvaneveldt 1990)&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://ojmason.github.io/img/pfnet-1.png&#34; caption=&#34;Fig 1: A network example (from Schvaneveldt 1990)&#34;/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://ojmason.github.io/pfnet-1.png&#34; caption=&#34;Fig 1: A network example (from Schvaneveldt 1990)&#34;/&gt;&lt;/p&gt;
 
 &lt;p&gt;Here, each node is linked to every other node.  Running the PFNET
 algorith on it, we get the output shown in the second figure.&lt;/p&gt;
 
 &lt;p&gt;A PFNET generated from the previous graph&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://ojmason.github.io/img/pfnet-2.png&#34; caption=&#34;Fig 2: A PFNET generated from the previous graph&#34;/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://ojmason.github.io/pfnet-2.png&#34; caption=&#34;Fig 2: A PFNET generated from the previous graph&#34;/&gt;&lt;/p&gt;
 
 &lt;p&gt;If you compare the output with the actual result from Schvaneveldt’s
 book (p.&lt;sup&gt;6&lt;/sup&gt;&amp;frasl;&lt;sub&gt;7&lt;/sub&gt;), you’ll realise that it is not identical, and the
