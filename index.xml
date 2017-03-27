@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ojmason</title>
+    <link>https://ojmason.github.io/website/index.xml</link>
+    <description>Recent content on ojmason</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Mon, 27 Mar 2017 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://ojmason.github.io/website/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>ojmason</title>
+      <link>https://ojmason.github.io/website/about/</link>
+      <pubDate>Mon, 27 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://ojmason.github.io/website/about/</guid>
+      <description>
+
+&lt;h1 id=&#34;ojmason&#34;&gt;ojmason&lt;/h1&gt;
+
+&lt;p&gt;Hello, I&amp;rsquo;m Oliver. I am a computational linguist, interested in applications
+of NLP and AI in understanding texts and conversing with human beings.
+&lt;img src=&#34;Self.jpg&#34; alt=&#34;Selfie&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I am a passionate dinghy sailor, sailing an Enterprise or a Laser at Midland
+Sailing Club in the UK. I am also a qualified Dinghy Instructor, and run the
+RYA training centre at the club.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://ojmason.github.io/website/post/2017-03-27-firstpost/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ojmason.github.io/website/post/2017-03-27-firstpost/</guid>
+      <description>
+
+&lt;h1 id=&#34;first-post&#34;&gt;First Post&lt;/h1&gt;
+
+&lt;p&gt;I&amp;rsquo;m trying blogging again &amp;ndash; twitter is a bit too sparse for longer rants. And this seems
+to be a time for rants. Lots happening in politics.&lt;/p&gt;
+
+&lt;p&gt;Anyway, here we go again.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
