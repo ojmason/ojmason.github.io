@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Arguable Intelligence</title>
-    <link>https://ojmason.github.io/index.xml</link>
-    <description>Recent content on Arguable Intelligence</description>
+    <title>Blogging on Arguable Intelligence</title>
+    <link>https://ojmason.github.io/tags/blogging/index.xml</link>
+    <description>Recent content in Blogging on Arguable Intelligence</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Mon, 27 Mar 2017 15:00:26 +0100</lastBuildDate>
-    <atom:link href="https://ojmason.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ojmason.github.io/tags/blogging/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title> Software is Sh*t</title>
@@ -70,21 +69,6 @@ in different ways. And few of them are of a high enough standard to be properly 
 to be a time for rants. Lots happening in politics.&lt;/p&gt;
 
 &lt;p&gt;Anyway, here we go again.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>about me</title>
-      <link>https://ojmason.github.io/about/</link>
-      <pubDate>Mon, 27 Mar 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://ojmason.github.io/about/</guid>
-      <description>&lt;p&gt;Hello, I&amp;rsquo;m Oliver. I am a computational linguist, interested in applications
-of NLP and AI in understanding texts and conversing with human beings.&lt;/p&gt;
-
-&lt;p&gt;I am a passionate dinghy sailor, sailing an Enterprise or a Laser at Midland
-Sailing Club in the UK. I am also a qualified Dinghy Instructor, and run the
-RYA training centre at the club.&lt;/p&gt;
 </description>
     </item>
     
