@@ -11,7 +11,7 @@
 
 
 
-<meta property="twitter:title" content=" First Post">
+<meta property="twitter:title" content="Replacing a stack with concurrency">
 
     <meta property="twitter:card" content="summary">
 
@@ -20,10 +20,10 @@
 <title>
 
 
-     Arguable Intelligence -  First Post 
+     Arguable Intelligence - Replacing a stack with concurrency 
 
 </title>
-<link rel="canonical" href="https://ojmason.github.io/blog/first-post/">
+<link rel="canonical" href="https://ojmason.github.io/blog/replacing-a-stack-with-concurrency/">
 
 
 <link rel="stylesheet" href="https://ojmason.github.io/css/main.v0.9.1.css">
@@ -88,30 +88,57 @@
                 <div class="title-container">
                     <div class="page-heading">
 
-     First Post
+    Replacing a stack with concurrency
 
 </div>
 
                 </div>
                 <div class="meta">
-                    <div class="date" title="Mon, Mar 27, 2017 14:40:17 GMT">Mon, Mar 27, 2017</div>
-                    <div class="reading-time"><div class="middot"></div>1 minute read</div>
+                    <div class="date" title="Wed, Apr 23, 2008 00:00:00 GMT">Wed, Apr 23, 2008</div>
+                    <div class="reading-time"><div class="middot"></div>2 minutes read</div>
                 </div>
             </div>
             <div class="markdown">
                 
-    
+    <p>For some language processing task I needed a reasonably powerful
+parser (a program to identify the syntactic structure of a sentence).
+So I dug out my copy of Winograd (1983) (<em>Language as a Cognitive
+Process</em>) and set about implementing an <a href="https://en.wikipedia.org/wiki/Augmented_transition_network">Augmented Transition Network</a>
+parser in Erlang.</p>
 
-<h1 id="first-post">First Post</h1>
+<p>Now, the first thing you learn about natural language is that it
+is full of ambiguities, and so there will always be several
+alternatives available, several possible paths through the network
+which defines the grammar. The traditional solution is to dump all
+the alternatives on a stack, and look at them when the current path
+has been finished with. You can either go depth-first, where you
+complete the current path before you get the next one off the stack,
+or breadth-first, where you advance all paths by one step at a time,
+kind of pseudo-parallel.</p>
 
-<p>I&rsquo;m trying blogging again &ndash; twitter is a bit too sparse for longer rants. And this seems
-to be a time for rants. Lots happening in politics.</p>
+<p>Having to deal with a stack is tedious, as you need to keep track
+of the current configuration: which network are you at, what node,
+what position in the sentence, etc. But then, it occurred to me,
+there’s an easier way to do it (at least it’s easier in Erlang!):
+every time you come to a point where you have multiple alternatives,
+you spawn a new process and pursue all of them in parallel.</p>
 
-<p>Anyway, here we go again.</p>
+<p>The only overhead you need is a loop which keeps track of all the
+processes currently running. This loop receives the results of
+successful paths, and gets notified of unsuccessful ones (where the
+process terminates without having found a valid structure). No need
+for a stack, and hopefully very efficient processing on multi-core
+machines as a free side-effect.</p>
 
-<p>Update: I&rsquo;m also going through my previous WordPress log to gather some articles that
-might still be interesting, so there will be older articles going back almost a decade
-appearing here.</p>
+<p>I’m still amazed how easy it was to implement. I wouldn’t have
+fancied doing that in Java or even C. For my test sentences I had
+about 8 to 10 processes running in parallel most of the time, but
+it depends on the size of the grammar and the length of the sentence
+really. What I liked about this was that it seemed the natural way
+to do in Erlang, where working with processes is just so easy.</p>
+
+<p>And also, another nail in the coffin for the claim that you can’t
+use Erlang for handling texts easily!</p>
 
 
                 <br>

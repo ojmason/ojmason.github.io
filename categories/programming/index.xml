@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Programming on Arguable Intelligence</title>
+    <link>https://ojmason.github.io/categories/programming/index.xml</link>
+    <description>Recent content in Programming on Arguable Intelligence</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <atom:link href="https://ojmason.github.io/categories/programming/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Every Test is Valuable</title>
+      <link>https://ojmason.github.io/blog/every-test-is-valuable/</link>
+      <pubDate>Tue, 17 Jul 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://ojmason.github.io/blog/every-test-is-valuable/</guid>
+      <description>&lt;p&gt;After reading Graham Lee’s &lt;a href=&#34;http://www.amazon.co.uk/gp/product/B007RNK0W6/ref=as_li_ss_tl?ie=UTF8&amp;amp;camp=1634&amp;amp;creative=19450&amp;amp;creativeASIN=B007RNK0W6&amp;amp;linkCode=as2&amp;amp;tag=phrasysnlp-21&#34;&gt;Test-Driven iOS Development&lt;/a&gt;; (disclaimer:
+affiliate link) I have (again) adopted a test-driven approach to
+software developing. Whenever I create a new class I write a bunch
+of tests exercising the class’ properties. One might question the
+value of this, because there is not really any reason why those
+should not work. However, having such a test in place just uncovered
+an as-yet unnoticed bug I introduced in a project.&lt;/p&gt;
+
+&lt;p&gt;Originally the class property in question was going to be set in
+the &lt;code&gt;init&lt;/code&gt; method, so I tested for the presence of the property
+after creating an instance of the relevant class. Easy pass. Weeks
+later I did something (and forgot to run the test suite). Today I
+did something else, and this time I did run them. Hey presto, failed
+test. And completely unexpected, because it was the property
+exercising one. How on Earth did that happen?&lt;/p&gt;
+
+&lt;p&gt;Upon closer inspection I tracked it down to a refactoring, where I
+extracted some code from &lt;code&gt;init&lt;/code&gt; as there were now multiple ways an
+object could be initialised. The failing code was part of that, and
+I realised that it was called from the new &lt;code&gt;initFromFile:&lt;/code&gt; method,
+but &lt;em&gt;no longer from the default initialiser&lt;/em&gt;. Easy mistake to make.
+And had I run my test-suite more consistently, my application would
+not have been with a potential bug in the mean-time.&lt;/p&gt;
+
+&lt;p&gt;What did I take home from this?&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Even Mickey-Mouse-tests are valuable. No test is too small to be useful
+(provided it’s actually testing something valid).&lt;/li&gt;
+&lt;li&gt;The test-suite should really be run after every change. I’ll have to check
+if I can get Xcode to run them automatically after each compilation…&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Kids and Computers</title>
+      <link>https://ojmason.github.io/blog/kids-and-computers/</link>
+      <pubDate>Tue, 08 Jul 2008 00:00:00 +0000</pubDate>
+      
+      <guid>https://ojmason.github.io/blog/kids-and-computers/</guid>
+      <description>&lt;p&gt;&lt;em&gt;Update:&lt;/em&gt; This did not turn out as I hoped. The main reason being that an old ZX Spectrum
+pre-dates the common availability of the Internet, and as soon as it was switched on the
+question arose, how one could watch YouTube videos on this machine. So, abject failure.
+Times have moved on, kids these days don&amp;rsquo;t know they&amp;rsquo;re born, good old days, it was so much
+better when I was young, spoilt kids nowadays etc etc etc.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;Like many(?) computer people of my generation I started off with
+the Sinclair ZX81, and then continued with the ZX Spectrum and
+onwards to an Amstrad CPC, learning BASIC and Z80 machine code
+(because those machines were actually pretty slow).  This also means
+that I treat computers as tools, not passively using programs other
+people have written, but writing my own stuff.  In time I moved on
+with languages, from Pascal to C, a bit of Prolog, C++, Java, and
+now Erlang.  But those endless hours typing in program listings in
+BASIC have surely benefitted me.  Learning by doing.  Type in small
+programs, change the code, observe what happens.&lt;/p&gt;
+
+&lt;p&gt;My oldest daughter is seven, still half my age when I started with
+computers, but from next year onwards they have ICT classes at
+school; these basically seem to be ‘how to change fonts in MS Word’.
+So I thought I’d better show her that a computer program is something
+you write, not just something you use.  The only problem was, how
+to do it?  Despite all its faults, BASIC seems to me to be a good
+language to start with.  True, it has few control structures or
+abstract data types, but it reads almost like English, and is only
+a starting point after all.  And it’s only a first step in any case.&lt;/p&gt;
+
+&lt;p&gt;The next question is how to get her interested.  Using a PC seems
+like overkill, and you need to boot it up, and shut it down, and
+then start a development environment etc.  And I guess it’s not
+that easy to use graphics or sound as it was on the old Spectrum.
+So, I went to ebay and bought a ZX Spectrum +2 for about £7.  You
+plug it in, it’s on.  You can start typing.  You’re finished, you
+unplug it.  No files to get corrupted.  And it’s got a built-in
+tape recoder for storage.&lt;/p&gt;
+
+&lt;p&gt;And, she is really excited.  It’s her very own computer, and she
+already knows several commands.  All I need now is a few books with
+BASIC programs, so that she has some material to type in.  In the
+meantime I go with her through the manual, explaining the new
+keywords, and she can already understand how a program is executed.
+With any luck she’ll get hooked, especially once she learns how to
+do graphics with it.  And the little games (‘guess the number’) are
+also the right level for her, and maybe even her sisters.&lt;/p&gt;
+
+&lt;p&gt;The only problem I can see is printing.  But I’ve got an emulator
+on my laptop, which might be able to read in something she saves,
+and I might be able to take it from there.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Programming and the Tower of Babel</title>
+      <link>https://ojmason.github.io/blog/programming-and-the-tower-of-babel/</link>
+      <pubDate>Sat, 31 May 2008 00:00:00 +0000</pubDate>
+      
+      <guid>https://ojmason.github.io/blog/programming-and-the-tower-of-babel/</guid>
+      <description>&lt;p&gt;&lt;em&gt;Update:&lt;/em&gt; I originally posted this article in May 2008, but it is still relevant. I have kind of
+found a solution that I&amp;rsquo;m trying out now, namely moving to a fairly minimalist language, Scheme.
+It is well suited to the main area I work in (NLP/AI), can be used purely functionally, and has
+such a simple syntax that it should be relatively easy to write run-times for it on various platforms
+if necessary.&lt;/p&gt;
+
+&lt;p&gt;In the meantime, however, the need for using different platforms has become less pressing for me, as
+I mainly do this as a work-related hobby nowadays.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;I’m having a problem with languages. Not that there is something I
+cannot do in my favourite language, but rather that there are
+distinct ecosystems for various languages, and they are usually
+fairly exclusive. For example, in order to program in a web context
+you need either PHP, or alternatively be prepared to run your own
+server if you want to use Java or Erlang. I’m not talking about
+businesses or commercial operations here, just the private/academic/small
+scale non-funded project range.&lt;/p&gt;
+
+&lt;p&gt;Most of the language processing software I’ve written is in Java,
+because it works well and can run almost everywhere (but not on
+shared webhosts). It’s useful to distribute applications, as people
+can use it on Linux, Macs and even Windows. But I’ve now pretty
+much switched to Erlang, as I put high hopes on the future of
+parallel programming, and I want my software to take advantage of
+multi-core processors. However, Erlang programs are not as easily
+shared and distributed as Java apps are. Problem.&lt;/p&gt;
+
+&lt;p&gt;Ideally I’d like to write all my programs only once. This was kind
+of the promise of Java, and it worked mostly. At some point I even
+considered working on an interpreter for JVM bytecode written in
+PHP (so that my Java classes would work without having to be re-coded
+in PHP itself), but aside from the possibly terrible performance
+it seemed too daunting a project. Maybe Erlang could be compiled
+into JVM bytecodes? Of course you’d lose all the concurrency features
+etc, but at least you could deploy it together with a Java app. A
+bit like Scala, almost.&lt;/p&gt;
+
+&lt;p&gt;If PHP wasn’t such a ghastly language I’d be happy to code everything
+in that, but it seems too much of a sacrifice. But for most purposes
+I would need at least those three:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Java for applications to be deployed to other people&lt;/li&gt;
+&lt;li&gt;PHP for stuff running on shared webservers&lt;/li&gt;
+&lt;li&gt;Erlang for research and cutting-edge stuff&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;And there is little to no common ground between them. Sigh.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

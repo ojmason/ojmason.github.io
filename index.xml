@@ -70,6 +70,10 @@ in different ways. And few of them are of a high enough standard to be properly 
 to be a time for rants. Lots happening in politics.&lt;/p&gt;
 
 &lt;p&gt;Anyway, here we go again.&lt;/p&gt;
+
+&lt;p&gt;Update: I&amp;rsquo;m also going through my previous WordPress log to gather some articles that
+might still be interesting, so there will be older articles going back almost a decade
+appearing here.&lt;/p&gt;
 </description>
     </item>
     
@@ -85,6 +89,349 @@ of NLP and AI in understanding texts and conversing with human beings.&lt;/p&gt;
 &lt;p&gt;I am a passionate dinghy sailor, sailing an Enterprise or a Laser at Midland
 Sailing Club in the UK. I am also a qualified Dinghy Instructor, and run the
 RYA training centre at the club.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Party Politics and the Emperor&#39;s New Clothes</title>
+      <link>https://ojmason.github.io/blog/party-politics-and-the-emperors-new-clothes/</link>
+      <pubDate>Sat, 24 Aug 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://ojmason.github.io/blog/party-politics-and-the-emperors-new-clothes/</guid>
+      <description>&lt;p&gt;On Twitter I came across a link to the (German) &lt;a href=&#34;http://www.cdu.de/sites/default/files/media/dokumente/regierungsprogramm-in-leichter-sprache-btw13.pdf&#34;&gt;CDU Wahlprogramm in “Leichter Sprache”&lt;/a&gt;.
+This is the conservative party’s election manifesto in a German
+version of basic English, to make it more easily comprehensible to
+people who have difficulty understanding standard German.&lt;/p&gt;
+
+&lt;p&gt;At first I thought it was a parody, as it sounded truly ridiculous
+and patronising. As if you had to explain to your 4-year-old what
+the world was like. Then I found out about the “&lt;a href=&#34;http://de.wikipedia.org/wiki/Leichte_Sprache&#34;&gt;Leichte Sprache&lt;/a&gt;”
+(literally: “&lt;a href=&#34;http://en.wikipedia.org/wiki/Plain_language&#34;&gt;easy/plain language&lt;/a&gt;“), which I had not heard of before.
+And in principle it is a noble thing to do, to make your manifesto
+more accessible. I’m sure &lt;a href=&#34;https://www.mtholyoke.edu/acad/intrel/orwell46.htm&#34;&gt;George Orwell&lt;/a&gt; would approve!&lt;/p&gt;
+
+&lt;p&gt;But the real reason why it does seem strange is rooted in the nature
+of political language: normally, language is used to obfuscate and
+manipulate, especially in complex areas such as politics. Fancy
+words are used to disguise true intentions and get people to vote
+for you. But take away the fancy words and complex phrases, and
+suddenly all is out there in the open, plain to see for everybody.
+And it turns out to be pretty meaningless. “Everybody should have
+a good job. And earn enough money. That needs to be written down.”
+But no mention about minimum wage or anything concrete to turn those
+vacuous phrases into reality.&lt;/p&gt;
+
+&lt;p&gt;Some other people on twitter reacted in the same way as I did; often
+I guess out of the same ignorance of the “easy language” concept.
+That’s a shame, but partly rooted in the patronising way the sentences
+come across. But it also shows that the (undesired) outcome of this
+publication is that people tend to not take the content seriously.
+Because there is not much of it.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://en.wikipedia.org/wiki/Critical_discourse_analysis&#34;&gt;Critical Discourse Analysis&lt;/a&gt;
+would lose a big part of its subject
+area if politics would switch wholesale to “easy language”. No more
+subconscious manipulation between the lines, no more obfuscation
+about who does what to whom. So after some reflection I applaud the
+CDU for making their manifesto available in this way, as it unmasks
+them as the patronising right-wingers they are, with their overly
+simplistic world view about pretty much any subject area in current
+politics. No more hiding behind fancy words that foreigners are not
+welcome. No more vague claims about surveillance cameras stopping
+crime. It’s all there, in plain language. And other parties seem
+to have done the same.&lt;/p&gt;
+
+&lt;p&gt;Now the only thing that needs to go is the disclaimer at the
+beginning: that this plain version is not the real manifesto, and
+only the real one does count. I would prefer it to be the other way
+round.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Every Test is Valuable</title>
+      <link>https://ojmason.github.io/blog/every-test-is-valuable/</link>
+      <pubDate>Tue, 17 Jul 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://ojmason.github.io/blog/every-test-is-valuable/</guid>
+      <description>&lt;p&gt;After reading Graham Lee’s &lt;a href=&#34;http://www.amazon.co.uk/gp/product/B007RNK0W6/ref=as_li_ss_tl?ie=UTF8&amp;amp;camp=1634&amp;amp;creative=19450&amp;amp;creativeASIN=B007RNK0W6&amp;amp;linkCode=as2&amp;amp;tag=phrasysnlp-21&#34;&gt;Test-Driven iOS Development&lt;/a&gt;; (disclaimer:
+affiliate link) I have (again) adopted a test-driven approach to
+software developing. Whenever I create a new class I write a bunch
+of tests exercising the class’ properties. One might question the
+value of this, because there is not really any reason why those
+should not work. However, having such a test in place just uncovered
+an as-yet unnoticed bug I introduced in a project.&lt;/p&gt;
+
+&lt;p&gt;Originally the class property in question was going to be set in
+the &lt;code&gt;init&lt;/code&gt; method, so I tested for the presence of the property
+after creating an instance of the relevant class. Easy pass. Weeks
+later I did something (and forgot to run the test suite). Today I
+did something else, and this time I did run them. Hey presto, failed
+test. And completely unexpected, because it was the property
+exercising one. How on Earth did that happen?&lt;/p&gt;
+
+&lt;p&gt;Upon closer inspection I tracked it down to a refactoring, where I
+extracted some code from &lt;code&gt;init&lt;/code&gt; as there were now multiple ways an
+object could be initialised. The failing code was part of that, and
+I realised that it was called from the new &lt;code&gt;initFromFile:&lt;/code&gt; method,
+but &lt;em&gt;no longer from the default initialiser&lt;/em&gt;. Easy mistake to make.
+And had I run my test-suite more consistently, my application would
+not have been with a potential bug in the mean-time.&lt;/p&gt;
+
+&lt;p&gt;What did I take home from this?&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Even Mickey-Mouse-tests are valuable. No test is too small to be useful
+(provided it’s actually testing something valid).&lt;/li&gt;
+&lt;li&gt;The test-suite should really be run after every change. I’ll have to check
+if I can get Xcode to run them automatically after each compilation…&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>The longest Chip in the World</title>
+      <link>https://ojmason.github.io/blog/the-longest-chip-in-the-world/</link>
+      <pubDate>Sat, 18 Dec 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://ojmason.github.io/blog/the-longest-chip-in-the-world/</guid>
+      <description>&lt;p&gt;In his &lt;a href=&#34;http://www.amazon.co.uk/gp/product/0465045669?ie=UTF8&amp;amp;tag=phrasysnlp-21&amp;amp;linkCode=as2&amp;amp;camp=1634&amp;amp;creative=19450&amp;amp;creativeASIN=0465045669&#34;&gt;Metamagical Themas: Questing for the Essence of Mind and
+Pattern&lt;/a&gt;,
+Douglas Hofstadter talks about &lt;em&gt;numerical literacy&lt;/em&gt;, the
+ability to understand large numbers. This is especially important
+when state budgets are thrown around which deal with billions of
+pounds or euros. At some point you just lose all feeling for
+quantities, as they are all so unimaginably large and abstract. He
+then goes on to pose some rough calculation questions, such as “How
+many cigarettes are smoked in the US every day?” – you start with
+some estimates, and then work out an answer, which might be near
+the order of magnitude of the right answer (which we of course don’t
+know). Quite an interesting and useful mental exercise.&lt;/p&gt;
+
+&lt;p&gt;Yesterday we had Fish &amp;amp; Chips for dinner. The girls were comparing
+the sizes of their chips, and then we came on to the topic of the
+longest chip in the world. Obviously, with ‘proper’ chips this is
+limited by the &lt;a href=&#34;http://www.france-today.com/2009/12/longest-chip-in-world-isof-course.html&#34;&gt;size of the source potato&lt;/a&gt;.
+However, assuming that industrially
+produced chips are made of mashed potato formed into chip-shapes,
+there is not really any fixed limit on the length. So, thinking
+of Hofstadter, I asked them how many potatoes we would need to make
+a chip that spans around the whole world.&lt;/p&gt;
+
+&lt;p&gt;Rough assumptions: one potato contains enough matter to produce
+10cm worth of chip (the thickness is not specified). So, how many
+potatoes do we need for one metre of chip? This is also useful to
+practice basic primary-school-level maths… – 10. How many for a
+kilometre? 10,000. How many kilometres do we need to span the world?
+Roughly 40,000 km. So how many potatoes do we need? 400 million.&lt;/p&gt;
+
+&lt;p&gt;The next question is whether there are enough potatoes in the world
+to do this. Assuming a potato weighs 100g, how much do our 400
+million potatoes weigh? 40 million kilogrammes, or 40,000 (metric)
+tons. What is the world’s potato production? According to &lt;a href=&#34;http://en.wikipedia.org/wiki/Potato&#34;&gt;Wikipedia&lt;/a&gt;,
+this is 315 million metric tons, so plenty enough. Now, if we were
+to turn the annual potato crop into one long chip, how many times
+would it go round the Earth? 7,875 times.&lt;/p&gt;
+
+&lt;p&gt;So, with a bit of basic maths (and Wikipedia for the data) you can
+make maths exciting for kids, practice how to multiply and divide,
+teach problem-solving, and have fun at the same time. And they also
+get a feeling for numbers: 400 million – that’s how many potatoes
+you need for a chip to span the Earth.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Kids and Computers</title>
+      <link>https://ojmason.github.io/blog/kids-and-computers/</link>
+      <pubDate>Tue, 08 Jul 2008 00:00:00 +0000</pubDate>
+      
+      <guid>https://ojmason.github.io/blog/kids-and-computers/</guid>
+      <description>&lt;p&gt;&lt;em&gt;Update:&lt;/em&gt; This did not turn out as I hoped. The main reason being that an old ZX Spectrum
+pre-dates the common availability of the Internet, and as soon as it was switched on the
+question arose, how one could watch YouTube videos on this machine. So, abject failure.
+Times have moved on, kids these days don&amp;rsquo;t know they&amp;rsquo;re born, good old days, it was so much
+better when I was young, spoilt kids nowadays etc etc etc.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;Like many(?) computer people of my generation I started off with
+the Sinclair ZX81, and then continued with the ZX Spectrum and
+onwards to an Amstrad CPC, learning BASIC and Z80 machine code
+(because those machines were actually pretty slow).  This also means
+that I treat computers as tools, not passively using programs other
+people have written, but writing my own stuff.  In time I moved on
+with languages, from Pascal to C, a bit of Prolog, C++, Java, and
+now Erlang.  But those endless hours typing in program listings in
+BASIC have surely benefitted me.  Learning by doing.  Type in small
+programs, change the code, observe what happens.&lt;/p&gt;
+
+&lt;p&gt;My oldest daughter is seven, still half my age when I started with
+computers, but from next year onwards they have ICT classes at
+school; these basically seem to be ‘how to change fonts in MS Word’.
+So I thought I’d better show her that a computer program is something
+you write, not just something you use.  The only problem was, how
+to do it?  Despite all its faults, BASIC seems to me to be a good
+language to start with.  True, it has few control structures or
+abstract data types, but it reads almost like English, and is only
+a starting point after all.  And it’s only a first step in any case.&lt;/p&gt;
+
+&lt;p&gt;The next question is how to get her interested.  Using a PC seems
+like overkill, and you need to boot it up, and shut it down, and
+then start a development environment etc.  And I guess it’s not
+that easy to use graphics or sound as it was on the old Spectrum.
+So, I went to ebay and bought a ZX Spectrum +2 for about £7.  You
+plug it in, it’s on.  You can start typing.  You’re finished, you
+unplug it.  No files to get corrupted.  And it’s got a built-in
+tape recoder for storage.&lt;/p&gt;
+
+&lt;p&gt;And, she is really excited.  It’s her very own computer, and she
+already knows several commands.  All I need now is a few books with
+BASIC programs, so that she has some material to type in.  In the
+meantime I go with her through the manual, explaining the new
+keywords, and she can already understand how a program is executed.
+With any luck she’ll get hooked, especially once she learns how to
+do graphics with it.  And the little games (‘guess the number’) are
+also the right level for her, and maybe even her sisters.&lt;/p&gt;
+
+&lt;p&gt;The only problem I can see is printing.  But I’ve got an emulator
+on my laptop, which might be able to read in something she saves,
+and I might be able to take it from there.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Programming and the Tower of Babel</title>
+      <link>https://ojmason.github.io/blog/programming-and-the-tower-of-babel/</link>
+      <pubDate>Sat, 31 May 2008 00:00:00 +0000</pubDate>
+      
+      <guid>https://ojmason.github.io/blog/programming-and-the-tower-of-babel/</guid>
+      <description>&lt;p&gt;&lt;em&gt;Update:&lt;/em&gt; I originally posted this article in May 2008, but it is still relevant. I have kind of
+found a solution that I&amp;rsquo;m trying out now, namely moving to a fairly minimalist language, Scheme.
+It is well suited to the main area I work in (NLP/AI), can be used purely functionally, and has
+such a simple syntax that it should be relatively easy to write run-times for it on various platforms
+if necessary.&lt;/p&gt;
+
+&lt;p&gt;In the meantime, however, the need for using different platforms has become less pressing for me, as
+I mainly do this as a work-related hobby nowadays.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;I’m having a problem with languages. Not that there is something I
+cannot do in my favourite language, but rather that there are
+distinct ecosystems for various languages, and they are usually
+fairly exclusive. For example, in order to program in a web context
+you need either PHP, or alternatively be prepared to run your own
+server if you want to use Java or Erlang. I’m not talking about
+businesses or commercial operations here, just the private/academic/small
+scale non-funded project range.&lt;/p&gt;
+
+&lt;p&gt;Most of the language processing software I’ve written is in Java,
+because it works well and can run almost everywhere (but not on
+shared webhosts). It’s useful to distribute applications, as people
+can use it on Linux, Macs and even Windows. But I’ve now pretty
+much switched to Erlang, as I put high hopes on the future of
+parallel programming, and I want my software to take advantage of
+multi-core processors. However, Erlang programs are not as easily
+shared and distributed as Java apps are. Problem.&lt;/p&gt;
+
+&lt;p&gt;Ideally I’d like to write all my programs only once. This was kind
+of the promise of Java, and it worked mostly. At some point I even
+considered working on an interpreter for JVM bytecode written in
+PHP (so that my Java classes would work without having to be re-coded
+in PHP itself), but aside from the possibly terrible performance
+it seemed too daunting a project. Maybe Erlang could be compiled
+into JVM bytecodes? Of course you’d lose all the concurrency features
+etc, but at least you could deploy it together with a Java app. A
+bit like Scala, almost.&lt;/p&gt;
+
+&lt;p&gt;If PHP wasn’t such a ghastly language I’d be happy to code everything
+in that, but it seems too much of a sacrifice. But for most purposes
+I would need at least those three:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Java for applications to be deployed to other people&lt;/li&gt;
+&lt;li&gt;PHP for stuff running on shared webservers&lt;/li&gt;
+&lt;li&gt;Erlang for research and cutting-edge stuff&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;And there is little to no common ground between them. Sigh.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Replacing a stack with concurrency</title>
+      <link>https://ojmason.github.io/blog/replacing-a-stack-with-concurrency/</link>
+      <pubDate>Wed, 23 Apr 2008 00:00:00 +0000</pubDate>
+      
+      <guid>https://ojmason.github.io/blog/replacing-a-stack-with-concurrency/</guid>
+      <description>&lt;p&gt;For some language processing task I needed a reasonably powerful
+parser (a program to identify the syntactic structure of a sentence).
+So I dug out my copy of Winograd (1983) (&lt;em&gt;Language as a Cognitive
+Process&lt;/em&gt;) and set about implementing an &lt;a href=&#34;https://en.wikipedia.org/wiki/Augmented_transition_network&#34;&gt;Augmented Transition Network&lt;/a&gt;
+parser in Erlang.&lt;/p&gt;
+
+&lt;p&gt;Now, the first thing you learn about natural language is that it
+is full of ambiguities, and so there will always be several
+alternatives available, several possible paths through the network
+which defines the grammar. The traditional solution is to dump all
+the alternatives on a stack, and look at them when the current path
+has been finished with. You can either go depth-first, where you
+complete the current path before you get the next one off the stack,
+or breadth-first, where you advance all paths by one step at a time,
+kind of pseudo-parallel.&lt;/p&gt;
+
+&lt;p&gt;Having to deal with a stack is tedious, as you need to keep track
+of the current configuration: which network are you at, what node,
+what position in the sentence, etc. But then, it occurred to me,
+there’s an easier way to do it (at least it’s easier in Erlang!):
+every time you come to a point where you have multiple alternatives,
+you spawn a new process and pursue all of them in parallel.&lt;/p&gt;
+
+&lt;p&gt;The only overhead you need is a loop which keeps track of all the
+processes currently running. This loop receives the results of
+successful paths, and gets notified of unsuccessful ones (where the
+process terminates without having found a valid structure). No need
+for a stack, and hopefully very efficient processing on multi-core
+machines as a free side-effect.&lt;/p&gt;
+
+&lt;p&gt;I’m still amazed how easy it was to implement. I wouldn’t have
+fancied doing that in Java or even C. For my test sentences I had
+about 8 to 10 processes running in parallel most of the time, but
+it depends on the size of the grammar and the length of the sentence
+really. What I liked about this was that it seemed the natural way
+to do in Erlang, where working with processes is just so easy.&lt;/p&gt;
+
+&lt;p&gt;And also, another nail in the coffin for the claim that you can’t
+use Erlang for handling texts easily!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Meteorites</title>
+      <link>https://ojmason.github.io/blog/meteorites/</link>
+      <pubDate>Wed, 09 Apr 2008 00:00:00 +0000</pubDate>
+      
+      <guid>https://ojmason.github.io/blog/meteorites/</guid>
+      <description>&lt;p&gt;While clearing out a decade’s worth of paper from my office I came
+across an article in the Feb 2003 issue of the university’s in-house
+paper, &lt;em&gt;Buzz&lt;/em&gt;. In one article, the following extract struck me: &lt;em&gt;…artists
+had acquired a meteorite from a meteorite dealer in Scotland.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Several questions come to mind: Can you make a living as a meteorite
+dealer? I guess there are more meteorites hitting Earth as one would
+think, not all of course big enough to make (no pun intended) an
+impact. And why Scotland? Is Scotland especially prone to being hit
+by meteorites?&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://curious.astro.cornell.edu/about-us/75-our-solar-system/comets-meteors-and-asteroids/meteorites/313-how-many-meteorites-hit-earth-each-year-intermediate&#34;&gt;Thanks to the web&lt;/a&gt;,
+the first question can be supplemented by a
+useful snippet of information: &lt;em&gt;Over the whole surface area of Earth,
+that translates to 18,000 to 84,000 meteorites bigger than 10 grams
+per year.&lt;/em&gt; But of course 70% of that end up in the sea, and most of
+them never make it through the atmosphere in the first place. I
+also don’t want to speculate how much demand there is for meteorites,
+other than from conceptual artists and perhaps astrophysicists.&lt;/p&gt;
 </description>
     </item>
     

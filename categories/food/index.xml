@@ -1,33 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Misc on Arguable Intelligence</title>
-    <link>https://ojmason.github.io/categories/misc/index.xml</link>
-    <description>Recent content in Misc on Arguable Intelligence</description>
+    <title>Food on Arguable Intelligence</title>
+    <link>https://ojmason.github.io/categories/food/index.xml</link>
+    <description>Recent content in Food on Arguable Intelligence</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <atom:link href="https://ojmason.github.io/categories/misc/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title> First Post</title>
-      <link>https://ojmason.github.io/blog/first-post/</link>
-      <pubDate>Mon, 27 Mar 2017 14:40:17 +0100</pubDate>
-      
-      <guid>https://ojmason.github.io/blog/first-post/</guid>
-      <description>
-
-&lt;h1 id=&#34;first-post&#34;&gt;First Post&lt;/h1&gt;
-
-&lt;p&gt;I&amp;rsquo;m trying blogging again &amp;ndash; twitter is a bit too sparse for longer rants. And this seems
-to be a time for rants. Lots happening in politics.&lt;/p&gt;
-
-&lt;p&gt;Anyway, here we go again.&lt;/p&gt;
-
-&lt;p&gt;Update: I&amp;rsquo;m also going through my previous WordPress log to gather some articles that
-might still be interesting, so there will be older articles going back almost a decade
-appearing here.&lt;/p&gt;
-</description>
-    </item>
+    <atom:link href="https://ojmason.github.io/categories/food/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>The longest Chip in the World</title>
@@ -78,34 +57,6 @@ make maths exciting for kids, practice how to multiply and divide,
 teach problem-solving, and have fun at the same time. And they also
 get a feeling for numbers: 400 million – that’s how many potatoes
 you need for a chip to span the Earth.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Meteorites</title>
-      <link>https://ojmason.github.io/blog/meteorites/</link>
-      <pubDate>Wed, 09 Apr 2008 00:00:00 +0000</pubDate>
-      
-      <guid>https://ojmason.github.io/blog/meteorites/</guid>
-      <description>&lt;p&gt;While clearing out a decade’s worth of paper from my office I came
-across an article in the Feb 2003 issue of the university’s in-house
-paper, &lt;em&gt;Buzz&lt;/em&gt;. In one article, the following extract struck me: &lt;em&gt;…artists
-had acquired a meteorite from a meteorite dealer in Scotland.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;Several questions come to mind: Can you make a living as a meteorite
-dealer? I guess there are more meteorites hitting Earth as one would
-think, not all of course big enough to make (no pun intended) an
-impact. And why Scotland? Is Scotland especially prone to being hit
-by meteorites?&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://curious.astro.cornell.edu/about-us/75-our-solar-system/comets-meteors-and-asteroids/meteorites/313-how-many-meteorites-hit-earth-each-year-intermediate&#34;&gt;Thanks to the web&lt;/a&gt;,
-the first question can be supplemented by a
-useful snippet of information: &lt;em&gt;Over the whole surface area of Earth,
-that translates to 18,000 to 84,000 meteorites bigger than 10 grams
-per year.&lt;/em&gt; But of course 70% of that end up in the sea, and most of
-them never make it through the atmosphere in the first place. I
-also don’t want to speculate how much demand there is for meteorites,
-other than from conceptual artists and perhaps astrophysicists.&lt;/p&gt;
 </description>
     </item>
     

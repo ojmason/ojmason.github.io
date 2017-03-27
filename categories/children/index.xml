@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Children on Arguable Intelligence</title>
+    <link>https://ojmason.github.io/categories/children/index.xml</link>
+    <description>Recent content in Children on Arguable Intelligence</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <atom:link href="https://ojmason.github.io/categories/children/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Kids and Computers</title>
+      <link>https://ojmason.github.io/blog/kids-and-computers/</link>
+      <pubDate>Tue, 08 Jul 2008 00:00:00 +0000</pubDate>
+      
+      <guid>https://ojmason.github.io/blog/kids-and-computers/</guid>
+      <description>&lt;p&gt;&lt;em&gt;Update:&lt;/em&gt; This did not turn out as I hoped. The main reason being that an old ZX Spectrum
+pre-dates the common availability of the Internet, and as soon as it was switched on the
+question arose, how one could watch YouTube videos on this machine. So, abject failure.
+Times have moved on, kids these days don&amp;rsquo;t know they&amp;rsquo;re born, good old days, it was so much
+better when I was young, spoilt kids nowadays etc etc etc.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;Like many(?) computer people of my generation I started off with
+the Sinclair ZX81, and then continued with the ZX Spectrum and
+onwards to an Amstrad CPC, learning BASIC and Z80 machine code
+(because those machines were actually pretty slow).  This also means
+that I treat computers as tools, not passively using programs other
+people have written, but writing my own stuff.  In time I moved on
+with languages, from Pascal to C, a bit of Prolog, C++, Java, and
+now Erlang.  But those endless hours typing in program listings in
+BASIC have surely benefitted me.  Learning by doing.  Type in small
+programs, change the code, observe what happens.&lt;/p&gt;
+
+&lt;p&gt;My oldest daughter is seven, still half my age when I started with
+computers, but from next year onwards they have ICT classes at
+school; these basically seem to be ‘how to change fonts in MS Word’.
+So I thought I’d better show her that a computer program is something
+you write, not just something you use.  The only problem was, how
+to do it?  Despite all its faults, BASIC seems to me to be a good
+language to start with.  True, it has few control structures or
+abstract data types, but it reads almost like English, and is only
+a starting point after all.  And it’s only a first step in any case.&lt;/p&gt;
+
+&lt;p&gt;The next question is how to get her interested.  Using a PC seems
+like overkill, and you need to boot it up, and shut it down, and
+then start a development environment etc.  And I guess it’s not
+that easy to use graphics or sound as it was on the old Spectrum.
+So, I went to ebay and bought a ZX Spectrum +2 for about £7.  You
+plug it in, it’s on.  You can start typing.  You’re finished, you
+unplug it.  No files to get corrupted.  And it’s got a built-in
+tape recoder for storage.&lt;/p&gt;
+
+&lt;p&gt;And, she is really excited.  It’s her very own computer, and she
+already knows several commands.  All I need now is a few books with
+BASIC programs, so that she has some material to type in.  In the
+meantime I go with her through the manual, explaining the new
+keywords, and she can already understand how a program is executed.
+With any luck she’ll get hooked, especially once she learns how to
+do graphics with it.  And the little games (‘guess the number’) are
+also the right level for her, and maybe even her sisters.&lt;/p&gt;
+
+&lt;p&gt;The only problem I can see is printing.  But I’ve got an emulator
+on my laptop, which might be able to read in something she saves,
+and I might be able to take it from there.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

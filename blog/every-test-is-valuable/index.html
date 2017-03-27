@@ -11,7 +11,7 @@
 
 
 
-<meta property="twitter:title" content=" First Post">
+<meta property="twitter:title" content="Every Test is Valuable">
 
     <meta property="twitter:card" content="summary">
 
@@ -20,10 +20,10 @@
 <title>
 
 
-     Arguable Intelligence -  First Post 
+     Arguable Intelligence - Every Test is Valuable 
 
 </title>
-<link rel="canonical" href="https://ojmason.github.io/blog/first-post/">
+<link rel="canonical" href="https://ojmason.github.io/blog/every-test-is-valuable/">
 
 
 <link rel="stylesheet" href="https://ojmason.github.io/css/main.v0.9.1.css">
@@ -88,30 +88,50 @@
                 <div class="title-container">
                     <div class="page-heading">
 
-     First Post
+    Every Test is Valuable
 
 </div>
 
                 </div>
                 <div class="meta">
-                    <div class="date" title="Mon, Mar 27, 2017 14:40:17 GMT">Mon, Mar 27, 2017</div>
-                    <div class="reading-time"><div class="middot"></div>1 minute read</div>
+                    <div class="date" title="Tue, Jul 17, 2012 00:00:00 GMT">Tue, Jul 17, 2012</div>
+                    <div class="reading-time"><div class="middot"></div>2 minutes read</div>
                 </div>
             </div>
             <div class="markdown">
                 
-    
+    <p>After reading Graham Lee’s <a href="http://www.amazon.co.uk/gp/product/B007RNK0W6/ref=as_li_ss_tl?ie=UTF8&amp;camp=1634&amp;creative=19450&amp;creativeASIN=B007RNK0W6&amp;linkCode=as2&amp;tag=phrasysnlp-21">Test-Driven iOS Development</a>; (disclaimer:
+affiliate link) I have (again) adopted a test-driven approach to
+software developing. Whenever I create a new class I write a bunch
+of tests exercising the class’ properties. One might question the
+value of this, because there is not really any reason why those
+should not work. However, having such a test in place just uncovered
+an as-yet unnoticed bug I introduced in a project.</p>
 
-<h1 id="first-post">First Post</h1>
+<p>Originally the class property in question was going to be set in
+the <code>init</code> method, so I tested for the presence of the property
+after creating an instance of the relevant class. Easy pass. Weeks
+later I did something (and forgot to run the test suite). Today I
+did something else, and this time I did run them. Hey presto, failed
+test. And completely unexpected, because it was the property
+exercising one. How on Earth did that happen?</p>
 
-<p>I&rsquo;m trying blogging again &ndash; twitter is a bit too sparse for longer rants. And this seems
-to be a time for rants. Lots happening in politics.</p>
+<p>Upon closer inspection I tracked it down to a refactoring, where I
+extracted some code from <code>init</code> as there were now multiple ways an
+object could be initialised. The failing code was part of that, and
+I realised that it was called from the new <code>initFromFile:</code> method,
+but <em>no longer from the default initialiser</em>. Easy mistake to make.
+And had I run my test-suite more consistently, my application would
+not have been with a potential bug in the mean-time.</p>
 
-<p>Anyway, here we go again.</p>
+<p>What did I take home from this?</p>
 
-<p>Update: I&rsquo;m also going through my previous WordPress log to gather some articles that
-might still be interesting, so there will be older articles going back almost a decade
-appearing here.</p>
+<ul>
+<li>Even Mickey-Mouse-tests are valuable. No test is too small to be useful
+(provided it’s actually testing something valid).</li>
+<li>The test-suite should really be run after every change. I’ll have to check
+if I can get Xcode to run them automatically after each compilation…</li>
+</ul>
 
 
                 <br>
