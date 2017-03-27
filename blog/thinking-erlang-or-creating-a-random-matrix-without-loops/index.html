@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+
+
+
+<meta property="twitter:title" content="Thinking Erlang, or Creating a Random Matrix without Loops">
+
+    <meta property="twitter:card" content="summary">
+
+<meta property="twitter:description" content="">
+
+<title>
+
+
+     Arguable Intelligence - Thinking Erlang, or Creating a Random Matrix without Loops 
+
+</title>
+<link rel="canonical" href="https://ojmason.github.io/blog/thinking-erlang-or-creating-a-random-matrix-without-loops/">
+
+
+<link rel="stylesheet" href="https://ojmason.github.io/css/main.v0.9.1.css">
+<link rel="stylesheet" href="https://ojmason.github.io/css/ionicons.min.css">
+
+
+
+
+
+
+
+
+<link rel="shortcut icon"
+
+    href="https://ojmason.github.io/img/favicon.ico"
+
+>
+
+
+
+
+</head>
+
+
+<body>
+
+
+<section class="header">
+
+    <div class="container">
+        <a href="https://ojmason.github.io/"><img class="logo" src="https://ojmason.github.io/img/cave.jpg" alt="logo" /></a>
+        <div class="content">
+            <a href="https://ojmason.github.io/"><div class="name"><h1>Arguable Intelligence</h1></div></a>
+            <nav>
+                <ul>
+                    
+                        <a href="https://ojmason.github.io/blog/"><li>Blog</li></a>
+                    
+                    
+                        
+                    
+                        
+                            
+                        
+                    
+                    
+                        
+                            <a href="https://ojmason.github.io/about/"><li>about me</li></a>
+                        
+                    
+                </ul>
+            </nav>
+        </div>
+    </div>
+</section>
+
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
+        <div class="content">
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    Thinking Erlang, or Creating a Random Matrix without Loops
+
+</div>
+
+                </div>
+                <div class="meta">
+                    <div class="date" title="Thu, Feb 26, 2009 00:00:00 GMT">Thu, Feb 26, 2009</div>
+                    <div class="reading-time"><div class="middot"></div>3 minutes read</div>
+                </div>
+            </div>
+            <div class="markdown">
+                
+    <p>For a project, my <a href="/blog/fast-pfnets-in-erlang/">Erlang implementation of a fast PFNET algorithm</a>,
+I needed to find a way to create a random matrix of integers (for
+path weights), with the diagonal being filled with zeroes.  I was
+wondering how best to do that, and started off with two loops, an
+inner one for each row, and an outer one for the full set of rows.
+Then the problem was how to tell the inner loop at what position
+the ‘0’ should be inserted.  I was thinking about passing a row-ID,
+when it suddenly clicked: <code>lists:seq/2</code> was what I needed!  This
+method, which I previously thought was pretty useless, creates a
+list with a sequence of numbers (the range is specified in the two
+parameters).  For example,</p>
+
+<pre>
+1> lists:seq(1,4).
+[1,2,3,4]
+2> lists:seq(634,637).    
+[634,635,636,637]
+3> lists:seq(1000,1003).
+[1000,1001,1002,1003]
+</pre>
+
+<p>Now I would simply generate a list with a number for each row, and
+then send the inner loop off to do its thing, filling the slot given
+by the sequence number with a zero, and others with a random value.</p>
+
+<p>But now it gets even better.  Using a separate (tail-)recursive
+function for the inner loop didn’t quite seem right, so I thought
+a bit more about it and came to the conclusion that this is simply
+a mapping; mapping an integer to a list (a vector of numbers, one
+of which (given by the integer) is a zero).  So instead of using a
+function for filling the row, I call <code>lists:seq/2</code> again and then map
+the whole thing.  This is the final version I arrived at, and I’m
+sure it can still be improved upon using list comprehensions:</p>
+
+<pre>
+random_matrix(Size, MaxVal) ->
+  random:seed(),
+  lists:map(
+    fun(X) ->
+      lists:map(
+          fun(Y) ->
+              case Y of 
+                 X -> 0; 
+                 _ -> random:uniform(MaxVal)
+                 end
+              end,
+          lists:seq(1,Size))
+      end,
+    lists:seq(1,Size)).
+</pre>
+
+<p>This solution seems to be far more idiomatic, and I am beginning
+to think that I finally no longer think in an imperative way of
+loops, but more in the Erlang-way of list operations.  Initially
+this is hard to achieve, but with any luck it will become a lot
+easier once one is used to it.  Elegance, here I come!</p>
+
+<p>Example run:</p>
+
+<pre>
+4> random_matrix(6,7).  
+[[0,1,4,6,7,4],
+ [3,0,5,7,5,4],
+ [5,1,0,2,5,2],
+ [4,2,4,0,3,1],
+ [4,4,3,3,0,1],
+ [5,7,3,2,2,0]]
+</pre>
+
+<p>Note: I have used <code>random:seed/0</code> above, as I am happy for the function
+to return identical matrices on subsequent runs with the same
+parameters. To get truly random results, that would have to be left
+out. However, for my benchmarking purposes it saved me having to
+save the matrix to a file and read it in, as I can easily generate
+a new copy of the same matrix I used before.</p>
+
+
+                <br>
+                <p><a href="https://ojmason.github.io/blog">Back to posts</a></p>
+            </div>
+            <br>
+            <div class="disqus">
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="footer">
+    <div class="container">
+        <div class="copyright">
+
+        
+
+        </div>
+        <div class="icons">
+
+        
+
+        
+
+        
+
+        
+
+        
+            <a href="https://ojmason.github.io/index.xml">
+                <i class="icon ion-social-rss larger" title="rss"></i>
+            </a>
+        
+
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<script>
+  window.onload = function() {
+    
+    
+  };
+</script>
+
+</body>
+</html>
+

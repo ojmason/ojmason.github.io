@@ -466,6 +466,90 @@ at all.&lt;/p&gt;
     </item>
     
     <item>
+      <title>Thinking Erlang, or Creating a Random Matrix without Loops</title>
+      <link>https://ojmason.github.io/blog/thinking-erlang-or-creating-a-random-matrix-without-loops/</link>
+      <pubDate>Thu, 26 Feb 2009 00:00:00 +0000</pubDate>
+      
+      <guid>https://ojmason.github.io/blog/thinking-erlang-or-creating-a-random-matrix-without-loops/</guid>
+      <description>&lt;p&gt;For a project, my &lt;a href=&#34;https://ojmason.github.io/blog/fast-pfnets-in-erlang/&#34;&gt;Erlang implementation of a fast PFNET algorithm&lt;/a&gt;,
+I needed to find a way to create a random matrix of integers (for
+path weights), with the diagonal being filled with zeroes.  I was
+wondering how best to do that, and started off with two loops, an
+inner one for each row, and an outer one for the full set of rows.
+Then the problem was how to tell the inner loop at what position
+the ‘0’ should be inserted.  I was thinking about passing a row-ID,
+when it suddenly clicked: &lt;code&gt;lists:seq/2&lt;/code&gt; was what I needed!  This
+method, which I previously thought was pretty useless, creates a
+list with a sequence of numbers (the range is specified in the two
+parameters).  For example,&lt;/p&gt;
+
+&lt;pre&gt;
+1&gt; lists:seq(1,4).
+[1,2,3,4]
+2&gt; lists:seq(634,637).    
+[634,635,636,637]
+3&gt; lists:seq(1000,1003).
+[1000,1001,1002,1003]
+&lt;/pre&gt;
+
+&lt;p&gt;Now I would simply generate a list with a number for each row, and
+then send the inner loop off to do its thing, filling the slot given
+by the sequence number with a zero, and others with a random value.&lt;/p&gt;
+
+&lt;p&gt;But now it gets even better.  Using a separate (tail-)recursive
+function for the inner loop didn’t quite seem right, so I thought
+a bit more about it and came to the conclusion that this is simply
+a mapping; mapping an integer to a list (a vector of numbers, one
+of which (given by the integer) is a zero).  So instead of using a
+function for filling the row, I call &lt;code&gt;lists:seq/2&lt;/code&gt; again and then map
+the whole thing.  This is the final version I arrived at, and I’m
+sure it can still be improved upon using list comprehensions:&lt;/p&gt;
+
+&lt;pre&gt;
+random_matrix(Size, MaxVal) -&gt;
+  random:seed(),
+  lists:map(
+    fun(X) -&gt;
+      lists:map(
+          fun(Y) -&gt;
+              case Y of 
+                 X -&gt; 0; 
+                 _ -&gt; random:uniform(MaxVal)
+                 end
+              end,
+          lists:seq(1,Size))
+      end,
+    lists:seq(1,Size)).
+&lt;/pre&gt;
+
+&lt;p&gt;This solution seems to be far more idiomatic, and I am beginning
+to think that I finally no longer think in an imperative way of
+loops, but more in the Erlang-way of list operations.  Initially
+this is hard to achieve, but with any luck it will become a lot
+easier once one is used to it.  Elegance, here I come!&lt;/p&gt;
+
+&lt;p&gt;Example run:&lt;/p&gt;
+
+&lt;pre&gt;
+4&gt; random_matrix(6,7).  
+[[0,1,4,6,7,4],
+ [3,0,5,7,5,4],
+ [5,1,0,2,5,2],
+ [4,2,4,0,3,1],
+ [4,4,3,3,0,1],
+ [5,7,3,2,2,0]]
+&lt;/pre&gt;
+
+&lt;p&gt;Note: I have used &lt;code&gt;random:seed/0&lt;/code&gt; above, as I am happy for the function
+to return identical matrices on subsequent runs with the same
+parameters. To get truly random results, that would have to be left
+out. However, for my benchmarking purposes it saved me having to
+save the matrix to a file and read it in, as I can easily generate
+a new copy of the same matrix I used before.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Fast PFNETs in Erlang</title>
       <link>https://ojmason.github.io/blog/fast-pfnets-in-erlang/</link>
       <pubDate>Sat, 14 Feb 2009 00:00:00 +0000</pubDate>
@@ -518,14 +602,14 @@ the before and after, graph layout courtesy of the graphviz program:&lt;/p&gt;
 
 &lt;p&gt;A network example (from Schvaneveldt 1990)&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://ojmason.github.io/pfnet-1.png&#34; caption=&#34;Fig 1: A network example (from Schvaneveldt 1990)&#34;/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://ojmason.github.io/img/pfnets-1.png&#34; caption=&#34;Fig 1: A network example (from Schvaneveldt 1990)&#34;/&gt;&lt;/p&gt;
 
 &lt;p&gt;Here, each node is linked to every other node.  Running the PFNET
 algorith on it, we get the output shown in the second figure.&lt;/p&gt;
 
 &lt;p&gt;A PFNET generated from the previous graph&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://ojmason.github.io/pfnet-2.png&#34; caption=&#34;Fig 2: A PFNET generated from the previous graph&#34;/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://ojmason.github.io/img/pfnets-2.png&#34; caption=&#34;Fig 2: A PFNET generated from the previous graph&#34;/&gt;&lt;/p&gt;
 
 &lt;p&gt;If you compare the output with the actual result from Schvaneveldt’s
 book (p.&lt;sup&gt;6&lt;/sup&gt;&amp;frasl;&lt;sub&gt;7&lt;/sub&gt;), you’ll realise that it is not identical, and the
