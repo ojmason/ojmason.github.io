@@ -36,7 +36,7 @@ object could be initialised. The failing code was part of that, and
 I realised that it was called from the new &lt;code&gt;initFromFile:&lt;/code&gt; method,
 but &lt;em&gt;no longer from the default initialiser&lt;/em&gt;. Easy mistake to make.
 And had I run my test-suite more consistently, my application would
-not have been with a potential bug in the mean-time.&lt;/p&gt;
+not have been with a potential bug in the meantime.&lt;/p&gt;
 
 &lt;p&gt;What did I take home from this?&lt;/p&gt;
 
@@ -46,6 +46,9 @@ not have been with a potential bug in the mean-time.&lt;/p&gt;
 &lt;li&gt;The test-suite should really be run after every change. I’ll have to check
 if I can get Xcode to run them automatically after each compilation…&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;p&gt;&lt;em&gt;Update&lt;/em&gt;: Since I stopped doing much iOS or Mac OS work, I no longer used Xcode.
+And I&amp;rsquo;m not missing it :)&lt;/p&gt;
 </description>
     </item>
     

@@ -207,9 +207,9 @@ visual science maps in cubic time&lt;/em&gt;, by Quirin, Cordón, Santamaría,
 Vargas-Quesada, and Moya-Anegón.  This algorithm is a lot faster
 (by about 450 times), but has one disadvantage: speed is traded in
 for flexibility.  The original Pathfinder algorithm has two parameters,
-r (the value of the Minkowski metric to be used) and q (the maximum
-length of paths to be considered).  The fast algorithm only has r,
-and always uses the maximum value for q (which is n-1).  I know too
+&lt;em&gt;r&lt;/em&gt; (the value of the Minkowski metric to be used) and &lt;em&gt;q&lt;/em&gt; (the maximum
+length of paths to be considered).  The fast algorithm only has &lt;em&gt;r&lt;/em&gt;,
+and always uses the maximum value for &lt;em&gt;q&lt;/em&gt; (which is n-1).  I know too
 little about the application of PFNETs to say whether this is
 important at all; for the uses I can envisage it does not seem to
 matter.&lt;/p&gt;
@@ -228,14 +228,14 @@ the before and after, graph layout courtesy of the graphviz program:&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://ojmason.github.io/img/pfnets-1.png&#34; caption=&#34;Fig 1: A network example (from Schvaneveldt 1990)&#34;/&gt;&lt;/p&gt;
 
 &lt;p&gt;Here, each node is linked to every other node.  Running the PFNET
-algorith on it, we get the output shown in the second figure.&lt;/p&gt;
+algorithm on it, we get the output shown in the second figure.&lt;/p&gt;
 
 &lt;p&gt;A PFNET generated from the previous graph&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://ojmason.github.io/img/pfnets-2.png&#34; caption=&#34;Fig 2: A PFNET generated from the previous graph&#34;/&gt;&lt;/p&gt;
 
 &lt;p&gt;If you compare the output with the actual result from Schvaneveldt’s
-book (p.&lt;sup&gt;6&lt;/sup&gt;&amp;frasl;&lt;sub&gt;7&lt;/sub&gt;), you’ll realise that it is not identical, and the
+book (p.6 / 7), you’ll realise that it is not identical, and the
 reason for that is that the example there limits the path-length,
 using the parameters (&lt;em&gt;r&lt;/em&gt; = 1, &lt;em&gt;q&lt;/em&gt; = 2) rather than (&lt;em&gt;r&lt;/em&gt; = 1, &lt;em&gt;q&lt;/em&gt; = n-1)
 as in the example shown here.  As a consequence, the link from N1
@@ -246,9 +246,9 @@ to N4 (with a weight of 5) disappears, because of the shorter path
 &lt;h2 id=&#34;implementation&#34;&gt;Implementation&lt;/h2&gt;
 
 &lt;p&gt;It is not possible to implement the pseudo-code given in Quirin &lt;em&gt;et
-al&lt;/em&gt; directly, as they use destructive updates of the link matrix,
-which we obviously cannot do in Erlang.  But the first, naïve
-implementation, is still quite short.  The input graph is represented
+al&lt;/em&gt; directly (in Erlang), as they use destructive updates of the link matrix,
+which we obviously cannot do in Erlang.  But the first, naïve,
+implementation is still quite short.  The input graph is represented
 as a matrix (&lt;em&gt;n&lt;/em&gt; x &lt;em&gt;n&lt;/em&gt;) where each value stands for the link weight,
 with zero being used to indicate non-existing links.  I have written
 a function that creates a dot file from a matrix, which is then fed

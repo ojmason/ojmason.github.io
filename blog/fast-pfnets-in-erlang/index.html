@@ -129,9 +129,9 @@ visual science maps in cubic time</em>, by Quirin, Cordón, Santamaría,
 Vargas-Quesada, and Moya-Anegón.  This algorithm is a lot faster
 (by about 450 times), but has one disadvantage: speed is traded in
 for flexibility.  The original Pathfinder algorithm has two parameters,
-r (the value of the Minkowski metric to be used) and q (the maximum
-length of paths to be considered).  The fast algorithm only has r,
-and always uses the maximum value for q (which is n-1).  I know too
+<em>r</em> (the value of the Minkowski metric to be used) and <em>q</em> (the maximum
+length of paths to be considered).  The fast algorithm only has <em>r</em>,
+and always uses the maximum value for <em>q</em> (which is n-1).  I know too
 little about the application of PFNETs to say whether this is
 important at all; for the uses I can envisage it does not seem to
 matter.</p>
@@ -150,14 +150,14 @@ the before and after, graph layout courtesy of the graphviz program:</p>
 <p><img src="/img/pfnets-1.png" caption="Fig 1: A network example (from Schvaneveldt 1990)"/></p>
 
 <p>Here, each node is linked to every other node.  Running the PFNET
-algorith on it, we get the output shown in the second figure.</p>
+algorithm on it, we get the output shown in the second figure.</p>
 
 <p>A PFNET generated from the previous graph</p>
 
 <p><img src="/img/pfnets-2.png" caption="Fig 2: A PFNET generated from the previous graph"/></p>
 
 <p>If you compare the output with the actual result from Schvaneveldt’s
-book (p.<sup>6</sup>&frasl;<sub>7</sub>), you’ll realise that it is not identical, and the
+book (p.6 / 7), you’ll realise that it is not identical, and the
 reason for that is that the example there limits the path-length,
 using the parameters (<em>r</em> = 1, <em>q</em> = 2) rather than (<em>r</em> = 1, <em>q</em> = n-1)
 as in the example shown here.  As a consequence, the link from N1
@@ -168,9 +168,9 @@ to N4 (with a weight of 5) disappears, because of the shorter path
 <h2 id="implementation">Implementation</h2>
 
 <p>It is not possible to implement the pseudo-code given in Quirin <em>et
-al</em> directly, as they use destructive updates of the link matrix,
-which we obviously cannot do in Erlang.  But the first, naïve
-implementation, is still quite short.  The input graph is represented
+al</em> directly (in Erlang), as they use destructive updates of the link matrix,
+which we obviously cannot do in Erlang.  But the first, naïve,
+implementation is still quite short.  The input graph is represented
 as a matrix (<em>n</em> x <em>n</em>) where each value stands for the link weight,
 with zero being used to indicate non-existing links.  I have written
 a function that creates a dot file from a matrix, which is then fed
