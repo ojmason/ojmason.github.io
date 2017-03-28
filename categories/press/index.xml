@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Press on Arguable Intelligence</title>
+    <link>https://ojmason.github.io/categories/press/index.xml</link>
+    <description>Recent content in Press on Arguable Intelligence</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <copyright>(C) Oliver Mason</copyright>
+    <atom:link href="https://ojmason.github.io/categories/press/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Numerical Illiteracy</title>
+      <link>https://ojmason.github.io/blog/numerical-illiteracy/</link>
+      <pubDate>Sun, 30 Jan 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://ojmason.github.io/blog/numerical-illiteracy/</guid>
+      <description>&lt;p&gt;&lt;em&gt;Note:&lt;/em&gt; This is an older article from the blog I ran while being an academic. Most of the posts
+on there are about teaching and learning, but this one is of more general relevance, see also
+&lt;a href=&#34;https://ojmason.github.io/longest-chip-in-the-world/&#34;&gt;this one&lt;/a&gt;.
+&lt;hr&gt;
+I had a look at our free local newspaper, the &lt;em&gt;Birmingham Mail Extra&lt;/em&gt;.
+In this issue is an article titled &amp;ldquo;Suburb is now crime hotspot&amp;rdquo;.
+This article has several problems, which are indicative of the
+problems of representing what happens &amp;lsquo;out there&amp;rsquo; in the form of a
+newspaper article.&lt;/p&gt;
+
+&lt;p&gt;Quinton had very little burglaries, &amp;ldquo;averaging just one or two
+burglaries a month&amp;rdquo; over the last nine years. But now, crime has
+&amp;ldquo;shot up by 29%&amp;rdquo;, more than the rest of Birmingham where crime only
+rose by 21%.&lt;/p&gt;
+
+&lt;p&gt;I find this rather misleading, and I worked through an example with
+the kids at the dinner table, which illustrates the problem:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Suburb A had 10 burglaries in 2009, and 12 in 2010. That is an increase of 20%.&lt;/li&gt;
+&lt;li&gt;Suburb B had 4 burglaries in 2009, and 5 in 2010. Increase of 25%.&lt;/li&gt;
+&lt;li&gt;Suburb C had 1 burglary in 2009, and 2 in 2010. A whopping 100% increase.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;em&gt;First lesson:&lt;/em&gt; percentage increase is meaningless unless everybody
+started in the same place. Why do developing economies have higher
+growth rates than Europe and the US? Because the percentage looks
+bigger. If you double your output from 100 cars to 200 cars you
+increase by 100%, but to maintain that rate you will have to produce
+an additional 200 cars the year after, and then 400, 800 etc.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Second lesson:&lt;/em&gt; without a fixed reference point (such as burglaries
+per 1000 inhabitants) you have no idea whether the risk of your
+house being burgled is high or low. Everything is relative, but you
+still need a fixed point to evaluate things.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Third lesson:&lt;/em&gt; this is not mentioned, but is that difference between
+29% and 21% statistically significant? With &amp;ldquo;one or two burglaries
+a month&amp;rdquo;, the variation seems rather high, given those small numbers.
+So if there was one extra or one fewer burglaries, how would the
+29% change?&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Final lesson:&lt;/em&gt; be careful with calling places &amp;ldquo;crime hotspot&amp;rdquo; when
+your statistics are that shaky.&lt;/p&gt;
+
+&lt;p&gt;Now I don&amp;rsquo;t expect a staff reporter at the &lt;em&gt;Birmingham Mail&lt;/em&gt; to apply
+the same rigour as a scientist (or any other, non-science researcher),
+but the way the article is presented is simply misleading. To me
+this sounds like a scare story being created out of some random
+statistics. I don&amp;rsquo;t know whether that is the case, and maybe Quinton
+is really a crime-ridden area, but I cannot tell from the few facts
+given to me in the article. The reason for this development given
+in the paper is that there are now 5 fewer policemen covering
+Quinton. Is there really such a cast-iron correlation between
+policemen and crime rate? How about the influence of the recession
+on crime? And how many policemen were there before the cut? 50? 500?
+5000?&lt;/p&gt;
+
+&lt;p&gt;I now have more questions and know less than I did before reading
+that article!&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
