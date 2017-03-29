@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://ojmason.github.io/blog/arguable-intelligence/</loc>
+    <lastmod>2017-03-28T16:45:58+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://ojmason.github.io/blog/software-is-sht/</loc>
     <lastmod>2017-03-27T15:00:26+01:00</lastmod>
   </url>
@@ -82,8 +87,14 @@
   </url>
   
   <url>
+    <loc>https://ojmason.github.io/categories/ai/</loc>
+    <lastmod>2017-03-28T16:45:58+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://ojmason.github.io/</loc>
-    <lastmod>2017-03-27T15:00:26+01:00</lastmod>
+    <lastmod>2017-03-28T16:45:58+01:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -95,7 +106,7 @@
   
   <url>
     <loc>https://ojmason.github.io/blog/</loc>
-    <lastmod>2017-03-27T15:00:26+01:00</lastmod>
+    <lastmod>2017-03-28T16:45:58+01:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -137,6 +148,12 @@
   <url>
     <loc>https://ojmason.github.io/categories/linguistics/</loc>
     <lastmod>2009-11-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ojmason.github.io/categories/machine-learning/</loc>
+    <lastmod>2017-03-28T16:45:58+01:00</lastmod>
     <priority>0</priority>
   </url>
   

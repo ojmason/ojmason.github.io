@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ai on Arguable Intelligence</title>
+    <link>https://ojmason.github.io/categories/ai/index.xml</link>
+    <description>Recent content in Ai on Arguable Intelligence</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <copyright>(C) Oliver Mason</copyright>
+    <atom:link href="https://ojmason.github.io/categories/ai/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Arguable Intelligence</title>
+      <link>https://ojmason.github.io/blog/arguable-intelligence/</link>
+      <pubDate>Tue, 28 Mar 2017 16:45:58 +0100</pubDate>
+      
+      <guid>https://ojmason.github.io/blog/arguable-intelligence/</guid>
+      <description>&lt;p&gt;I work in the field of AI. I studied it at university, I read books about AI in my spare time,
+implement toy systems that operate in the field, and I try to keep uptodate with current developments.
+And it infuriates me&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;Artificial Intelligence has moved from an academic/applied subject to a marketing buzzword. Every
+washing machine is now &amp;ldquo;powered by AI&amp;rdquo;. So AI means everything and nothing these days. Let&amp;rsquo;s look at
+the traditional definitions:&lt;/p&gt;
+
+&lt;dl&gt;
+&lt;dt&gt;Hard AI&lt;/dt&gt;
+&lt;dd&gt;the cognitive processes of human beings are implemented in software. By doing so, a computer
+basically functions like a human being, the brain being equivalent to a micro processor.&lt;/dd&gt;
+&lt;dt&gt;Soft AI&lt;/dt&gt;
+&lt;dd&gt;the cognitive system of a human being is imitated by computer software. There is no claim that
+this models human cognition, but the outcomes are the same.&lt;/dd&gt;
+&lt;/dl&gt;
+
+&lt;p&gt;This dichotomy was current when I learned about AI. But now there is a new element which arose in the
+past couple of decades with the availability of large amounts of data in all sorts of domains: machine
+learning (ML). In ML you basically train a mathematical model with data, which allows you to classify
+other data items (which your system has not seen before). Or maybe map between one item (eg an English phrase)
+and another (eg an equivalent German phrase). The difference here is that there is &lt;em&gt;no human cognition involved&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;AI is a direct reference to cognition, hence the &amp;lsquo;I&amp;rsquo; of it, but ML is not. It&amp;rsquo;s an automaton, which has no
+understanding of what it is doing. In early AI systems, domain knowledge was usually modelled in a
+representation system, a logical language, a semantic network, whatever.
+&lt;a href=&#34;https://en.wikipedia.org/wiki/Knowledge_representation_and_reasoning&#34;&gt;Knowledge representation&lt;/a&gt; was/is an
+important aspect of AI, as you cannot have AI without knowledge. In an ML system, knowledge is encoded in
+model parameters, numerical values that have no meaning outside the model.&lt;/p&gt;
+
+&lt;p&gt;One point that motivates me to work in AI is that we learn about how humans process the world. We find out what
+is important, how me make decision, how we evaluate what is better or worse. In ML we just feed a black box with
+examples that we have marked up as good or bad, and we get a black box that can distinguish between these categories
+with a more or less acceptable accuracy. What have we learned about the process of making that distinction?&lt;/p&gt;
+
+&lt;p&gt;Nothing.&lt;/p&gt;
+
+&lt;p&gt;To re-iterate, machine learning is not artificial intelligence. It is statistical engineering. I&amp;rsquo;m not denying
+that it is useful, but calling it AI is plain wrong, and will undoubtedly lead to a new
+&lt;a href=&#34;https://en.wikipedia.org/wiki/AI_winter&#34;&gt;AI winter&lt;/a&gt; once the bubble bursts.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

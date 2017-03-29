@@ -7,8 +7,57 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
     <copyright>(C) Oliver Mason</copyright>
-    <lastBuildDate>Mon, 27 Mar 2017 15:00:26 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 28 Mar 2017 16:45:58 +0100</lastBuildDate>
     <atom:link href="https://ojmason.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Arguable Intelligence</title>
+      <link>https://ojmason.github.io/blog/arguable-intelligence/</link>
+      <pubDate>Tue, 28 Mar 2017 16:45:58 +0100</pubDate>
+      
+      <guid>https://ojmason.github.io/blog/arguable-intelligence/</guid>
+      <description>&lt;p&gt;I work in the field of AI. I studied it at university, I read books about AI in my spare time,
+implement toy systems that operate in the field, and I try to keep uptodate with current developments.
+And it infuriates me&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;Artificial Intelligence has moved from an academic/applied subject to a marketing buzzword. Every
+washing machine is now &amp;ldquo;powered by AI&amp;rdquo;. So AI means everything and nothing these days. Let&amp;rsquo;s look at
+the traditional definitions:&lt;/p&gt;
+
+&lt;dl&gt;
+&lt;dt&gt;Hard AI&lt;/dt&gt;
+&lt;dd&gt;the cognitive processes of human beings are implemented in software. By doing so, a computer
+basically functions like a human being, the brain being equivalent to a micro processor.&lt;/dd&gt;
+&lt;dt&gt;Soft AI&lt;/dt&gt;
+&lt;dd&gt;the cognitive system of a human being is imitated by computer software. There is no claim that
+this models human cognition, but the outcomes are the same.&lt;/dd&gt;
+&lt;/dl&gt;
+
+&lt;p&gt;This dichotomy was current when I learned about AI. But now there is a new element which arose in the
+past couple of decades with the availability of large amounts of data in all sorts of domains: machine
+learning (ML). In ML you basically train a mathematical model with data, which allows you to classify
+other data items (which your system has not seen before). Or maybe map between one item (eg an English phrase)
+and another (eg an equivalent German phrase). The difference here is that there is &lt;em&gt;no human cognition involved&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;AI is a direct reference to cognition, hence the &amp;lsquo;I&amp;rsquo; of it, but ML is not. It&amp;rsquo;s an automaton, which has no
+understanding of what it is doing. In early AI systems, domain knowledge was usually modelled in a
+representation system, a logical language, a semantic network, whatever.
+&lt;a href=&#34;https://en.wikipedia.org/wiki/Knowledge_representation_and_reasoning&#34;&gt;Knowledge representation&lt;/a&gt; was/is an
+important aspect of AI, as you cannot have AI without knowledge. In an ML system, knowledge is encoded in
+model parameters, numerical values that have no meaning outside the model.&lt;/p&gt;
+
+&lt;p&gt;One point that motivates me to work in AI is that we learn about how humans process the world. We find out what
+is important, how me make decision, how we evaluate what is better or worse. In ML we just feed a black box with
+examples that we have marked up as good or bad, and we get a black box that can distinguish between these categories
+with a more or less acceptable accuracy. What have we learned about the process of making that distinction?&lt;/p&gt;
+
+&lt;p&gt;Nothing.&lt;/p&gt;
+
+&lt;p&gt;To re-iterate, machine learning is not artificial intelligence. It is statistical engineering. I&amp;rsquo;m not denying
+that it is useful, but calling it AI is plain wrong, and will undoubtedly lead to a new
+&lt;a href=&#34;https://en.wikipedia.org/wiki/AI_winter&#34;&gt;AI winter&lt;/a&gt; once the bubble bursts.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title> Software is Sh*t</title>
@@ -953,54 +1002,6 @@ I would need at least those three:&lt;/p&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;And there is little to no common ground between them. Sigh.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Replacing a stack with concurrency</title>
-      <link>https://ojmason.github.io/blog/replacing-a-stack-with-concurrency/</link>
-      <pubDate>Wed, 23 Apr 2008 00:00:00 +0000</pubDate>
-      
-      <guid>https://ojmason.github.io/blog/replacing-a-stack-with-concurrency/</guid>
-      <description>&lt;p&gt;For some language processing task I needed a reasonably powerful
-parser (a program to identify the syntactic structure of a sentence).
-So I dug out my copy of Winograd (1983) (&lt;em&gt;Language as a Cognitive
-Process&lt;/em&gt;) and set about implementing an &lt;a href=&#34;https://en.wikipedia.org/wiki/Augmented_transition_network&#34;&gt;Augmented Transition Network&lt;/a&gt;
-parser in Erlang.&lt;/p&gt;
-
-&lt;p&gt;Now, the first thing you learn about natural language is that it
-is full of ambiguities, and so there will always be several
-alternatives available, several possible paths through the network
-which defines the grammar. The traditional solution is to dump all
-the alternatives on a stack, and look at them when the current path
-has been finished with. You can either go depth-first, where you
-complete the current path before you get the next one off the stack,
-or breadth-first, where you advance all paths by one step at a time,
-kind of pseudo-parallel.&lt;/p&gt;
-
-&lt;p&gt;Having to deal with a stack is tedious, as you need to keep track
-of the current configuration: which network are you at, what node,
-what position in the sentence, etc. But then, it occurred to me,
-there’s an easier way to do it (at least it’s easier in Erlang!):
-every time you come to a point where you have multiple alternatives,
-you spawn a new process and pursue all of them in parallel.&lt;/p&gt;
-
-&lt;p&gt;The only overhead you need is a loop which keeps track of all the
-processes currently running. This loop receives the results of
-successful paths, and gets notified of unsuccessful ones (where the
-process terminates without having found a valid structure). No need
-for a stack, and hopefully very efficient processing on multi-core
-machines as a free side-effect.&lt;/p&gt;
-
-&lt;p&gt;I’m still amazed how easy it was to implement. I wouldn’t have
-fancied doing that in Java or even C. For my test sentences I had
-about 8 to 10 processes running in parallel most of the time, but
-it depends on the size of the grammar and the length of the sentence
-really. What I liked about this was that it seemed the natural way
-to do in Erlang, where working with processes is just so easy.&lt;/p&gt;
-
-&lt;p&gt;And also, another nail in the coffin for the claim that you can’t
-use Erlang for handling texts easily!&lt;/p&gt;
 </description>
     </item>
     
