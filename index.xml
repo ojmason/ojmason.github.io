@@ -7,8 +7,56 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
     <copyright>(C) Oliver Mason</copyright>
-    <lastBuildDate>Tue, 28 Mar 2017 16:45:58 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 07 Apr 2017 11:11:30 +0100</lastBuildDate>
     <atom:link href="https://ojmason.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>History Repeats Itself</title>
+      <link>https://ojmason.github.io/blog/history-repeats-itself/</link>
+      <pubDate>Fri, 07 Apr 2017 11:11:30 +0100</pubDate>
+      
+      <guid>https://ojmason.github.io/blog/history-repeats-itself/</guid>
+      <description>&lt;p&gt;At the AAAI-84 conference, more than 30 years ago, was a panel discussion on &lt;em&gt;The Dark Ages of AI&lt;/em&gt;. Drew McDermott
+said in the article in AI Magazine (vol 6 no 3 1985):&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;In spite of all the commercial hustle and bustle around AI these days there&amp;rsquo;s a mood [&amp;hellip;] of deep unease among
+AI reserachers [&amp;hellip;]. This unease is due to the worry that that perhaps expectations about AI are too high,
+and that this will eventually end in disaster.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I have a real feeling of deja-vu. We have been there before, in the late 1960s, when the failed promises of
+instant high-quality machine translation caused what was dubbed the &lt;em&gt;AI Winter&lt;/em&gt;, with all research funding
+being stopped. AI recovered, and twenty years later the same happened. And now again.&lt;/p&gt;
+
+&lt;p&gt;The situation has somewhat changed, as we have an abundance of data and processing power, but still no intelligence.
+The algorithms are still the same old ones we had before, only on a larger scale.
+&lt;a href=&#34;https://en.wikipedia.org/wiki/Artificial_neural_network&#34;&gt;Artificial neural networks&lt;/a&gt; are faster,
+and with &lt;a href=&#34;https://en.wikipedia.org/wiki/Deep_learning&#34;&gt;Deep Learning&lt;/a&gt; they have become easier to use. We are replacing human engineering work (feature selection etc)
+by clever algorithms and are letting the machine find things out by itself.&lt;/p&gt;
+
+&lt;p&gt;The problem is that it works fine in some situations, and then it suddenly becomes the magic bullet. Everybody now has
+to do Deep Learning, as it has become the new marketing buzzword. AI is everywhere, but also nowhere, really. We do
+not know anything more about the world than we did before, but we can get fast computers to recognise patterns in
+data. &lt;a href=&#34;https://ojmason.github.io/blog/arguable-intelligence/&#34;&gt;No intelligence there&lt;/a&gt;. And if you are trying to calm down expectations you are not
+&amp;lsquo;disruptive&amp;rsquo; enough.&lt;/p&gt;
+
+&lt;p&gt;It is only a question of time until it all comes crashing down, and AI will be be blamed for empty promises. We&amp;rsquo;ve
+been there before.&lt;/p&gt;
+
+&lt;p&gt;This all fits into the overall pattern of human behaviour. In Europe we are forgetting the lessons from the early
+20th century, and nationalism is on the rise; it might seem a bit over the top to compare the current situation to
+1930s Germany, but the point is that at the time people didn&amp;rsquo;t know what was happening. We now have the benefit of
+knowing where it can lead to, and it would be foolish to ignore the warning signs.&lt;/p&gt;
+
+&lt;p&gt;In AI as in society: history always repeats itself, and if you forget the past, you are condemmed to repeat it.
+(&lt;a href=&#34;https://en.wikipedia.org/wiki/George_Santayana&#34;&gt;George Santayana&lt;/a&gt;)&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;Note: thanks to @DiegoKuonen for tweeting the reference to the AAAI-84 paper.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Arguable Intelligence</title>
@@ -942,66 +990,6 @@ also the right level for her, and maybe even her sisters.&lt;/p&gt;
 &lt;p&gt;The only problem I can see is printing.  But I’ve got an emulator
 on my laptop, which might be able to read in something she saves,
 and I might be able to take it from there.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Programming and the Tower of Babel</title>
-      <link>https://ojmason.github.io/blog/programming-and-the-tower-of-babel/</link>
-      <pubDate>Sat, 31 May 2008 00:00:00 +0000</pubDate>
-      
-      <guid>https://ojmason.github.io/blog/programming-and-the-tower-of-babel/</guid>
-      <description>&lt;p&gt;&lt;em&gt;Update:&lt;/em&gt; I originally posted this article in May 2008, but it is still relevant. I have kind of
-found a solution that I&amp;rsquo;m trying out now, namely moving to a fairly minimalist language, Scheme.
-It is well suited to the main area I work in (NLP/AI), can be used purely functionally, and has
-such a simple syntax that it should be relatively easy to write run-times for it on various platforms
-if necessary.&lt;/p&gt;
-
-&lt;p&gt;In the meantime, however, the need for using different platforms has become less pressing for me, as
-I mainly do this as a work-related hobby nowadays.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;I’m having a problem with languages. Not that there is something I
-cannot do in my favourite language, but rather that there are
-distinct ecosystems for various languages, and they are usually
-fairly exclusive. For example, in order to program in a web context
-you need either PHP, or alternatively be prepared to run your own
-server if you want to use Java or Erlang. I’m not talking about
-businesses or commercial operations here, just the private/academic/small
-scale non-funded project range.&lt;/p&gt;
-
-&lt;p&gt;Most of the language processing software I’ve written is in Java,
-because it works well and can run almost everywhere (but not on
-shared webhosts). It’s useful to distribute applications, as people
-can use it on Linux, Macs and even Windows. But I’ve now pretty
-much switched to Erlang, as I put high hopes on the future of
-parallel programming, and I want my software to take advantage of
-multi-core processors. However, Erlang programs are not as easily
-shared and distributed as Java apps are. Problem.&lt;/p&gt;
-
-&lt;p&gt;Ideally I’d like to write all my programs only once. This was kind
-of the promise of Java, and it worked mostly. At some point I even
-considered working on an interpreter for JVM bytecode written in
-PHP (so that my Java classes would work without having to be re-coded
-in PHP itself), but aside from the possibly terrible performance
-it seemed too daunting a project. Maybe Erlang could be compiled
-into JVM bytecodes? Of course you’d lose all the concurrency features
-etc, but at least you could deploy it together with a Java app. A
-bit like Scala, almost. &lt;em&gt;Update:&lt;/em&gt; There is a (defunct?) project
-that does attempt exactly that: &lt;a href=&#34;https://github.com/trifork/erjang&#34;&gt;Erlang on the JVM&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;If PHP wasn’t such a ghastly language I’d be happy to code everything
-in that, but it seems too much of a sacrifice. But for most purposes
-I would need at least those three:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Java for applications to be deployed to other people&lt;/li&gt;
-&lt;li&gt;PHP for stuff running on shared webservers&lt;/li&gt;
-&lt;li&gt;Erlang for research and cutting-edge stuff&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;And there is little to no common ground between them. Sigh.&lt;/p&gt;
 </description>
     </item>
     

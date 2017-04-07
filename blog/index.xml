@@ -7,8 +7,56 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
     <copyright>(C) Oliver Mason</copyright>
-    <lastBuildDate>Tue, 28 Mar 2017 16:45:58 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 07 Apr 2017 11:11:30 +0100</lastBuildDate>
     <atom:link href="https://ojmason.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>History Repeats Itself</title>
+      <link>https://ojmason.github.io/blog/history-repeats-itself/</link>
+      <pubDate>Fri, 07 Apr 2017 11:11:30 +0100</pubDate>
+      
+      <guid>https://ojmason.github.io/blog/history-repeats-itself/</guid>
+      <description>&lt;p&gt;At the AAAI-84 conference, more than 30 years ago, was a panel discussion on &lt;em&gt;The Dark Ages of AI&lt;/em&gt;. Drew McDermott
+said in the article in AI Magazine (vol 6 no 3 1985):&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;In spite of all the commercial hustle and bustle around AI these days there&amp;rsquo;s a mood [&amp;hellip;] of deep unease among
+AI reserachers [&amp;hellip;]. This unease is due to the worry that that perhaps expectations about AI are too high,
+and that this will eventually end in disaster.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I have a real feeling of deja-vu. We have been there before, in the late 1960s, when the failed promises of
+instant high-quality machine translation caused what was dubbed the &lt;em&gt;AI Winter&lt;/em&gt;, with all research funding
+being stopped. AI recovered, and twenty years later the same happened. And now again.&lt;/p&gt;
+
+&lt;p&gt;The situation has somewhat changed, as we have an abundance of data and processing power, but still no intelligence.
+The algorithms are still the same old ones we had before, only on a larger scale.
+&lt;a href=&#34;https://en.wikipedia.org/wiki/Artificial_neural_network&#34;&gt;Artificial neural networks&lt;/a&gt; are faster,
+and with &lt;a href=&#34;https://en.wikipedia.org/wiki/Deep_learning&#34;&gt;Deep Learning&lt;/a&gt; they have become easier to use. We are replacing human engineering work (feature selection etc)
+by clever algorithms and are letting the machine find things out by itself.&lt;/p&gt;
+
+&lt;p&gt;The problem is that it works fine in some situations, and then it suddenly becomes the magic bullet. Everybody now has
+to do Deep Learning, as it has become the new marketing buzzword. AI is everywhere, but also nowhere, really. We do
+not know anything more about the world than we did before, but we can get fast computers to recognise patterns in
+data. &lt;a href=&#34;https://ojmason.github.io/blog/arguable-intelligence/&#34;&gt;No intelligence there&lt;/a&gt;. And if you are trying to calm down expectations you are not
+&amp;lsquo;disruptive&amp;rsquo; enough.&lt;/p&gt;
+
+&lt;p&gt;It is only a question of time until it all comes crashing down, and AI will be be blamed for empty promises. We&amp;rsquo;ve
+been there before.&lt;/p&gt;
+
+&lt;p&gt;This all fits into the overall pattern of human behaviour. In Europe we are forgetting the lessons from the early
+20th century, and nationalism is on the rise; it might seem a bit over the top to compare the current situation to
+1930s Germany, but the point is that at the time people didn&amp;rsquo;t know what was happening. We now have the benefit of
+knowing where it can lead to, and it would be foolish to ignore the warning signs.&lt;/p&gt;
+
+&lt;p&gt;In AI as in society: history always repeats itself, and if you forget the past, you are condemmed to repeat it.
+(&lt;a href=&#34;https://en.wikipedia.org/wiki/George_Santayana&#34;&gt;George Santayana&lt;/a&gt;)&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;Note: thanks to @DiegoKuonen for tweeting the reference to the AAAI-84 paper.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Arguable Intelligence</title>
@@ -986,54 +1034,6 @@ I would need at least those three:&lt;/p&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;And there is little to no common ground between them. Sigh.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Replacing a stack with concurrency</title>
-      <link>https://ojmason.github.io/blog/replacing-a-stack-with-concurrency/</link>
-      <pubDate>Wed, 23 Apr 2008 00:00:00 +0000</pubDate>
-      
-      <guid>https://ojmason.github.io/blog/replacing-a-stack-with-concurrency/</guid>
-      <description>&lt;p&gt;For some language processing task I needed a reasonably powerful
-parser (a program to identify the syntactic structure of a sentence).
-So I dug out my copy of Winograd (1983) (&lt;em&gt;Language as a Cognitive
-Process&lt;/em&gt;) and set about implementing an &lt;a href=&#34;https://en.wikipedia.org/wiki/Augmented_transition_network&#34;&gt;Augmented Transition Network&lt;/a&gt;
-parser in Erlang.&lt;/p&gt;
-
-&lt;p&gt;Now, the first thing you learn about natural language is that it
-is full of ambiguities, and so there will always be several
-alternatives available, several possible paths through the network
-which defines the grammar. The traditional solution is to dump all
-the alternatives on a stack, and look at them when the current path
-has been finished with. You can either go depth-first, where you
-complete the current path before you get the next one off the stack,
-or breadth-first, where you advance all paths by one step at a time,
-kind of pseudo-parallel.&lt;/p&gt;
-
-&lt;p&gt;Having to deal with a stack is tedious, as you need to keep track
-of the current configuration: which network are you at, what node,
-what position in the sentence, etc. But then, it occurred to me,
-there’s an easier way to do it (at least it’s easier in Erlang!):
-every time you come to a point where you have multiple alternatives,
-you spawn a new process and pursue all of them in parallel.&lt;/p&gt;
-
-&lt;p&gt;The only overhead you need is a loop which keeps track of all the
-processes currently running. This loop receives the results of
-successful paths, and gets notified of unsuccessful ones (where the
-process terminates without having found a valid structure). No need
-for a stack, and hopefully very efficient processing on multi-core
-machines as a free side-effect.&lt;/p&gt;
-
-&lt;p&gt;I’m still amazed how easy it was to implement. I wouldn’t have
-fancied doing that in Java or even C. For my test sentences I had
-about 8 to 10 processes running in parallel most of the time, but
-it depends on the size of the grammar and the length of the sentence
-really. What I liked about this was that it seemed the natural way
-to do in Erlang, where working with processes is just so easy.&lt;/p&gt;
-
-&lt;p&gt;And also, another nail in the coffin for the claim that you can’t
-use Erlang for handling texts easily!&lt;/p&gt;
 </description>
     </item>
     
