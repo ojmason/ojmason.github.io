@@ -33,7 +33,7 @@ RYA training centre at the club.&lt;/p&gt;
       
       <guid>https://ojmason.github.io/blog/toki-pona/</guid>
       <description>&lt;p&gt;Since working in computational linguistics I have been interested in constructed languages (&amp;lsquo;conlangs&amp;rsquo;).
-When trying to process any natural language with compute programs, you constantly run into inconvenient
+When trying to process any natural language with computer programs, you constantly run into inconvenient
 exceptions, in morphology, syntax, etc. A conlang such as &lt;a href=&#34;https://en.wikipedia.org/wiki/Esperanto&#34;&gt;Esperanto&lt;/a&gt;
 promises a great simplification: as it is completely regular, NLP software is likely to be much simpler and
 less complex. However, given that Esperanto is a full-scale language, it&amp;rsquo;s still not trivial to work with. It&amp;rsquo;s
@@ -47,11 +47,11 @@ way you think about the world? This is kind of related to the &lt;a href=&#34;ht
 When you have to limit yourself to describing/paraphrasing everything with a limited vocabulary, you need to
 reflect more about what it is you&amp;rsquo;re talking about. For example, a friend is a &lt;em&gt;jan pona&lt;/em&gt; (&amp;lsquo;good person&amp;rsquo;), and a
 bad person is a &lt;em&gt;jan ike&lt;/em&gt;. So how do you say &amp;lsquo;bad friend&amp;rsquo;? You are not able to say someone is both good and bad
-at the same time.&lt;/p&gt;
+at the same time. So a friend cannot be a bad person, or vice versa.&lt;/p&gt;
 
 &lt;p&gt;Toki Pona arguably is a toy language only. There is just one word for &lt;em&gt;fruit&lt;/em&gt;, &lt;em&gt;vegetable&lt;/em&gt;, etc.: &lt;em&gt;kili&lt;/em&gt;. If you want
 to say &lt;em&gt;banana&lt;/em&gt;, you say &lt;em&gt;kili jelo&lt;/em&gt; (&amp;ldquo;yellow fruit&amp;rdquo;). If you want to talk about lemons as well, you&amp;rsquo;re out of luck.
-It&amp;rsquo;s very context dependent, and definitely not useful for scientific treatise, or even recipes. But it&amp;rsquo;s fine
+It&amp;rsquo;s very context dependent, and definitely not useful for a scientific treatise, or even recipes. But it&amp;rsquo;s fine
 for basic stories, myths and legends, and so on. And, most importantly, it&amp;rsquo;s easy to learn. No morphology. Very
 limited syntax. Small vocabulary. The main difficulty is to express yourself given those limited means. But
 we grow only when challenged!&lt;/p&gt;
