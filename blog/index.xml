@@ -7,8 +7,35 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
     <copyright>(C) Oliver Mason</copyright>
-    <lastBuildDate>Fri, 07 Apr 2017 11:11:30 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 10 Apr 2017 11:27:24 +0100</lastBuildDate>
     <atom:link href="https://ojmason.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Toki Pona</title>
+      <link>https://ojmason.github.io/blog/toki-pona/</link>
+      <pubDate>Mon, 10 Apr 2017 11:27:24 +0100</pubDate>
+      
+      <guid>https://ojmason.github.io/blog/toki-pona/</guid>
+      <description>&lt;p&gt;Since working in computational linguistics I have been interested in constructed languages (&amp;lsquo;conlangs&amp;rsquo;).
+When trying to process any natural language with compute programs, you constantly run into inconvenient
+exceptions, in morphology, syntax, etc. A conlang such as &lt;a href=&#34;https://en.wikipedia.org/wiki/Esperanto&#34;&gt;Esperanto&lt;/a&gt;
+promises a great simplification: as it is completely regular, NLP software is likely to be much simpler and
+less complex. However, given that Esperanto is a full-scale language, it&amp;rsquo;s still not trivial to work with. It&amp;rsquo;s
+got a large vocabulary, and the syntax is not that easy to parse.&lt;/p&gt;
+
+&lt;p&gt;In a post on the &lt;a href=&#34;http://esperanto.stackexchange.com/&#34;&gt;Esperanto Language Stack Exchange&lt;/a&gt; I then heard of another
+conlang, &lt;a href=&#34;https://en.wikipedia.org/wiki/Toki_Pona&#34;&gt;Toki Pona&lt;/a&gt;. This is billed as a &lt;em&gt;minimalist&lt;/em&gt; language: it only
+has about 120 words, and a very fixed and simplistic sentence structure. Unlike Esperanto, it is not really a
+proper language for everyday use, but more of a philosophical experiment. How does your language influence the
+way you think about the world? This is kind of related to the &lt;a href=&#34;https://en.wikipedia.org/wiki/Linguistic_relativity&#34;&gt;Sapir-Whorf Hypothesis&lt;/a&gt;.
+When you have to limit yourself to describing/paraphrasing everything with a limited vocabulary, you need to
+reflect more about what it is you&amp;rsquo;re talking about. For example, a friend is a &lt;em&gt;jan pona&lt;/em&gt; (&amp;lsquo;good person&amp;rsquo;), and a
+bad person is a &lt;em&gt;jan ike&lt;/em&gt;. So how do you say &amp;lsquo;bad friend&amp;rsquo;? You are not able to say someone is both good and bad
+at the same time.&lt;/p&gt;
+
+&lt;p&gt;Toki Pona arguably is a toy language only. There is just one word for&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>History Repeats Itself</title>
@@ -132,7 +159,7 @@ message? It&amp;rsquo;s enough to turn you into a grumpy old man.&lt;/p&gt;
 
 &lt;p&gt;Then one of my twitter friends recommended Hugo. Installation was fine, only then github
 was confused. It is already well known that &lt;code&gt;git&lt;/code&gt; is not exactly the pinnacle of usability,
-and it doesn&amp;rsquo;t help that it seem to become the default tool for any command-line job. I can
+and it doesn&amp;rsquo;t help that it seems to become the default tool for any command-line job. I can
 see that a website can be modelled with a repository, and it&amp;rsquo;s probably a good idea, but
 git seems such an overkill for 90% of what you would want to do.&lt;/p&gt;
 
@@ -974,66 +1001,6 @@ also the right level for her, and maybe even her sisters.&lt;/p&gt;
 &lt;p&gt;The only problem I can see is printing.  But I’ve got an emulator
 on my laptop, which might be able to read in something she saves,
 and I might be able to take it from there.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Programming and the Tower of Babel</title>
-      <link>https://ojmason.github.io/blog/programming-and-the-tower-of-babel/</link>
-      <pubDate>Sat, 31 May 2008 00:00:00 +0000</pubDate>
-      
-      <guid>https://ojmason.github.io/blog/programming-and-the-tower-of-babel/</guid>
-      <description>&lt;p&gt;&lt;em&gt;Update:&lt;/em&gt; I originally posted this article in May 2008, but it is still relevant. I have kind of
-found a solution that I&amp;rsquo;m trying out now, namely moving to a fairly minimalist language, Scheme.
-It is well suited to the main area I work in (NLP/AI), can be used purely functionally, and has
-such a simple syntax that it should be relatively easy to write run-times for it on various platforms
-if necessary.&lt;/p&gt;
-
-&lt;p&gt;In the meantime, however, the need for using different platforms has become less pressing for me, as
-I mainly do this as a work-related hobby nowadays.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;I’m having a problem with languages. Not that there is something I
-cannot do in my favourite language, but rather that there are
-distinct ecosystems for various languages, and they are usually
-fairly exclusive. For example, in order to program in a web context
-you need either PHP, or alternatively be prepared to run your own
-server if you want to use Java or Erlang. I’m not talking about
-businesses or commercial operations here, just the private/academic/small
-scale non-funded project range.&lt;/p&gt;
-
-&lt;p&gt;Most of the language processing software I’ve written is in Java,
-because it works well and can run almost everywhere (but not on
-shared webhosts). It’s useful to distribute applications, as people
-can use it on Linux, Macs and even Windows. But I’ve now pretty
-much switched to Erlang, as I put high hopes on the future of
-parallel programming, and I want my software to take advantage of
-multi-core processors. However, Erlang programs are not as easily
-shared and distributed as Java apps are. Problem.&lt;/p&gt;
-
-&lt;p&gt;Ideally I’d like to write all my programs only once. This was kind
-of the promise of Java, and it worked mostly. At some point I even
-considered working on an interpreter for JVM bytecode written in
-PHP (so that my Java classes would work without having to be re-coded
-in PHP itself), but aside from the possibly terrible performance
-it seemed too daunting a project. Maybe Erlang could be compiled
-into JVM bytecodes? Of course you’d lose all the concurrency features
-etc, but at least you could deploy it together with a Java app. A
-bit like Scala, almost. &lt;em&gt;Update:&lt;/em&gt; There is a (defunct?) project
-that does attempt exactly that: &lt;a href=&#34;https://github.com/trifork/erjang&#34;&gt;Erlang on the JVM&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;If PHP wasn’t such a ghastly language I’d be happy to code everything
-in that, but it seems too much of a sacrifice. But for most purposes
-I would need at least those three:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Java for applications to be deployed to other people&lt;/li&gt;
-&lt;li&gt;PHP for stuff running on shared webservers&lt;/li&gt;
-&lt;li&gt;Erlang for research and cutting-edge stuff&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;And there is little to no common ground between them. Sigh.&lt;/p&gt;
 </description>
     </item>
     

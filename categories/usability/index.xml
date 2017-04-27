@@ -34,7 +34,7 @@ message? It&amp;rsquo;s enough to turn you into a grumpy old man.&lt;/p&gt;
 
 &lt;p&gt;Then one of my twitter friends recommended Hugo. Installation was fine, only then github
 was confused. It is already well known that &lt;code&gt;git&lt;/code&gt; is not exactly the pinnacle of usability,
-and it doesn&amp;rsquo;t help that it seem to become the default tool for any command-line job. I can
+and it doesn&amp;rsquo;t help that it seems to become the default tool for any command-line job. I can
 see that a website can be modelled with a repository, and it&amp;rsquo;s probably a good idea, but
 git seems such an overkill for 90% of what you would want to do.&lt;/p&gt;
 

@@ -7,8 +7,51 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
     <copyright>(C) Oliver Mason</copyright>
-    <lastBuildDate>Fri, 07 Apr 2017 11:11:30 +0100</lastBuildDate>
+    <lastBuildDate>Thu, 27 Apr 2017 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://ojmason.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>about me</title>
+      <link>https://ojmason.github.io/defaultsite/</link>
+      <pubDate>Thu, 27 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://ojmason.github.io/defaultsite/</guid>
+      <description>&lt;p&gt;Hello, I&amp;rsquo;m Oliver. I am a computational linguist, interested in applications
+of NLP and AI in understanding texts and conversing with human beings.&lt;/p&gt;
+
+&lt;p&gt;I am a passionate dinghy sailor, sailing an &lt;a href=&#34;https://en.wikipedia.org/wiki/Enterprise_(dinghy)&#34;&gt;Enterprise&lt;/a&gt;
+or a &lt;a href=&#34;https://en.wikipedia.org/wiki/Laser_(dinghy)&#34;&gt;Laser&lt;/a&gt; at &lt;a href=&#34;https://en.wikipedia.org/wiki/Midland_Sailing_Club&#34;&gt;Midland
+Sailing Club&lt;/a&gt; in the UK. I am also a qualified Dinghy Instructor, and run the
+RYA training centre at the club.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Toki Pona</title>
+      <link>https://ojmason.github.io/blog/toki-pona/</link>
+      <pubDate>Mon, 10 Apr 2017 11:27:24 +0100</pubDate>
+      
+      <guid>https://ojmason.github.io/blog/toki-pona/</guid>
+      <description>&lt;p&gt;Since working in computational linguistics I have been interested in constructed languages (&amp;lsquo;conlangs&amp;rsquo;).
+When trying to process any natural language with compute programs, you constantly run into inconvenient
+exceptions, in morphology, syntax, etc. A conlang such as &lt;a href=&#34;https://en.wikipedia.org/wiki/Esperanto&#34;&gt;Esperanto&lt;/a&gt;
+promises a great simplification: as it is completely regular, NLP software is likely to be much simpler and
+less complex. However, given that Esperanto is a full-scale language, it&amp;rsquo;s still not trivial to work with. It&amp;rsquo;s
+got a large vocabulary, and the syntax is not that easy to parse.&lt;/p&gt;
+
+&lt;p&gt;In a post on the &lt;a href=&#34;http://esperanto.stackexchange.com/&#34;&gt;Esperanto Language Stack Exchange&lt;/a&gt; I then heard of another
+conlang, &lt;a href=&#34;https://en.wikipedia.org/wiki/Toki_Pona&#34;&gt;Toki Pona&lt;/a&gt;. This is billed as a &lt;em&gt;minimalist&lt;/em&gt; language: it only
+has about 120 words, and a very fixed and simplistic sentence structure. Unlike Esperanto, it is not really a
+proper language for everyday use, but more of a philosophical experiment. How does your language influence the
+way you think about the world? This is kind of related to the &lt;a href=&#34;https://en.wikipedia.org/wiki/Linguistic_relativity&#34;&gt;Sapir-Whorf Hypothesis&lt;/a&gt;.
+When you have to limit yourself to describing/paraphrasing everything with a limited vocabulary, you need to
+reflect more about what it is you&amp;rsquo;re talking about. For example, a friend is a &lt;em&gt;jan pona&lt;/em&gt; (&amp;lsquo;good person&amp;rsquo;), and a
+bad person is a &lt;em&gt;jan ike&lt;/em&gt;. So how do you say &amp;lsquo;bad friend&amp;rsquo;? You are not able to say someone is both good and bad
+at the same time.&lt;/p&gt;
+
+&lt;p&gt;Toki Pona arguably is a toy language only. There is just one word for&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>History Repeats Itself</title>
@@ -132,7 +175,7 @@ message? It&amp;rsquo;s enough to turn you into a grumpy old man.&lt;/p&gt;
 
 &lt;p&gt;Then one of my twitter friends recommended Hugo. Installation was fine, only then github
 was confused. It is already well known that &lt;code&gt;git&lt;/code&gt; is not exactly the pinnacle of usability,
-and it doesn&amp;rsquo;t help that it seem to become the default tool for any command-line job. I can
+and it doesn&amp;rsquo;t help that it seems to become the default tool for any command-line job. I can
 see that a website can be modelled with a repository, and it&amp;rsquo;s probably a good idea, but
 git seems such an overkill for 90% of what you would want to do.&lt;/p&gt;
 
@@ -733,263 +776,6 @@ parameters. To get truly random results, that would have to be left
 out. However, for my benchmarking purposes it saved me having to
 save the matrix to a file and read it in, as I can easily generate
 a new copy of the same matrix I used before.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Fast PFNETs in Erlang</title>
-      <link>https://ojmason.github.io/blog/fast-pfnets-in-erlang/</link>
-      <pubDate>Sat, 14 Feb 2009 00:00:00 +0000</pubDate>
-      
-      <guid>https://ojmason.github.io/blog/fast-pfnets-in-erlang/</guid>
-      <description>
-
-&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://en.wikipedia.org/wiki/Pathfinder_Networks&#34;&gt;Pathfinder Networks&lt;/a&gt;
-(PFNETs) are networks derived from a graph
-representing proximity data.  Basically, each node is connected to
-(almost) every other node by a weighted link, and that makes it
-hard to see what’s going on.  The Pathfinder algorithm prunes the
-graph by removing links which are weighted higher than another path
-between the same nodes.&lt;/p&gt;
-
-&lt;p&gt;For example: A links to B with weight 5.  A also links to C with
-weight 2, and C links to B with weight 2.  Adding up the weights,
-A to B direct is 5, A to C to B is 4.  Result: we remove the link
-from A to B, as the route via C is shorter.  There are different
-ways to calculate the path lengths (using the &lt;a href=&#34;http://en.wikipedia.org/wiki/Minkowski_metric&#34;&gt;Minkowski &lt;em&gt;r&lt;/em&gt;-metric&lt;/a&gt;),
-but you get the general idea.  The resulting PFNET has fewer links
-and is easier to analyse.&lt;/p&gt;
-
-&lt;p&gt;In Schvaneveldt (1990) an algorithm for computing PFNETs is given,
-but it is rather complex and computationally intensive.  There is
-an improved algorithm called Binary Pathfinder, but that is apparently
-more memory intensive.  Not very promising so far, but then along
-comes &lt;em&gt;A new variant of the Pathfinder algorithm to generate large
-visual science maps in cubic time&lt;/em&gt;, by Quirin, Cordón, Santamaría,
-Vargas-Quesada, and Moya-Anegón.  This algorithm is a lot faster
-(by about 450 times), but has one disadvantage: speed is traded in
-for flexibility.  The original Pathfinder algorithm has two parameters,
-&lt;em&gt;r&lt;/em&gt; (the value of the Minkowski metric to be used) and &lt;em&gt;q&lt;/em&gt; (the maximum
-length of paths to be considered).  The fast algorithm only has &lt;em&gt;r&lt;/em&gt;,
-and always uses the maximum value for &lt;em&gt;q&lt;/em&gt; (which is n-1).  I know too
-little about the application of PFNETs to say whether this is
-important at all; for the uses I can envisage it does not seem to
-matter.&lt;/p&gt;
-
-&lt;p&gt;As added bonus, the algorithm in pseudo code in Quirin et al. is
-very short and straightforward.  They’re using a different &lt;a href=&#34;http://en.wikipedia.org/wiki/Floyd-Warshall_algorithm&#34;&gt;shortest-path
-algorithm&lt;/a&gt;
-to identify, erm, shorter paths.  And then it’s very
-simple to prune the original network.&lt;/p&gt;
-
-&lt;p&gt;A picture tells more than 1K words, so here instead of 2000 words
-the before and after, graph layout courtesy of the graphviz program:&lt;/p&gt;
-
-&lt;p&gt;A network example (from Schvaneveldt 1990)&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://ojmason.github.io/img/pfnets-1.png&#34; caption=&#34;Fig 1: A network example (from Schvaneveldt 1990)&#34;/&gt;&lt;/p&gt;
-
-&lt;p&gt;Here, each node is linked to every other node.  Running the PFNET
-algorithm on it, we get the output shown in the second figure.&lt;/p&gt;
-
-&lt;p&gt;A PFNET generated from the previous graph&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://ojmason.github.io/img/pfnets-2.png&#34; caption=&#34;Fig 2: A PFNET generated from the previous graph&#34;/&gt;&lt;/p&gt;
-
-&lt;p&gt;If you compare the output with the actual result from Schvaneveldt’s
-book (p.6 / 7), you’ll realise that it is not identical, and the
-reason for that is that the example there limits the path-length,
-using the parameters (&lt;em&gt;r&lt;/em&gt; = 1, &lt;em&gt;q&lt;/em&gt; = 2) rather than (&lt;em&gt;r&lt;/em&gt; = 1, &lt;em&gt;q&lt;/em&gt; = n-1)
-as in the example shown here.  As a consequence, the link from N1
-to N4 (with a weight of 5) disappears, because of the shorter path
-(N1-N2-N3-N4, weight 4).  But that path is too long if &lt;em&gt;q&lt;/em&gt; is just
-2, and so it is kept in Schvaneveldt’s example.&lt;/p&gt;
-
-&lt;h2 id=&#34;implementation&#34;&gt;Implementation&lt;/h2&gt;
-
-&lt;p&gt;It is not possible to implement the pseudo-code given in Quirin &lt;em&gt;et
-al&lt;/em&gt; directly (in Erlang), as they use destructive updates of the link matrix,
-which we obviously cannot do in Erlang.  But the first, naïve,
-implementation is still quite short.  The input graph is represented
-as a matrix (&lt;em&gt;n&lt;/em&gt; x &lt;em&gt;n&lt;/em&gt;) where each value stands for the link weight,
-with zero being used to indicate non-existing links.  I have written
-a function that creates a dot file from a matrix, which is then fed
-into graphviz for generating images as the ones shown above.&lt;/p&gt;
-
-&lt;p&gt;There are basically two steps: creating a matrix of shortest paths
-from the input matrix, and then generating the PFNET by comparing
-the two matrices; if a certain cell has the same value in both
-matrices, then it is a shortest path and is kept, otherwise there
-is a shorter path and it’s pruned. Here is the main function:&lt;/p&gt;
-
-&lt;pre&gt;
-find_path(Matrix) -&gt;
-    Shortest = loop1(1,length(Matrix),Matrix),
-    generate_pfnet(Matrix, Shortest, []).
-&lt;/pre&gt;
-
-&lt;p&gt;Next we have the three loops (hence ‘cubic time’!) of the Floyd-Warshall
-shortest path algorithm to create the shortest path matrix:&lt;/p&gt;
-
-&lt;pre&gt;
-loop1(K,N,Matrix) when K &gt; N -&gt; 
-    Matrix;
-loop1(K,N,Matrix) -&gt;
-    NewMatrix = loop2(K,1,Matrix,
-        Matrix,[]),
-    loop1(K+1,N,NewMatrix).
-
-loop2(_,_,_,[],Acc) -&gt;
-    lists:reverse(Acc);
-loop2(K,I,D,[Row|Rest],Acc) -&gt;
-    NewRow = loop3(K,I,1,D, Row, []),
-    loop2(K,I+1,D,Rest,[NewRow|Acc]).
-
-loop3(_,_,_,_, [], Acc) -&gt;
-    lists:reverse(Acc);
-loop3(K,I,J,D, [X|Rest], Acc) -&gt;
-    loop3(K,I,J+1,D, Rest,
-    [min(X, get(I,K,D) + get(K,J,D))|Acc]).
-&lt;/pre&gt;
-
-&lt;p&gt;The final line implements the Minkowski metric with &lt;em&gt;r&lt;/em&gt; = 1; this
-could be expanded to include other values as well, eg &lt;em&gt;r&lt;/em&gt; = 2 for
-Euclidean, or &lt;em&gt;r&lt;/em&gt; = ∞ (which seem to be the most common values in
-use; the latter means using the maximum weight of any path component
-along the full path).&lt;/p&gt;
-
-&lt;p&gt;And here are two utility methods, one to find the smaller of two
-values, and one to retrieve an element from a matrix (which is a
-list of rows).  There is something of a hack to deal with the fact
-that zero does not mean a very small weight, but refers to a
-non-existing link:&lt;/p&gt;
-
-&lt;pre&gt;
-min(X, Y) when X &lt; Y -&gt; X;
-min(_X, Y) -&gt; Y.
-
-get(Row, Col, Matrix) -&gt;
-    case lists:nth(Col,
-      lists:nth(Row, Matrix)) of
-        0 -&gt; 999999999;
-        X -&gt; X
-    end.
-&lt;/pre&gt;
-
-&lt;p&gt;And finally, generating the PFNET by comparing the two matrices
-(again, awful hack included):&lt;/p&gt;
-
-&lt;pre&gt;
-generate_pfnet([],[],Result) -&gt;
-    lists:reverse(Result);
-generate_pfnet([R1|Rest1], [R2|Rest2], Acc) -&gt;
-    Row = generate_pfrow(R1,R2,[]),
-    generate_pfnet(Rest1, Rest2, [Row|Acc]).
-
-generate_pfrow([],[],Result) -&gt;
-    lists:reverse(Result);
-generate_pfrow([C|Rest1], [C|Rest2], Acc) -&gt;
-    case C of
-        999999999 -&gt; C1 = 0;
-        _ -&gt; C1 = C
-    end,
-    generate_pfrow(Rest1, Rest2, [C1|Acc]);
-generate_pfrow([C1|Rest1], [C2|Rest2], Acc) -&gt;
-    generate_pfrow(Rest1, Rest2, [0|Acc]).
-&lt;/pre&gt;
-
-&lt;h2 id=&#34;discussion&#34;&gt;Discussion&lt;/h2&gt;
-
-&lt;p&gt;So this is the basic code.  It works, but there is scope for improvement.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;it only currently generates PFNETs with (&lt;em&gt;r&lt;/em&gt; = 1, &lt;em&gt;q&lt;/em&gt; = &lt;em&gt;n&lt;/em&gt;-1)&lt;/li&gt;
-&lt;li&gt;there is no parallelism, hence it’s not really making use of Erlang’s strengths.&lt;/li&gt;
-&lt;li&gt;the three loops don’t look very elegant, and could probably be replaced by list comprehensions&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Because of the matrix being updated, it doesn’t look that easy to
-parallelise the processing, but it would work at the level of
-updating the individual rows.  If that can be done in parallel, it
-would probably provide some speed-up (provided the matrix is not
-of a trivial size).  So the first step would be to change the matrix
-processing using &lt;code&gt;lists:map/2&lt;/code&gt;, and replacing this then by &lt;code&gt;pmap&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Once the code is up to scratch with full parallelism, and tested
-on larger matrices I will probably put it up on Google Code in case
-other people are interested in using it.  If you have any suggestions,
-tell me in the comments!&lt;/p&gt;
-
-&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
-
-&lt;dl&gt;
-&lt;dt&gt;Schvaneveldt, R. W. (Ed.) (1990)&lt;/dt&gt;
-&lt;dd&gt;Pathfinder Associative Networks: Studies in Knowledge Organization. Norwood, NJ: Ablex.
-The book is out of print. A copy can be downloaded from the &lt;a href=&#34;http://en.wikipedia.org/wiki/Pathfinder_Networks&#34;&gt;Wikipedia page&lt;/a&gt;&lt;/dd&gt;
-&lt;dt&gt;Quirin, A; Cordón, O; Santamaría, J; Vargas-Quesada, B; Moya-Anegón, F (2008)&lt;/dt&gt;
-&lt;dd&gt;“A new variant of the Pathfinder algorithm to generate large visual science maps in cubic time”, Information Processing and Management, 44, p.1611-1623.&lt;/dd&gt;
-&lt;/dl&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Kids and Computers</title>
-      <link>https://ojmason.github.io/blog/kids-and-computers/</link>
-      <pubDate>Tue, 08 Jul 2008 00:00:00 +0000</pubDate>
-      
-      <guid>https://ojmason.github.io/blog/kids-and-computers/</guid>
-      <description>&lt;p&gt;&lt;em&gt;Update:&lt;/em&gt; This did not turn out as I hoped. The main reason being that an old ZX Spectrum
-pre-dates the common availability of the Internet, and as soon as it was switched on the
-question arose, how one could watch YouTube videos on this machine. So, abject failure.
-Times have moved on, kids these days don&amp;rsquo;t know they&amp;rsquo;re born, good old days, it was so much
-better when I was young, spoilt kids nowadays etc etc etc.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;Like many(?) computer people of my generation I started off with
-the Sinclair ZX81, and then continued with the ZX Spectrum and
-onwards to an Amstrad CPC, learning BASIC and Z80 machine code
-(because those machines were actually pretty slow).  This also means
-that I treat computers as tools, not passively using programs other
-people have written, but writing my own stuff.  In time I moved on
-with languages, from Pascal to C, a bit of Prolog, C++, Java, and
-now Erlang.  But those endless hours typing in program listings in
-BASIC have surely benefitted me.  Learning by doing.  Type in small
-programs, change the code, observe what happens.&lt;/p&gt;
-
-&lt;p&gt;My oldest daughter is seven, still half my age when I started with
-computers, but from next year onwards they have ICT classes at
-school; these basically seem to be ‘how to change fonts in MS Word’.
-So I thought I’d better show her that a computer program is something
-you write, not just something you use.  The only problem was, how
-to do it?  Despite all its faults, BASIC seems to me to be a good
-language to start with.  True, it has few control structures or
-abstract data types, but it reads almost like English, and is only
-a starting point after all.  And it’s only a first step in any case.&lt;/p&gt;
-
-&lt;p&gt;The next question is how to get her interested.  Using a PC seems
-like overkill, and you need to boot it up, and shut it down, and
-then start a development environment etc.  And I guess it’s not
-that easy to use graphics or sound as it was on the old Spectrum.
-So, I went to ebay and bought a ZX Spectrum +2 for about £7.  You
-plug it in, it’s on.  You can start typing.  You’re finished, you
-unplug it.  No files to get corrupted.  And it’s got a built-in
-tape recoder for storage.&lt;/p&gt;
-
-&lt;p&gt;And, she is really excited.  It’s her very own computer, and she
-already knows several commands.  All I need now is a few books with
-BASIC programs, so that she has some material to type in.  In the
-meantime I go with her through the manual, explaining the new
-keywords, and she can already understand how a program is executed.
-With any luck she’ll get hooked, especially once she learns how to
-do graphics with it.  And the little games (‘guess the number’) are
-also the right level for her, and maybe even her sisters.&lt;/p&gt;
-
-&lt;p&gt;The only problem I can see is printing.  But I’ve got an emulator
-on my laptop, which might be able to read in something she saves,
-and I might be able to take it from there.&lt;/p&gt;
 </description>
     </item>
     
