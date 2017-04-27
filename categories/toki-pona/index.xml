@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Nlp on Arguable Intelligence</title>
-    <link>https://ojmason.github.io/categories/nlp/index.xml</link>
-    <description>Recent content in Nlp on Arguable Intelligence</description>
+    <title>Toki Pona on Arguable Intelligence</title>
+    <link>https://ojmason.github.io/categories/toki-pona/index.xml</link>
+    <description>Recent content in Toki Pona on Arguable Intelligence</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
     <copyright>(C) Oliver Mason</copyright>
-    <atom:link href="https://ojmason.github.io/categories/nlp/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ojmason.github.io/categories/toki-pona/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Toki Pona</title>
@@ -47,54 +47,6 @@ be extremely easy. More on that as it materialises.&lt;/p&gt;
 are various on-line resources available, plus a text book &lt;a href=&#34;http://amzn.to/2oN4Zo7&#34;&gt;&lt;em&gt;Toki Pona &amp;ndash; The Language of Good&lt;/em&gt;&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;I&amp;rsquo;ll post more on this at a later time&amp;hellip;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Replacing a stack with concurrency</title>
-      <link>https://ojmason.github.io/blog/replacing-a-stack-with-concurrency/</link>
-      <pubDate>Wed, 23 Apr 2008 00:00:00 +0000</pubDate>
-      
-      <guid>https://ojmason.github.io/blog/replacing-a-stack-with-concurrency/</guid>
-      <description>&lt;p&gt;For some language processing task I needed a reasonably powerful
-parser (a program to identify the syntactic structure of a sentence).
-So I dug out my copy of Winograd (1983) (&lt;em&gt;Language as a Cognitive
-Process&lt;/em&gt;) and set about implementing an &lt;a href=&#34;https://en.wikipedia.org/wiki/Augmented_transition_network&#34;&gt;Augmented Transition Network&lt;/a&gt;
-parser in Erlang.&lt;/p&gt;
-
-&lt;p&gt;Now, the first thing you learn about natural language is that it
-is full of ambiguities, and so there will always be several
-alternatives available, several possible paths through the network
-which defines the grammar. The traditional solution is to dump all
-the alternatives on a stack, and look at them when the current path
-has been finished with. You can either go depth-first, where you
-complete the current path before you get the next one off the stack,
-or breadth-first, where you advance all paths by one step at a time,
-kind of pseudo-parallel.&lt;/p&gt;
-
-&lt;p&gt;Having to deal with a stack is tedious, as you need to keep track
-of the current configuration: which network are you at, what node,
-what position in the sentence, etc. But then, it occurred to me,
-there’s an easier way to do it (at least it’s easier in Erlang!):
-every time you come to a point where you have multiple alternatives,
-you spawn a new process and pursue all of them in parallel.&lt;/p&gt;
-
-&lt;p&gt;The only overhead you need is a loop which keeps track of all the
-processes currently running. This loop receives the results of
-successful paths, and gets notified of unsuccessful ones (where the
-process terminates without having found a valid structure). No need
-for a stack, and hopefully very efficient processing on multi-core
-machines as a free side-effect.&lt;/p&gt;
-
-&lt;p&gt;I’m still amazed how easy it was to implement. I wouldn’t have
-fancied doing that in Java or even C. For my test sentences I had
-about 8 to 10 processes running in parallel most of the time, but
-it depends on the size of the grammar and the length of the sentence
-really. What I liked about this was that it seemed the natural way
-to do in Erlang, where working with processes is just so easy.&lt;/p&gt;
-
-&lt;p&gt;And also, another nail in the coffin for the claim that you can’t
-use Erlang for handling texts easily!&lt;/p&gt;
 </description>
     </item>
     
