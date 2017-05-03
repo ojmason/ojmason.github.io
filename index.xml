@@ -7,8 +7,51 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
     <copyright>(C) Oliver Mason</copyright>
-    <lastBuildDate>Thu, 27 Apr 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 03 May 2017 15:28:48 +0100</lastBuildDate>
     <atom:link href="https://ojmason.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>The Streak of Damocles</title>
+      <link>https://ojmason.github.io/blog/the-streak-of-damocles/</link>
+      <pubDate>Wed, 03 May 2017 15:28:48 +0100</pubDate>
+      
+      <guid>https://ojmason.github.io/blog/the-streak-of-damocles/</guid>
+      <description>&lt;p&gt;Streaks are a well-know means of establishing habits. You do something every day, and count how many consecutive
+days you have had in a run. Each day adds one to the streak. And puts on the pressure not to break it. You do not
+want to get back to &amp;ldquo;0 days since the last time I forgot to do X&amp;rdquo;. Pressure to do it equals motivation. A positive
+feedback loop: the longer the streak, the more pressure. Until you snap.&lt;/p&gt;
+
+&lt;p&gt;I have built up almost 600 days of uninterrupted language learning on Duolingo. That is partly because I managed
+to fit it into my daily routine, so I have no difficulty doing two lessons (my daily target) every day. It is
+difficult sometimes when travelling, as your daily routine is different then, and I nearly lost the streak because
+of a timezone issue. In a way the streak is not why I&amp;rsquo;m learning, though. I have an intrinsic motivation (wanting
+to improve my language skills), and the streak maintenance is more for the benefit of keeping track how long I&amp;rsquo;ve
+been doing this.&lt;/p&gt;
+
+&lt;p&gt;My daughters also use Duolingo (not so much anymore, though), and one of them had a longish streak, and then lost it,
+as she was too busy one day doing the multitude of other things she does. That pretty much killed her motivation for
+quite some time. Elsewhere on the internet there are similar stories of people who lost streaks due to circumstances
+outside their control, with a negative effect on their motivation. Even if you still want to learn the language (or
+do whatever activity you want to establish as a habit), it&amp;rsquo;s a punch that you first need to recover from.&lt;/p&gt;
+
+&lt;p&gt;Like so many ideas, streaks as a motivational tool sound good, but they have their own problems. I don&amp;rsquo;t know what
+would happen if I lost my streak. While I hope it would not bother me, it still might affect my willingness to
+continue. I just don&amp;rsquo;t know. So here the pressure that has built up over time is clearly negative through the
+uncertainty it introduces. On previous occasions, streaks have helped me to maintain a habit for a limited period
+of time, but never as long as with my language skills.&lt;/p&gt;
+
+&lt;p&gt;When I was still working as an academic, I set myself a target of writing at least 1000 words every day. It went up
+to the point that I went to bed, realised I hadn&amp;rsquo;t done any writing, jumped out again and sat in front of the computer
+until I had done it. While I managed to do that for quite a while, at some point it just petered out. If you have
+to force yourself to do something, then streaks will not help you. My Duolingo habit supports this: I am genuinely
+interested and motivated to learn, and two lessons a day is an easily manageable task. The writing target I had set
+myself was probably too ambitious to maintain in the long run.&lt;/p&gt;
+
+&lt;p&gt;If you use streaks merely to keep track for how long you have done something, then they are probaby alright. But if
+they become your main motivational driver, then I would think they have missed their purpose. And losing your streak
+might well lead you to abandoning the task you wanted to habitualise.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>about me</title>
@@ -706,90 +749,6 @@ at all.&lt;/p&gt;
 &lt;dt&gt;Firth, J. R. (1957)&lt;/dt&gt;
 &lt;dd&gt;“A Synopsis of Linguistic Theory 1930-1955” in Studies in Linguistic Analysis, Oxford: Philological Society.&lt;/dd&gt;
 &lt;/dl&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Thinking Erlang, or Creating a Random Matrix without Loops</title>
-      <link>https://ojmason.github.io/blog/thinking-erlang-or-creating-a-random-matrix-without-loops/</link>
-      <pubDate>Thu, 26 Feb 2009 00:00:00 +0000</pubDate>
-      
-      <guid>https://ojmason.github.io/blog/thinking-erlang-or-creating-a-random-matrix-without-loops/</guid>
-      <description>&lt;p&gt;For a project, my &lt;a href=&#34;https://ojmason.github.io/blog/fast-pfnets-in-erlang/&#34;&gt;Erlang implementation of a fast PFNET algorithm&lt;/a&gt;,
-I needed to find a way to create a random matrix of integers (for
-path weights), with the diagonal being filled with zeroes.  I was
-wondering how best to do that, and started off with two loops, an
-inner one for each row, and an outer one for the full set of rows.
-Then the problem was how to tell the inner loop at what position
-the ‘0’ should be inserted.  I was thinking about passing a row-ID,
-when it suddenly clicked: &lt;code&gt;lists:seq/2&lt;/code&gt; was what I needed!  This
-method, which I previously thought was pretty useless, creates a
-list with a sequence of numbers (the range is specified in the two
-parameters).  For example,&lt;/p&gt;
-
-&lt;pre&gt;
-1&gt; lists:seq(1,4).
-[1,2,3,4]
-2&gt; lists:seq(634,637).    
-[634,635,636,637]
-3&gt; lists:seq(1000,1003).
-[1000,1001,1002,1003]
-&lt;/pre&gt;
-
-&lt;p&gt;Now I would simply generate a list with a number for each row, and
-then send the inner loop off to do its thing, filling the slot given
-by the sequence number with a zero, and others with a random value.&lt;/p&gt;
-
-&lt;p&gt;But now it gets even better.  Using a separate (tail-)recursive
-function for the inner loop didn’t quite seem right, so I thought
-a bit more about it and came to the conclusion that this is simply
-a mapping; mapping an integer to a list (a vector of numbers, one
-of which (given by the integer) is a zero).  So instead of using a
-function for filling the row, I call &lt;code&gt;lists:seq/2&lt;/code&gt; again and then map
-the whole thing.  This is the final version I arrived at, and I’m
-sure it can still be improved upon using list comprehensions:&lt;/p&gt;
-
-&lt;pre&gt;
-random_matrix(Size, MaxVal) -&gt;
-  random:seed(),
-  lists:map(
-    fun(X) -&gt;
-      lists:map(
-          fun(Y) -&gt;
-              case Y of 
-                 X -&gt; 0; 
-                 _ -&gt; random:uniform(MaxVal)
-                 end
-              end,
-          lists:seq(1,Size))
-      end,
-    lists:seq(1,Size)).
-&lt;/pre&gt;
-
-&lt;p&gt;This solution seems to be far more idiomatic, and I am beginning
-to think that I finally no longer think in an imperative way of
-loops, but more in the Erlang-way of list operations.  Initially
-this is hard to achieve, but with any luck it will become a lot
-easier once one is used to it.  Elegance, here I come!&lt;/p&gt;
-
-&lt;p&gt;Example run:&lt;/p&gt;
-
-&lt;pre&gt;
-4&gt; random_matrix(6,7).  
-[[0,1,4,6,7,4],
- [3,0,5,7,5,4],
- [5,1,0,2,5,2],
- [4,2,4,0,3,1],
- [4,4,3,3,0,1],
- [5,7,3,2,2,0]]
-&lt;/pre&gt;
-
-&lt;p&gt;Note: I have used &lt;code&gt;random:seed/0&lt;/code&gt; above, as I am happy for the function
-to return identical matrices on subsequent runs with the same
-parameters. To get truly random results, that would have to be left
-out. However, for my benchmarking purposes it saved me having to
-save the matrix to a file and read it in, as I can easily generate
-a new copy of the same matrix I used before.&lt;/p&gt;
 </description>
     </item>
     
