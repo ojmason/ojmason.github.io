@@ -7,8 +7,48 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
     <copyright>(C) Oliver Mason</copyright>
-    <lastBuildDate>Thu, 11 May 2017 09:27:46 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 23 May 2017 20:14:21 +0100</lastBuildDate>
     <atom:link href="https://ojmason.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Keeping up Motivation</title>
+      <link>https://ojmason.github.io/blog/keeping-up-motivation/</link>
+      <pubDate>Tue, 23 May 2017 20:14:21 +0100</pubDate>
+      
+      <guid>https://ojmason.github.io/blog/keeping-up-motivation/</guid>
+      <description>&lt;p&gt;Last Saturday I took part in our weekly regatta at the sailing club. The first race on a Saturday is an average
+lap time one, where all boats start at the same time, and then sail for an hour. There&amp;rsquo;s a yardstick system to
+work out which boat sailed the fastest, taking into account the inherent speed differential of the different boats.
+I was sailing in a &lt;a href=&#34;https://en.wikipedia.org/wiki/Laser_(dinghy)&#34;&gt;Laser&lt;/a&gt;, which is a medium fast boat given the
+other ones that were participating in this race.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://ojmason.github.io/img/laserracing.jpg&#34; caption=&#34;Saturday Afternoon Racing on Edgbaston Reservoir&#34;/&gt;&lt;/p&gt;
+
+&lt;p&gt;I had a decent start, especially since I&amp;rsquo;m still fairly new to Laser sailing and my boatspeed is not as good as
+it could be yet. And my sail is fairly ancient. But it was nice and breezy, and as the field split into two groups,
+I managed to stay at the top of the slower group (while the much faster dinghies plus our best club Laser sailor
+were disappearing in the distance).&lt;/p&gt;
+
+&lt;p&gt;However, once I got away from the second group I ended up in &amp;lsquo;no man&amp;rsquo;s land&amp;rsquo;, in a zone between the two fields. Not
+really fast enough to catch up with the faster boats, but also far enough away from the rest of the field that I
+lost contact. And the inevitable happened: I lost focus, didn&amp;rsquo;t really have anything to gauge my speed, and ended
+up being caught by the other boats, unable to keep my position.&lt;/p&gt;
+
+&lt;p&gt;In addition to that, I rounded one of the marks the wrong way, so technically sailed the wrong course, and had to
+retire. As I noticed that during the race, I guess that might also have broken my concentration.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;m not quite sure what to do in this situation. I clearly do better if I have something to compare myself to. Maybe
+I should have looked at my watch occasionally to see how long it&amp;rsquo;d take me to do one lap? Of course this doesn&amp;rsquo;t
+work perfectly, as the conditions are different all the time with wind shifts and gusts, but it&amp;rsquo;d give me an idea
+whether I was faster or slower than previously. Maybe it&amp;rsquo;s just lack of awareness of the boats around me &amp;ndash; when
+sailing you need to look at many different things, and it is easy to concentrate too much on the sail settings, but
+then lose sight of the overall picture.&lt;/p&gt;
+
+&lt;p&gt;In general it&amp;rsquo;s always dangerous to try and measure/quantify performance too much, as it&amp;rsquo;s easy to confuse the metric
+with the intended performance. But obviously some of that is necessary just for orientation purposes. If you get lost,
+you lose!&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Mark Rounding</title>
@@ -660,61 +700,6 @@ make maths exciting for kids, practice how to multiply and divide,
 teach problem-solving, and have fun at the same time. And they also
 get a feeling for numbers: 400 million – that’s how many potatoes
 you need for a chip to span the Earth.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Sentence Disambiguation -- Modality to the Rescue!</title>
-      <link>https://ojmason.github.io/blog/sentence-disambiguation----modality-to-the-rescue/</link>
-      <pubDate>Thu, 12 Nov 2009 00:00:00 +0000</pubDate>
-      
-      <guid>https://ojmason.github.io/blog/sentence-disambiguation----modality-to-the-rescue/</guid>
-      <description>&lt;p&gt;I’m currently reading a new book on iPhone development, &lt;a href=&#34;http://www.amazon.co.uk/gp/product/1430224037?ie=UTF8&amp;amp;tag=phrasysnlp-21&amp;amp;linkCode=as2&amp;amp;camp=1634&amp;amp;creative=6738&amp;amp;creativeASIN=1430224037&#34;&gt;&lt;em&gt;iPhone
-Advanced Projects&lt;/em&gt;&lt;/a&gt;
- by Apress. I will probably talk about that book
-in a later post, but today I will just focus on one sentence I came
-across on page 212:&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;I also adore the capability that I have to flag articles from folks I follow on Twitter and save them to Instapaper.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;This sentence has (at least) two readings, which are probably only
-obvious to a linguist (and who else would care?); I highlight the
-differences by adding commas:&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;I adore the capability, that I have to flag articles…&lt;/li&gt;
-&lt;li&gt;I adore the capability that I have, to flag articles…&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;In the first case you adore the capability. And the capability is
-that you have to do something (flag articles). Sounds rather odd,
-doesn’t it? The second case is more clear-cut and easy to understand:
-you can flag articles, and that’s the capability you have and adore.&lt;/p&gt;
-
-&lt;p&gt;So in terms of &lt;a href=&#34;https://en.wikipedia.org/wiki/Pattern_grammar&#34;&gt;pattern grammar&lt;/a&gt;,
-you’re either looking at &lt;em&gt;N that&lt;/em&gt; or
-&lt;em&gt;N &lt;em&gt;to&lt;/em&gt;-inf&lt;/em&gt; with &lt;em&gt;capability&lt;/em&gt;. If you consult the &lt;a href=&#34;http://www.amazon.co.uk/gp/product/1424008255?ie=UTF8&amp;amp;tag=phrasysnlp-21&amp;amp;linkCode=as2&amp;amp;camp=1634&amp;amp;creative=6738&amp;amp;creativeASIN=1424008255&#34;&gt;Cobuild Dictionary&lt;/a&gt;,
-you’ll find that &lt;em&gt;capability&lt;/em&gt; only occurs with the second pattern,
-the &lt;em&gt;to&lt;/em&gt;-infinitive, so that you can rule out the first reading.&lt;/p&gt;
-
-&lt;p&gt;Another possibility would be to look at it in terms of &lt;a href=&#34;http://en.wikipedia.org/wiki/English_modal_auxiliary_verb&#34;&gt;modality&lt;/a&gt;:
-here we could argue that &lt;em&gt;capability&lt;/em&gt; prospects a modality of ability,
-but &lt;em&gt;have to&lt;/em&gt; expresses obligation; the two don’t go together. Hence
-the first reading sounds odd, as a capability does not usually force
-you to do anything, but rather enables you. It could, however, be
-used to signal sarcasm or irony, as in (the obviously made up) &lt;em&gt;I
-really like that my new computer gives me the capability to have
-to save my work every five minutes&lt;/em&gt;. This is clearly an odd sentence,
-suggesting that modality works along similar lines as &lt;a href=&#34;http://en.wikipedia.org/wiki/Discourse_prosody&#34;&gt;discourse
-prosody&lt;/a&gt; as described by Louw (1993) [for the full reference follow
-the previous link].&lt;/p&gt;
-
-&lt;p&gt;Here we have discussed two ways of disambiguating a sentence, one
-based on grammatical properties (or typical environments), and one
-on a non-syntactic phenomenon (modality). Pattern grammar allows
-us to identify what the typical usage would be, whereas modality
-explains to us why the first reading is at odds with the corresponding
-words. Now all we need is a ‘pattern grammar’ for modality!&lt;/p&gt;
 </description>
     </item>
     

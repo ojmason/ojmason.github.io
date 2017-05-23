@@ -7,8 +7,48 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
     <copyright>(C) Oliver Mason</copyright>
-    <lastBuildDate>Thu, 11 May 2017 09:27:46 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 23 May 2017 20:14:21 +0100</lastBuildDate>
     <atom:link href="https://ojmason.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Keeping up Motivation</title>
+      <link>https://ojmason.github.io/blog/keeping-up-motivation/</link>
+      <pubDate>Tue, 23 May 2017 20:14:21 +0100</pubDate>
+      
+      <guid>https://ojmason.github.io/blog/keeping-up-motivation/</guid>
+      <description>&lt;p&gt;Last Saturday I took part in our weekly regatta at the sailing club. The first race on a Saturday is an average
+lap time one, where all boats start at the same time, and then sail for an hour. There&amp;rsquo;s a yardstick system to
+work out which boat sailed the fastest, taking into account the inherent speed differential of the different boats.
+I was sailing in a &lt;a href=&#34;https://en.wikipedia.org/wiki/Laser_(dinghy)&#34;&gt;Laser&lt;/a&gt;, which is a medium fast boat given the
+other ones that were participating in this race.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://ojmason.github.io/img/laserracing.jpg&#34; caption=&#34;Saturday Afternoon Racing on Edgbaston Reservoir&#34;/&gt;&lt;/p&gt;
+
+&lt;p&gt;I had a decent start, especially since I&amp;rsquo;m still fairly new to Laser sailing and my boatspeed is not as good as
+it could be yet. And my sail is fairly ancient. But it was nice and breezy, and as the field split into two groups,
+I managed to stay at the top of the slower group (while the much faster dinghies plus our best club Laser sailor
+were disappearing in the distance).&lt;/p&gt;
+
+&lt;p&gt;However, once I got away from the second group I ended up in &amp;lsquo;no man&amp;rsquo;s land&amp;rsquo;, in a zone between the two fields. Not
+really fast enough to catch up with the faster boats, but also far enough away from the rest of the field that I
+lost contact. And the inevitable happened: I lost focus, didn&amp;rsquo;t really have anything to gauge my speed, and ended
+up being caught by the other boats, unable to keep my position.&lt;/p&gt;
+
+&lt;p&gt;In addition to that, I rounded one of the marks the wrong way, so technically sailed the wrong course, and had to
+retire. As I noticed that during the race, I guess that might also have broken my concentration.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;m not quite sure what to do in this situation. I clearly do better if I have something to compare myself to. Maybe
+I should have looked at my watch occasionally to see how long it&amp;rsquo;d take me to do one lap? Of course this doesn&amp;rsquo;t
+work perfectly, as the conditions are different all the time with wind shifts and gusts, but it&amp;rsquo;d give me an idea
+whether I was faster or slower than previously. Maybe it&amp;rsquo;s just lack of awareness of the boats around me &amp;ndash; when
+sailing you need to look at many different things, and it is easy to concentrate too much on the sail settings, but
+then lose sight of the overall picture.&lt;/p&gt;
+
+&lt;p&gt;In general it&amp;rsquo;s always dangerous to try and measure/quantify performance too much, as it&amp;rsquo;s easy to confuse the metric
+with the intended performance. But obviously some of that is necessary just for orientation purposes. If you get lost,
+you lose!&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Mark Rounding</title>
@@ -787,90 +827,6 @@ at all.&lt;/p&gt;
 &lt;dt&gt;Firth, J. R. (1957)&lt;/dt&gt;
 &lt;dd&gt;“A Synopsis of Linguistic Theory 1930-1955” in Studies in Linguistic Analysis, Oxford: Philological Society.&lt;/dd&gt;
 &lt;/dl&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Thinking Erlang, or Creating a Random Matrix without Loops</title>
-      <link>https://ojmason.github.io/blog/thinking-erlang-or-creating-a-random-matrix-without-loops/</link>
-      <pubDate>Thu, 26 Feb 2009 00:00:00 +0000</pubDate>
-      
-      <guid>https://ojmason.github.io/blog/thinking-erlang-or-creating-a-random-matrix-without-loops/</guid>
-      <description>&lt;p&gt;For a project, my &lt;a href=&#34;https://ojmason.github.io/blog/fast-pfnets-in-erlang/&#34;&gt;Erlang implementation of a fast PFNET algorithm&lt;/a&gt;,
-I needed to find a way to create a random matrix of integers (for
-path weights), with the diagonal being filled with zeroes.  I was
-wondering how best to do that, and started off with two loops, an
-inner one for each row, and an outer one for the full set of rows.
-Then the problem was how to tell the inner loop at what position
-the ‘0’ should be inserted.  I was thinking about passing a row-ID,
-when it suddenly clicked: &lt;code&gt;lists:seq/2&lt;/code&gt; was what I needed!  This
-method, which I previously thought was pretty useless, creates a
-list with a sequence of numbers (the range is specified in the two
-parameters).  For example,&lt;/p&gt;
-
-&lt;pre&gt;
-1&gt; lists:seq(1,4).
-[1,2,3,4]
-2&gt; lists:seq(634,637).    
-[634,635,636,637]
-3&gt; lists:seq(1000,1003).
-[1000,1001,1002,1003]
-&lt;/pre&gt;
-
-&lt;p&gt;Now I would simply generate a list with a number for each row, and
-then send the inner loop off to do its thing, filling the slot given
-by the sequence number with a zero, and others with a random value.&lt;/p&gt;
-
-&lt;p&gt;But now it gets even better.  Using a separate (tail-)recursive
-function for the inner loop didn’t quite seem right, so I thought
-a bit more about it and came to the conclusion that this is simply
-a mapping; mapping an integer to a list (a vector of numbers, one
-of which (given by the integer) is a zero).  So instead of using a
-function for filling the row, I call &lt;code&gt;lists:seq/2&lt;/code&gt; again and then map
-the whole thing.  This is the final version I arrived at, and I’m
-sure it can still be improved upon using list comprehensions:&lt;/p&gt;
-
-&lt;pre&gt;
-random_matrix(Size, MaxVal) -&gt;
-  random:seed(),
-  lists:map(
-    fun(X) -&gt;
-      lists:map(
-          fun(Y) -&gt;
-              case Y of 
-                 X -&gt; 0; 
-                 _ -&gt; random:uniform(MaxVal)
-                 end
-              end,
-          lists:seq(1,Size))
-      end,
-    lists:seq(1,Size)).
-&lt;/pre&gt;
-
-&lt;p&gt;This solution seems to be far more idiomatic, and I am beginning
-to think that I finally no longer think in an imperative way of
-loops, but more in the Erlang-way of list operations.  Initially
-this is hard to achieve, but with any luck it will become a lot
-easier once one is used to it.  Elegance, here I come!&lt;/p&gt;
-
-&lt;p&gt;Example run:&lt;/p&gt;
-
-&lt;pre&gt;
-4&gt; random_matrix(6,7).  
-[[0,1,4,6,7,4],
- [3,0,5,7,5,4],
- [5,1,0,2,5,2],
- [4,2,4,0,3,1],
- [4,4,3,3,0,1],
- [5,7,3,2,2,0]]
-&lt;/pre&gt;
-
-&lt;p&gt;Note: I have used &lt;code&gt;random:seed/0&lt;/code&gt; above, as I am happy for the function
-to return identical matrices on subsequent runs with the same
-parameters. To get truly random results, that would have to be left
-out. However, for my benchmarking purposes it saved me having to
-save the matrix to a file and read it in, as I can easily generate
-a new copy of the same matrix I used before.&lt;/p&gt;
 </description>
     </item>
     
