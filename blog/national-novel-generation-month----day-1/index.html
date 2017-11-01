@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+
+
+
+<meta property="twitter:site" content="@ojmason">
+
+<meta property="twitter:card" content="summary">
+<meta property="twitter:title" content="National Novel Generation Month -- Day 1">
+
+<meta property="twitter:image" content="https://ojmason.github.io//img/cave.jpg">
+
+<meta property="twitter:description" content="Once upon a time...">
+
+<title>
+
+
+     Arguable Intelligence - National Novel Generation Month -- Day 1 
+
+</title>
+<link rel="canonical" href="https://ojmason.github.io/blog/national-novel-generation-month----day-1/">
+
+
+<link rel="stylesheet" href="https://ojmason.github.io/css/main.v0.9.1.css">
+<link rel="stylesheet" href="https://ojmason.github.io/css/ionicons.min.css">
+
+
+
+
+
+
+
+
+<link rel="shortcut icon"
+
+    href="https://ojmason.github.io/img/favicon.ico"
+
+>
+
+
+
+
+</head>
+
+
+<body>
+
+
+<section class="header">
+
+    <div class="container">
+        <a href="https://ojmason.github.io/"><img class="logo" src="https://ojmason.github.io/img/cave.jpg" alt="logo" /></a>
+        <div class="content">
+            <a href="https://ojmason.github.io/"><div class="name"><h1>Arguable Intelligence</h1></div></a>
+            <nav>
+                <ul>
+                    
+                        <a href="https://ojmason.github.io/blog/"><li>Blog</li></a>
+                    
+                    
+                        
+                    
+                        
+                            
+                        
+                    
+                    
+                        
+                    
+                        
+                            <a href="https://ojmason.github.io/about/"><li>about me</li></a>
+                        
+                    
+                </ul>
+            </nav>
+        </div>
+    </div>
+</section>
+
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
+        <div class="content">
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    National Novel Generation Month -- Day 1
+
+</div>
+
+                </div>
+                <div class="meta">
+                    <div class="date" title="Wed, Nov 1, 2017 22:29:36 GMT">Wed, Nov 1, 2017</div>
+                    <div class="reading-time"><div class="middot"></div>2 minutes read</div>
+                </div>
+            </div>
+            <div class="markdown">
+                
+    <p>I have this year finally managed to have a go at NaNoGenMo, the attempt to write code to generate a novel, in analogy
+to NaNoWriMo, where people try to actually write a novel themselves (which sounds like rather a lot of hard
+work). Instead, I will instruct the computer to do it for me.</p>
+
+<p>My approach will consist of various stages, and at the top level I am planning to generate a broad and abstract
+sequence of events that will be fleshed out in subsequent stages. I have chosen the framework of
+<a href="https://en.wikipedia.org/wiki/Vladimir_Propp">Vladimir Propp</a>, who analysed Russian folk tales and came up with
+a list of 31 <em>narrative functions</em>, which can be grouped into four distinct sections. I&rsquo;m generating a list of
+sections, where each section can have up to four functions, and then I pick the appropriate number of functions
+randomly from the list of functions for each section.</p>
+
+<p>There are some constraints, so you cannot have a <em>return</em> unless you also had a <em>departure</em> beforehand. I have
+implemented a very simple routine which churns out sequences that fulfil their constraints. Quite primitive at
+the moment, but perhaps a starting point.</p>
+
+<p>Some example outputs (for their meaning see the Wikipedia link above) are:</p>
+
+<ul>
+<li><p>(complicity trickery departure departure villany first-donor-func hero-reaction wedding pursuit)<br />
+This is a bit weird, as there are two departures (but they could be different people), and after
+the <em>wedding</em> there is a <em>pursuit</em>, so the hero is chased away by a villain after he got married
+and rewarded/promoted. Strange, but perhaps leading to an interesting story!</p></li>
+
+<li><p>(interdiction trickery interdiction trickery departure departure departure first-donor-func struggle struggle transfiguration difficult-task)<br />
+Here the hero gets a warning/command twice, and each time a villain attempts some deception. This time,
+<em>three</em> people leave (I think that needs to be cut down to single occurrence only!) and a lot of fighting
+is happening.</p></li>
+</ul>
+
+<p>Thing is, I can imagine writing a story around those functions. The
+challenge is to see if the computer can do that, too. Still early
+days.  The main concern with this whole thing is that the generated
+novel will either be trivial and boring, or non-sensical and
+incoherent. Probably even both. I am under no illusions that the final result will be worthwhile
+reading; but I will only find out at the end!</p>
+
+
+                <br>
+                <p><a href="https://ojmason.github.io/blog">Back to posts</a></p>
+            </div>
+            <br>
+            <div class="disqus">
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="footer">
+    <div class="container">
+        <div class="copyright">
+
+        
+            <a href="https://ojmason.github.io/license">(C) Oliver Mason</a>
+        
+
+        </div>
+        <div class="icons">
+
+        
+
+        
+            <a href="https://twitter.com/ojmason" target="_blank">
+                <i class="icon ion-social-twitter" title="twitter"></i>
+            </a>
+        
+
+        
+
+        
+
+        
+            <a href="https://ojmason.github.io/index.xml">
+                <i class="icon ion-social-rss larger" title="rss"></i>
+            </a>
+        
+
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<script>
+  window.onload = function() {
+    
+    
+  };
+</script>
+
+</body>
+</html>
+
