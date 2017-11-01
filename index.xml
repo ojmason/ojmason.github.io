@@ -7,8 +7,87 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
     <copyright>(C) Oliver Mason</copyright>
-    <lastBuildDate>Tue, 23 May 2017 20:14:21 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 01 Nov 2017 22:29:36 +0000</lastBuildDate>
     <atom:link href="https://ojmason.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>National Novel Generation Month -- Day 1</title>
+      <link>https://ojmason.github.io/blog/national-novel-generation-month----day-1/</link>
+      <pubDate>Wed, 01 Nov 2017 22:29:36 +0000</pubDate>
+      
+      <guid>https://ojmason.github.io/blog/national-novel-generation-month----day-1/</guid>
+      <description>&lt;p&gt;I have this year finally managed to have a go at NaNoGenMo, the attempt to write code to generate a novel, in analogy
+to NaNoWriMo, where people try to actually write a novel themselves (which sounds like rather a lot of hard
+work). Instead, I will instruct the computer to do it for me.&lt;/p&gt;
+
+&lt;p&gt;My approach will consist of various stages, and at the top level I am planning to generate a broad and abstract
+sequence of events that will be fleshed out in subsequent stages. I have chosen the framework of
+&lt;a href=&#34;https://en.wikipedia.org/wiki/Vladimir_Propp&#34;&gt;Vladimir Propp&lt;/a&gt;, who analysed Russian folk tales and came up with
+a list of 31 &lt;em&gt;narrative functions&lt;/em&gt;, which can be grouped into four distinct sections. I&amp;rsquo;m generating a list of
+sections, where each section can have up to four functions, and then I pick the appropriate number of functions
+randomly from the list of functions for each section.&lt;/p&gt;
+
+&lt;p&gt;There are some constraints, so you cannot have a &lt;em&gt;return&lt;/em&gt; unless you also had a &lt;em&gt;departure&lt;/em&gt; beforehand. I have
+implemented a very simple routine which churns out sequences that fulfil their constraints. Quite primitive at
+the moment, but perhaps a starting point.&lt;/p&gt;
+
+&lt;p&gt;Some example outputs (for their meaning see the Wikipedia link above) are:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;(complicity trickery departure departure villany first-donor-func hero-reaction wedding pursuit)&lt;br /&gt;
+This is a bit weird, as there are two departures (but they could be different people), and after
+the &lt;em&gt;wedding&lt;/em&gt; there is a &lt;em&gt;pursuit&lt;/em&gt;, so the hero is chased away by a villain after he got married
+and rewarded/promoted. Strange, but perhaps leading to an interesting story!&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;(interdiction trickery interdiction trickery departure departure departure first-donor-func struggle struggle transfiguration difficult-task)&lt;br /&gt;
+Here the hero gets a warning/command twice, and each time a villain attempts some deception. This time,
+&lt;em&gt;three&lt;/em&gt; people leave (I think that needs to be cut down to single occurrence only!) and a lot of fighting
+is happening.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Thing is, I can imagine writing a story around those functions. The
+challenge is to see if the computer can do that, too. Still early
+days.  The main concern with this whole thing is that the generated
+novel will either be trivial and boring, or non-sensical and
+incoherent. Probably even both. I am under no illusions that the final result will be worthwhile
+reading; but I will only find out at the end!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Constitutional Failure</title>
+      <link>https://ojmason.github.io/blog/constitutional-failure/</link>
+      <pubDate>Wed, 16 Aug 2017 16:02:02 +0100</pubDate>
+      
+      <guid>https://ojmason.github.io/blog/constitutional-failure/</guid>
+      <description>&lt;p&gt;Leaving aside that Brexit is a political disaster in itself, the way the UK got into it
+shows a deeper failure of the political system: a lack of resilience to catastrophic events.
+The term &amp;ldquo;catastrophic&amp;rdquo; is here meant in the sense of &amp;ldquo;some event that causes enormous change
+(usually bad)&amp;ldquo;, though in my view Brexit is a catastrophe in the other, main sense as well.&lt;/p&gt;
+
+&lt;p&gt;A constitutional system should protect the state from radical change. The Weimar Republic failed,
+as its constitution was not able to prevent the rise of fascism and its own abolition by an elected
+government. The current German constitution requires a much bigger majority for any changes to the constitution
+itself as a consequence: no more simple majorities that can empower a dictatorship as happened in 1933.
+And the current chancellor cannot be voted out unless another candidate has a majority, another lesson
+learned from 1933, where the democratic centre got squeezed from the extreme left and right wings, robbing
+it of a majority without providing a positive alternative.&lt;/p&gt;
+
+&lt;p&gt;The American system is currently being tested on the powers of the president. It was fine for the president
+to make decisions by decree against the majority in the elected chambers as long as it was the good guy Obama;
+but now Trump is in power, he can use the same powers to do things we don&amp;rsquo;t like. As Dan Carlin says in his
+&lt;em&gt;Common Sense&lt;/em&gt; podcast, you want to be careful with who gets the power in case the people in charge change.&lt;/p&gt;
+
+&lt;p&gt;The British system failed, as a purely advisory referendum which arguably had no real majority in the population
+and was called for no particular reason apart from appeasing a backbench group in a political party suddenly
+became taken for granted, with enormous consequences for the economy and the political system of the country.
+Regardless how it pans out, it will have caused great damage to the economy and the political status of the UK,
+and will have wasted huge amounts of civil servants&amp;rsquo; time in trying to deal with re-writing four decades of laws
+and regulations.&lt;/p&gt;
+
+&lt;p&gt;If the UK had a functioning constitution, a decision of this enormity could not happen with a majority of just 1.5%.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Keeping up Motivation</title>
@@ -579,127 +658,6 @@ if I can get Xcode to run them automatically after each compilation…&lt;/li&gt
 
 &lt;p&gt;&lt;em&gt;Update&lt;/em&gt;: Since I stopped doing much iOS or Mac OS work, I no longer used Xcode.
 And I&amp;rsquo;m not missing it :)&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Numerical Illiteracy</title>
-      <link>https://ojmason.github.io/blog/numerical-illiteracy/</link>
-      <pubDate>Sun, 30 Jan 2011 00:00:00 +0000</pubDate>
-      
-      <guid>https://ojmason.github.io/blog/numerical-illiteracy/</guid>
-      <description>&lt;p&gt;&lt;em&gt;Note:&lt;/em&gt; This is an older article from the blog I ran while being an academic. Most of the posts
-on there are about teaching and learning, but this one is of more general relevance, see also
-&lt;a href=&#34;https://ojmason.github.io/longest-chip-in-the-world/&#34;&gt;this one&lt;/a&gt;.
-&lt;hr&gt;
-I had a look at our free local newspaper, the &lt;em&gt;Birmingham Mail Extra&lt;/em&gt;.
-In this issue is an article titled &amp;ldquo;Suburb is now crime hotspot&amp;rdquo;.
-This article has several problems, which are indicative of the
-problems of representing what happens &amp;lsquo;out there&amp;rsquo; in the form of a
-newspaper article.&lt;/p&gt;
-
-&lt;p&gt;Quinton had very little burglaries, &amp;ldquo;averaging just one or two
-burglaries a month&amp;rdquo; over the last nine years. But now, crime has
-&amp;ldquo;shot up by 29%&amp;rdquo;, more than the rest of Birmingham where crime only
-rose by 21%.&lt;/p&gt;
-
-&lt;p&gt;I find this rather misleading, and I worked through an example with
-the kids at the dinner table, which illustrates the problem:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Suburb A had 10 burglaries in 2009, and 12 in 2010. That is an increase of 20%.&lt;/li&gt;
-&lt;li&gt;Suburb B had 4 burglaries in 2009, and 5 in 2010. Increase of 25%.&lt;/li&gt;
-&lt;li&gt;Suburb C had 1 burglary in 2009, and 2 in 2010. A whopping 100% increase.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;em&gt;First lesson:&lt;/em&gt; percentage increase is meaningless unless everybody
-started in the same place. Why do developing economies have higher
-growth rates than Europe and the US? Because the percentage looks
-bigger. If you double your output from 100 cars to 200 cars you
-increase by 100%, but to maintain that rate you will have to produce
-an additional 200 cars the year after, and then 400, 800 etc.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Second lesson:&lt;/em&gt; without a fixed reference point (such as burglaries
-per 1000 inhabitants) you have no idea whether the risk of your
-house being burgled is high or low. Everything is relative, but you
-still need a fixed point to evaluate things.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Third lesson:&lt;/em&gt; this is not mentioned, but is that difference between
-29% and 21% statistically significant? With &amp;ldquo;one or two burglaries
-a month&amp;rdquo;, the variation seems rather high, given those small numbers.
-So if there was one extra or one fewer burglaries, how would the
-29% change?&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Final lesson:&lt;/em&gt; be careful with calling places &amp;ldquo;crime hotspot&amp;rdquo; when
-your statistics are that shaky.&lt;/p&gt;
-
-&lt;p&gt;Now I don&amp;rsquo;t expect a staff reporter at the &lt;em&gt;Birmingham Mail&lt;/em&gt; to apply
-the same rigour as a scientist (or any other, non-science researcher),
-but the way the article is presented is simply misleading. To me
-this sounds like a scare story being created out of some random
-statistics. I don&amp;rsquo;t know whether that is the case, and maybe Quinton
-is really a crime-ridden area, but I cannot tell from the few facts
-given to me in the article. The reason for this development given
-in the paper is that there are now 5 fewer policemen covering
-Quinton. Is there really such a cast-iron correlation between
-policemen and crime rate? How about the influence of the recession
-on crime? And how many policemen were there before the cut? 50? 500?
-5000?&lt;/p&gt;
-
-&lt;p&gt;I now have more questions and know less than I did before reading
-that article!&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>The longest Chip in the World</title>
-      <link>https://ojmason.github.io/blog/the-longest-chip-in-the-world/</link>
-      <pubDate>Sat, 18 Dec 2010 00:00:00 +0000</pubDate>
-      
-      <guid>https://ojmason.github.io/blog/the-longest-chip-in-the-world/</guid>
-      <description>&lt;p&gt;In his &lt;a href=&#34;http://www.amazon.co.uk/gp/product/0465045669?ie=UTF8&amp;amp;tag=phrasysnlp-21&amp;amp;linkCode=as2&amp;amp;camp=1634&amp;amp;creative=19450&amp;amp;creativeASIN=0465045669&#34;&gt;Metamagical Themas: Questing for the Essence of Mind and
-Pattern&lt;/a&gt;,
-Douglas Hofstadter talks about &lt;em&gt;numerical literacy&lt;/em&gt;, the
-ability to understand large numbers. This is especially important
-when state budgets are thrown around which deal with billions of
-pounds or euros. At some point you just lose all feeling for
-quantities, as they are all so unimaginably large and abstract. He
-then goes on to pose some rough calculation questions, such as “How
-many cigarettes are smoked in the US every day?” – you start with
-some estimates, and then work out an answer, which might be near
-the order of magnitude of the right answer (which we of course don’t
-know). Quite an interesting and useful mental exercise.&lt;/p&gt;
-
-&lt;p&gt;Yesterday we had Fish &amp;amp; Chips for dinner. The girls were comparing
-the sizes of their chips, and then we came on to the topic of the
-longest chip in the world. Obviously, with ‘proper’ chips this is
-limited by the &lt;a href=&#34;http://www.france-today.com/2009/12/longest-chip-in-world-isof-course.html&#34;&gt;size of the source potato&lt;/a&gt;.
-However, assuming that industrially
-produced chips are made of mashed potato formed into chip-shapes,
-there is not really any fixed limit on the length. So, thinking
-of Hofstadter, I asked them how many potatoes we would need to make
-a chip that spans around the whole world.&lt;/p&gt;
-
-&lt;p&gt;Rough assumptions: one potato contains enough matter to produce
-10cm worth of chip (the thickness is not specified). So, how many
-potatoes do we need for one metre of chip? This is also useful to
-practice basic primary-school-level maths… – 10. How many for a
-kilometre? 10,000. How many kilometres do we need to span the world?
-Roughly 40,000 km. So how many potatoes do we need? 400 million.&lt;/p&gt;
-
-&lt;p&gt;The next question is whether there are enough potatoes in the world
-to do this. Assuming a potato weighs 100g, how much do our 400
-million potatoes weigh? 40 million kilogrammes, or 40,000 (metric)
-tons. What is the world’s potato production? According to &lt;a href=&#34;http://en.wikipedia.org/wiki/Potato&#34;&gt;Wikipedia&lt;/a&gt;,
-this is 315 million metric tons, so plenty enough. Now, if we were
-to turn the annual potato crop into one long chip, how many times
-would it go round the Earth? 7,875 times.&lt;/p&gt;
-
-&lt;p&gt;So, with a bit of basic maths (and Wikipedia for the data) you can
-make maths exciting for kids, practice how to multiply and divide,
-teach problem-solving, and have fun at the same time. And they also
-get a feeling for numbers: 400 million – that’s how many potatoes
-you need for a chip to span the Earth.&lt;/p&gt;
 </description>
     </item>
     
