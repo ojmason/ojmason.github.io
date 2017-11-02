@@ -10,6 +10,60 @@
     <atom:link href="https://ojmason.github.io/tags/nanogenmo/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>National Novel Generation Month -- Day 2</title>
+      <link>https://ojmason.github.io/blog/national-novel-generation-month----day-2/</link>
+      <pubDate>Thu, 02 Nov 2017 23:08:09 +0000</pubDate>
+      
+      <guid>https://ojmason.github.io/blog/national-novel-generation-month----day-2/</guid>
+      <description>&lt;p&gt;Today was more of a research day, apart from some refactoring of yesterday&amp;rsquo;s work. Spent ages trying
+to track down an error, which turned out to be one missing level of brackets in a data file. Oh well,
+at least I&amp;rsquo;m getting used to debugging Scheme code now (I&amp;rsquo;m using guile to develop this system).&lt;/p&gt;
+
+&lt;p&gt;To turn the basic plot into a story, I need to turn the Proppian functions into actions. So I&amp;rsquo;m thinking
+of a way of annotating them with what essentially happens in each function. This can be a conceptual
+dependency-style structure, but possibly also using some higher level commands than just the basic
+primitives that Schank et al used in their work. These would later be expanded into such primitives to
+be fed into the language generator at the end.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ve also compiled an initial list of &lt;em&gt;aims&lt;/em&gt;, which will drive what the characters will be doing. These
+are for example&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;go to location&lt;/li&gt;
+&lt;li&gt;go to person&lt;/li&gt;
+&lt;li&gt;acquire object&lt;/li&gt;
+&lt;li&gt;deliver object&lt;/li&gt;
+&lt;li&gt;acquire information&lt;/li&gt;
+&lt;li&gt;defeat person&lt;/li&gt;
+&lt;li&gt;destroy object&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;So the Propp function &lt;em&gt;departure&lt;/em&gt; maps onto giving the hero the aim &lt;em&gt;go to location&lt;/em&gt;. What that location is,
+remains to be seen. It could be the location where a person or object can be found. Whereas &lt;em&gt;reconnaissance&lt;/em&gt;
+gives the villain the aim &lt;em&gt;acquire information&lt;/em&gt;. There will be different ways to achieve these aims, which
+will involve sub-aims, and hopefully enough variation to generate plenty of different stories.&lt;/p&gt;
+
+&lt;p&gt;Thinking about characters, I&amp;rsquo;ve been looking at emotions. Emotions will determine how characters react, though
+I have as yet no clue how that would work. I&amp;rsquo;ve come across a scheme by Robert Plutchnik
+&lt;a href=&#34;https://en.wikipedia.org/wiki/Robert_Plutchnik&#34;&gt;Robert Plutchnik&lt;/a&gt;, which uses eight basic emotions, where two
+are paired as counterparts:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Trust - Disgust&lt;/li&gt;
+&lt;li&gt;Fear - Anger&lt;/li&gt;
+&lt;li&gt;Sadness - Joy&lt;/li&gt;
+&lt;li&gt;Surprise - Anticipation&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;There would be a scale (-10 to +10 or so), so an emotion item would be a list of four numbers. A character
+will have a basic emotional state, but would also have emotion items describing the relationship with other characters.
+The states are variable, so if character A is angry, and meets character B, towards whome they feel joy, then they
+might become less angry. Obviously a very simplistic way to model something as complicated as human emotions,
+but the perfect is the enemy of the good. Especially if you only have one month!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>National Novel Generation Month -- Day 1</title>
       <link>https://ojmason.github.io/blog/national-novel-generation-month----day-1/</link>
       <pubDate>Wed, 01 Nov 2017 22:29:36 +0000</pubDate>

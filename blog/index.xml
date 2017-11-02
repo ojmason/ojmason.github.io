@@ -7,8 +7,62 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
     <copyright>(C) Oliver Mason</copyright>
-    <lastBuildDate>Wed, 01 Nov 2017 22:29:36 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 02 Nov 2017 23:08:09 +0000</lastBuildDate>
     <atom:link href="https://ojmason.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>National Novel Generation Month -- Day 2</title>
+      <link>https://ojmason.github.io/blog/national-novel-generation-month----day-2/</link>
+      <pubDate>Thu, 02 Nov 2017 23:08:09 +0000</pubDate>
+      
+      <guid>https://ojmason.github.io/blog/national-novel-generation-month----day-2/</guid>
+      <description>&lt;p&gt;Today was more of a research day, apart from some refactoring of yesterday&amp;rsquo;s work. Spent ages trying
+to track down an error, which turned out to be one missing level of brackets in a data file. Oh well,
+at least I&amp;rsquo;m getting used to debugging Scheme code now (I&amp;rsquo;m using guile to develop this system).&lt;/p&gt;
+
+&lt;p&gt;To turn the basic plot into a story, I need to turn the Proppian functions into actions. So I&amp;rsquo;m thinking
+of a way of annotating them with what essentially happens in each function. This can be a conceptual
+dependency-style structure, but possibly also using some higher level commands than just the basic
+primitives that Schank et al used in their work. These would later be expanded into such primitives to
+be fed into the language generator at the end.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ve also compiled an initial list of &lt;em&gt;aims&lt;/em&gt;, which will drive what the characters will be doing. These
+are for example&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;go to location&lt;/li&gt;
+&lt;li&gt;go to person&lt;/li&gt;
+&lt;li&gt;acquire object&lt;/li&gt;
+&lt;li&gt;deliver object&lt;/li&gt;
+&lt;li&gt;acquire information&lt;/li&gt;
+&lt;li&gt;defeat person&lt;/li&gt;
+&lt;li&gt;destroy object&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;So the Propp function &lt;em&gt;departure&lt;/em&gt; maps onto giving the hero the aim &lt;em&gt;go to location&lt;/em&gt;. What that location is,
+remains to be seen. It could be the location where a person or object can be found. Whereas &lt;em&gt;reconnaissance&lt;/em&gt;
+gives the villain the aim &lt;em&gt;acquire information&lt;/em&gt;. There will be different ways to achieve these aims, which
+will involve sub-aims, and hopefully enough variation to generate plenty of different stories.&lt;/p&gt;
+
+&lt;p&gt;Thinking about characters, I&amp;rsquo;ve been looking at emotions. Emotions will determine how characters react, though
+I have as yet no clue how that would work. I&amp;rsquo;ve come across a scheme by Robert Plutchnik
+&lt;a href=&#34;https://en.wikipedia.org/wiki/Robert_Plutchnik&#34;&gt;Robert Plutchnik&lt;/a&gt;, which uses eight basic emotions, where two
+are paired as counterparts:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Trust - Disgust&lt;/li&gt;
+&lt;li&gt;Fear - Anger&lt;/li&gt;
+&lt;li&gt;Sadness - Joy&lt;/li&gt;
+&lt;li&gt;Surprise - Anticipation&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;There would be a scale (-10 to +10 or so), so an emotion item would be a list of four numbers. A character
+will have a basic emotional state, but would also have emotion items describing the relationship with other characters.
+The states are variable, so if character A is angry, and meets character B, towards whome they feel joy, then they
+might become less angry. Obviously a very simplistic way to model something as complicated as human emotions,
+but the perfect is the enemy of the good. Especially if you only have one month!&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>National Novel Generation Month -- Day 1</title>
@@ -51,41 +105,6 @@ days.  The main concern with this whole thing is that the generated
 novel will either be trivial and boring, or non-sensical and
 incoherent. Probably even both. I am under no illusions that the final result will be worthwhile
 reading; but I will only find out at the end!&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Constitutional Failure</title>
-      <link>https://ojmason.github.io/blog/constitutional-failure/</link>
-      <pubDate>Wed, 16 Aug 2017 16:02:02 +0100</pubDate>
-      
-      <guid>https://ojmason.github.io/blog/constitutional-failure/</guid>
-      <description>&lt;p&gt;Leaving aside that Brexit is a political disaster in itself, the way the UK got into it
-shows a deeper failure of the political system: a lack of resilience to catastrophic events.
-The term &amp;ldquo;catastrophic&amp;rdquo; is here meant in the sense of &amp;ldquo;some event that causes enormous change
-(usually bad)&amp;ldquo;, though in my view Brexit is a catastrophe in the other, main sense as well.&lt;/p&gt;
-
-&lt;p&gt;A constitutional system should protect the state from radical change. The Weimar Republic failed,
-as its constitution was not able to prevent the rise of fascism and its own abolition by an elected
-government. The current German constitution requires a much bigger majority for any changes to the constitution
-itself as a consequence: no more simple majorities that can empower a dictatorship as happened in 1933.
-And the current chancellor cannot be voted out unless another candidate has a majority, another lesson
-learned from 1933, where the democratic centre got squeezed from the extreme left and right wings, robbing
-it of a majority without providing a positive alternative.&lt;/p&gt;
-
-&lt;p&gt;The American system is currently being tested on the powers of the president. It was fine for the president
-to make decisions by decree against the majority in the elected chambers as long as it was the good guy Obama;
-but now Trump is in power, he can use the same powers to do things we don&amp;rsquo;t like. As Dan Carlin says in his
-&lt;em&gt;Common Sense&lt;/em&gt; podcast, you want to be careful with who gets the power in case the people in charge change.&lt;/p&gt;
-
-&lt;p&gt;The British system failed, as a purely advisory referendum which arguably had no real majority in the population
-and was called for no particular reason apart from appeasing a backbench group in a political party suddenly
-became taken for granted, with enormous consequences for the economy and the political system of the country.
-Regardless how it pans out, it will have caused great damage to the economy and the political status of the UK,
-and will have wasted huge amounts of civil servants&amp;rsquo; time in trying to deal with re-writing four decades of laws
-and regulations.&lt;/p&gt;
-
-&lt;p&gt;If the UK had a functioning constitution, a decision of this enormity could not happen with a majority of just 1.5%.&lt;/p&gt;
 </description>
     </item>
     

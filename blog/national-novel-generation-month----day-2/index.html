@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+
+
+
+<meta property="twitter:site" content="@ojmason">
+
+<meta property="twitter:card" content="summary">
+<meta property="twitter:title" content="National Novel Generation Month -- Day 2">
+
+<meta property="twitter:image" content="https://ojmason.github.io/img/cave.jpg">
+
+<meta property="twitter:description" content="Once upon a time...">
+
+<title>
+
+
+     Arguable Intelligence - National Novel Generation Month -- Day 2 
+
+</title>
+<link rel="canonical" href="https://ojmason.github.io/blog/national-novel-generation-month----day-2/">
+
+
+<link rel="stylesheet" href="https://ojmason.github.io/css/main.v0.9.1.css">
+<link rel="stylesheet" href="https://ojmason.github.io/css/ionicons.min.css">
+
+
+
+
+
+
+
+
+<link rel="shortcut icon"
+
+    href="https://ojmason.github.io/img/favicon.ico"
+
+>
+
+
+
+
+</head>
+
+
+<body>
+
+
+<section class="header">
+
+    <div class="container">
+        <a href="https://ojmason.github.io/"><img class="logo" src="https://ojmason.github.io/img/cave.jpg" alt="logo" /></a>
+        <div class="content">
+            <a href="https://ojmason.github.io/"><div class="name"><h1>Arguable Intelligence</h1></div></a>
+            <nav>
+                <ul>
+                    
+                        <a href="https://ojmason.github.io/blog/"><li>Blog</li></a>
+                    
+                    
+                        
+                    
+                        
+                            
+                        
+                    
+                    
+                        
+                    
+                        
+                            <a href="https://ojmason.github.io/about/"><li>about me</li></a>
+                        
+                    
+                </ul>
+            </nav>
+        </div>
+    </div>
+</section>
+
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
+        <div class="content">
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    National Novel Generation Month -- Day 2
+
+</div>
+
+                </div>
+                <div class="meta">
+                    <div class="date" title="Thu, Nov 2, 2017 23:08:09 GMT">Thu, Nov 2, 2017</div>
+                    <div class="reading-time"><div class="middot"></div>2 minutes read</div>
+                </div>
+            </div>
+            <div class="markdown">
+                
+    <p>Today was more of a research day, apart from some refactoring of yesterday&rsquo;s work. Spent ages trying
+to track down an error, which turned out to be one missing level of brackets in a data file. Oh well,
+at least I&rsquo;m getting used to debugging Scheme code now (I&rsquo;m using guile to develop this system).</p>
+
+<p>To turn the basic plot into a story, I need to turn the Proppian functions into actions. So I&rsquo;m thinking
+of a way of annotating them with what essentially happens in each function. This can be a conceptual
+dependency-style structure, but possibly also using some higher level commands than just the basic
+primitives that Schank et al used in their work. These would later be expanded into such primitives to
+be fed into the language generator at the end.</p>
+
+<p>I&rsquo;ve also compiled an initial list of <em>aims</em>, which will drive what the characters will be doing. These
+are for example</p>
+
+<ul>
+<li>go to location</li>
+<li>go to person</li>
+<li>acquire object</li>
+<li>deliver object</li>
+<li>acquire information</li>
+<li>defeat person</li>
+<li>destroy object</li>
+</ul>
+
+<p>So the Propp function <em>departure</em> maps onto giving the hero the aim <em>go to location</em>. What that location is,
+remains to be seen. It could be the location where a person or object can be found. Whereas <em>reconnaissance</em>
+gives the villain the aim <em>acquire information</em>. There will be different ways to achieve these aims, which
+will involve sub-aims, and hopefully enough variation to generate plenty of different stories.</p>
+
+<p>Thinking about characters, I&rsquo;ve been looking at emotions. Emotions will determine how characters react, though
+I have as yet no clue how that would work. I&rsquo;ve come across a scheme by Robert Plutchnik
+<a href="https://en.wikipedia.org/wiki/Robert_Plutchnik">Robert Plutchnik</a>, which uses eight basic emotions, where two
+are paired as counterparts:</p>
+
+<ul>
+<li>Trust - Disgust</li>
+<li>Fear - Anger</li>
+<li>Sadness - Joy</li>
+<li>Surprise - Anticipation</li>
+</ul>
+
+<p>There would be a scale (-10 to +10 or so), so an emotion item would be a list of four numbers. A character
+will have a basic emotional state, but would also have emotion items describing the relationship with other characters.
+The states are variable, so if character A is angry, and meets character B, towards whome they feel joy, then they
+might become less angry. Obviously a very simplistic way to model something as complicated as human emotions,
+but the perfect is the enemy of the good. Especially if you only have one month!</p>
+
+
+                <br>
+                <p><a href="https://ojmason.github.io/blog">Back to posts</a></p>
+            </div>
+            <br>
+            <div class="disqus">
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="footer">
+    <div class="container">
+        <div class="copyright">
+
+        
+            <a href="https://ojmason.github.io/license">(C) Oliver Mason</a>
+        
+
+        </div>
+        <div class="icons">
+
+        
+
+        
+            <a href="https://twitter.com/ojmason" target="_blank">
+                <i class="icon ion-social-twitter" title="twitter"></i>
+            </a>
+        
+
+        
+
+        
+
+        
+            <a href="https://ojmason.github.io/index.xml">
+                <i class="icon ion-social-rss larger" title="rss"></i>
+            </a>
+        
+
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<script>
+  window.onload = function() {
+    
+    
+  };
+</script>
+
+</body>
+</html>
+
