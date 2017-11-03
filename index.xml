@@ -7,8 +7,41 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
     <copyright>(C) Oliver Mason</copyright>
-    <lastBuildDate>Thu, 02 Nov 2017 23:08:09 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 03 Nov 2017 17:41:28 +0000</lastBuildDate>
     <atom:link href="https://ojmason.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>National Novel Generation Month -- Day 3</title>
+      <link>https://ojmason.github.io/blog/national-novel-generation-month----day-3/</link>
+      <pubDate>Fri, 03 Nov 2017 17:41:28 +0000</pubDate>
+      
+      <guid>https://ojmason.github.io/blog/national-novel-generation-month----day-3/</guid>
+      <description>&lt;p&gt;Now that I have a basic (abstract) plot outline and some idea about the characters&amp;rsquo; emotions,
+I need to think about what drives them. &lt;a href=&#34;nanogenmo-2.html&#34;&gt;Yesterday&lt;/a&gt; I listed some aims that
+the system would understand. So, each character gets a set of initial aims that they are trying to
+achieve. Ideally there would be some conflict built in, for example a love interest: two separate
+characters want to fall in love with the same person. As they attempt to win that person&amp;rsquo;s heart,
+they might clash. Or, decide to live in an open relationship together as a triple, who knows!&lt;/p&gt;
+
+&lt;p&gt;That would also make it easy to implement some of &lt;a href=&#34;nanogenmo-1.html&#34;&gt;Propp&amp;rsquo;s functions&lt;/a&gt;: the
+&lt;em&gt;interdiction&lt;/em&gt; would mean that the hero is told one of his aims is not allowed. And the &lt;em&gt;interdiction-violation&lt;/em&gt;
+would mean that the hero ignores that, and keep it as an aim. Alternatively, a friend&amp;rsquo;s aim could be disallowed,
+and the hero would try to achieve the aim for the friend, such as acquire an object and give it to the friend.&lt;/p&gt;
+
+&lt;p&gt;The next step then is to annotate the narrative functions with actions and aims; for example, &lt;em&gt;absentation&lt;/em&gt;
+could be an &lt;em&gt;atrans&lt;/em&gt; of a friend to a location as an action, and the same for the hero as an aim, as the hero
+wants to be with their friend. There might be some conflicting aim (such as staying at home, protecting the
+family), but the resolution might be that the friend starts feeling sad when away from their home environment,
+leading to the aim of coming back home, which then achieves the hero&amp;rsquo;s aim as well.&lt;/p&gt;
+
+&lt;p&gt;I also need to start thinking about the &lt;em&gt;World Simulator&lt;/em&gt;, the engine that does all the heavy lifting of
+producing the story content. The original idea is to take &lt;em&gt;TaleSpin&lt;/em&gt;, but that might be a bit too simplistic.
+After all, it&amp;rsquo;s only really been used for short stories about Joe Bear and Irving Bird. In addition I need
+timestamping to keep track of where the various characters are and what they are doing, and a more sophisticated
+logging facility, as the simulator log will be fed into the story renderer at the end. I also need to work
+with multiple characters at once, so the whole setup needs to be a bit more capable than the original.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>National Novel Generation Month -- Day 2</title>
@@ -633,50 +666,6 @@ to have done the same.&lt;/p&gt;
 beginning: that this plain version is not the real manifesto, and
 only the real one does count. I would prefer it to be the other way
 round.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Every Test is Valuable</title>
-      <link>https://ojmason.github.io/blog/every-test-is-valuable/</link>
-      <pubDate>Tue, 17 Jul 2012 00:00:00 +0000</pubDate>
-      
-      <guid>https://ojmason.github.io/blog/every-test-is-valuable/</guid>
-      <description>&lt;p&gt;After reading Graham Lee’s &lt;a href=&#34;http://www.amazon.co.uk/gp/product/B007RNK0W6/ref=as_li_ss_tl?ie=UTF8&amp;amp;camp=1634&amp;amp;creative=19450&amp;amp;creativeASIN=B007RNK0W6&amp;amp;linkCode=as2&amp;amp;tag=phrasysnlp-21&#34;&gt;Test-Driven iOS Development&lt;/a&gt;; (disclaimer:
-affiliate link) I have (again) adopted a test-driven approach to
-software developing. Whenever I create a new class I write a bunch
-of tests exercising the class’ properties. One might question the
-value of this, because there is not really any reason why those
-should not work. However, having such a test in place just uncovered
-an as-yet unnoticed bug I introduced in a project.&lt;/p&gt;
-
-&lt;p&gt;Originally the class property in question was going to be set in
-the &lt;code&gt;init&lt;/code&gt; method, so I tested for the presence of the property
-after creating an instance of the relevant class. Easy pass. Weeks
-later I did something (and forgot to run the test suite). Today I
-did something else, and this time I did run them. Hey presto, failed
-test. And completely unexpected, because it was the property
-exercising one. How on Earth did that happen?&lt;/p&gt;
-
-&lt;p&gt;Upon closer inspection I tracked it down to a refactoring, where I
-extracted some code from &lt;code&gt;init&lt;/code&gt; as there were now multiple ways an
-object could be initialised. The failing code was part of that, and
-I realised that it was called from the new &lt;code&gt;initFromFile:&lt;/code&gt; method,
-but &lt;em&gt;no longer from the default initialiser&lt;/em&gt;. Easy mistake to make.
-And had I run my test-suite more consistently, my application would
-not have been with a potential bug in the meantime.&lt;/p&gt;
-
-&lt;p&gt;What did I take home from this?&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Even Mickey-Mouse-tests are valuable. No test is too small to be useful
-(provided it’s actually testing something valid).&lt;/li&gt;
-&lt;li&gt;The test-suite should really be run after every change. I’ll have to check
-if I can get Xcode to run them automatically after each compilation…&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;em&gt;Update&lt;/em&gt;: Since I stopped doing much iOS or Mac OS work, I no longer used Xcode.
-And I&amp;rsquo;m not missing it :)&lt;/p&gt;
 </description>
     </item>
     

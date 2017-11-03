@@ -10,6 +10,39 @@
     <atom:link href="https://ojmason.github.io/tags/nanogenmo/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>National Novel Generation Month -- Day 3</title>
+      <link>https://ojmason.github.io/blog/national-novel-generation-month----day-3/</link>
+      <pubDate>Fri, 03 Nov 2017 17:41:28 +0000</pubDate>
+      
+      <guid>https://ojmason.github.io/blog/national-novel-generation-month----day-3/</guid>
+      <description>&lt;p&gt;Now that I have a basic (abstract) plot outline and some idea about the characters&amp;rsquo; emotions,
+I need to think about what drives them. &lt;a href=&#34;nanogenmo-2.html&#34;&gt;Yesterday&lt;/a&gt; I listed some aims that
+the system would understand. So, each character gets a set of initial aims that they are trying to
+achieve. Ideally there would be some conflict built in, for example a love interest: two separate
+characters want to fall in love with the same person. As they attempt to win that person&amp;rsquo;s heart,
+they might clash. Or, decide to live in an open relationship together as a triple, who knows!&lt;/p&gt;
+
+&lt;p&gt;That would also make it easy to implement some of &lt;a href=&#34;nanogenmo-1.html&#34;&gt;Propp&amp;rsquo;s functions&lt;/a&gt;: the
+&lt;em&gt;interdiction&lt;/em&gt; would mean that the hero is told one of his aims is not allowed. And the &lt;em&gt;interdiction-violation&lt;/em&gt;
+would mean that the hero ignores that, and keep it as an aim. Alternatively, a friend&amp;rsquo;s aim could be disallowed,
+and the hero would try to achieve the aim for the friend, such as acquire an object and give it to the friend.&lt;/p&gt;
+
+&lt;p&gt;The next step then is to annotate the narrative functions with actions and aims; for example, &lt;em&gt;absentation&lt;/em&gt;
+could be an &lt;em&gt;atrans&lt;/em&gt; of a friend to a location as an action, and the same for the hero as an aim, as the hero
+wants to be with their friend. There might be some conflicting aim (such as staying at home, protecting the
+family), but the resolution might be that the friend starts feeling sad when away from their home environment,
+leading to the aim of coming back home, which then achieves the hero&amp;rsquo;s aim as well.&lt;/p&gt;
+
+&lt;p&gt;I also need to start thinking about the &lt;em&gt;World Simulator&lt;/em&gt;, the engine that does all the heavy lifting of
+producing the story content. The original idea is to take &lt;em&gt;TaleSpin&lt;/em&gt;, but that might be a bit too simplistic.
+After all, it&amp;rsquo;s only really been used for short stories about Joe Bear and Irving Bird. In addition I need
+timestamping to keep track of where the various characters are and what they are doing, and a more sophisticated
+logging facility, as the simulator log will be fed into the story renderer at the end. I also need to work
+with multiple characters at once, so the whole setup needs to be a bit more capable than the original.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>National Novel Generation Month -- Day 2</title>
       <link>https://ojmason.github.io/blog/national-novel-generation-month----day-2/</link>
       <pubDate>Thu, 02 Nov 2017 23:08:09 +0000</pubDate>
