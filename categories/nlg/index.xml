@@ -10,6 +10,40 @@
     <atom:link href="https://ojmason.github.io/categories/nlg/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>National Novel Generation Month -- Day 4</title>
+      <link>https://ojmason.github.io/blog/national-novel-generation-month----day-4/</link>
+      <pubDate>Sun, 05 Nov 2017 23:25:33 +0000</pubDate>
+      
+      <guid>https://ojmason.github.io/blog/national-novel-generation-month----day-4/</guid>
+      <description>&lt;p&gt;Today is only day 4, as I was too busy to do anything on the project yesterday. I spent a bit
+more time on emotions, exploring the &lt;a href=&#34;https://en.wikipedia.org/wiki/Contrasting_and_categorization_of_emotions#Plutchik.27s_wheel_of_emotions&#34;&gt;Wheel of Emotions&lt;/a&gt;
+in a bit more detail. Implementation-wise I made a start on the module that generates and handles characters.
+From the wheel of emotions it is possible to derive a number of secondary emotions, and as I use
+emotion &amp;lsquo;coordinates&amp;rsquo; to evaluate the stance of a character towards other characters, this should
+allow for a decent modelling of interpersonal relations. I&amp;rsquo;m still not sure how this will influence
+decision making. There will probably have to be some evaluation function which assigns a numerical
+score to each option, and that will be modified by the stance of the character towards any affected
+characters, and also the character&amp;rsquo;s own current emotional state. If they are furious, they might
+actually choose an irrational option that harms themselves.&lt;/p&gt;
+
+&lt;p&gt;When rendering this as a story, it might be worth looking at state changes, and possibly to add changes
+to emotional states as annotations to any activities that are going on, so that we can generate text like
+&lt;em&gt;A did some action, and it filled B with anger.&lt;/em&gt; or &lt;em&gt;A was overjoyed to see B again.&lt;/em&gt; &amp;ndash; obviously, it
+is always better to describe emotional states indirectly where possible, but that seems to hard for now.&lt;/p&gt;
+
+&lt;p&gt;Given how little time I can devote to the project, I think I will have to scale it down a bit if I want to
+have anything ready by the end of the month. I might always try to continue working on it afterwards for
+the more ambitious &amp;lsquo;stretch goals&amp;rsquo;.&lt;/p&gt;
+
+&lt;p&gt;On the to-do list now is the representation of world knowledge, both the objective &amp;lsquo;truth&amp;rsquo; and the characters&amp;rsquo;
+individual views of it. Then the world simulator/planner, and then a few basic aims. At that point I should
+have a simple TaleSpin working, which I can extend with more details. I would then add more aims and actions to it as I go
+along, and start work on the routine to generate the story from the world log, and finally the verbalisation,
+which will be a slightly more sophisticated clone of Mumble.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>National Novel Generation Month -- Day 3</title>
       <link>https://ojmason.github.io/blog/national-novel-generation-month----day-3/</link>
       <pubDate>Fri, 03 Nov 2017 17:41:28 +0000</pubDate>
