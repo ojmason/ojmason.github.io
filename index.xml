@@ -7,8 +7,31 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
     <copyright>(C) Oliver Mason</copyright>
-    <lastBuildDate>Sun, 05 Nov 2017 23:25:33 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 07 Nov 2017 11:05:29 +0000</lastBuildDate>
     <atom:link href="https://ojmason.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>National Novel Generation Month -- Day 5</title>
+      <link>https://ojmason.github.io/blog/national-novel-generation-month----day-5/</link>
+      <pubDate>Tue, 07 Nov 2017 11:05:29 +0000</pubDate>
+      
+      <guid>https://ojmason.github.io/blog/national-novel-generation-month----day-5/</guid>
+      <description>&lt;p&gt;Today just some minor implementations; a start on basic functions to maintain the world: add and update character
+information, etc. All rather mundane yet necessary stuff. More reading in &lt;em&gt;Inside Computer Understanding&lt;/em&gt; by
+Schank and Riesbeck, and the realisation that I really have to cut down things if I want to get anything done by
+the end of the month. The more interesting part for me is the natural language generation, so I might have to give up
+on generating an interesting world in favour of more trivial events.&lt;/p&gt;
+
+&lt;p&gt;I think back with sentimental feelings to the days of being a student &amp;ndash; no job, no family, but lots of spare time
+to work on interesting stuff like this. I think that is the real benefit of a university education: the freedom to
+research pet projects!&lt;/p&gt;
+
+&lt;p&gt;In order to make it worthwhile, I will develop the world simulator in a modular way, so that more complexity
+can always be added in later on. New plans or goals, new actions, or whatever else is required to make it more
+realistic. I might end up with a version of the Sims&amp;hellip; but with a narrative text interface, rather than a graphical
+one. Let&amp;rsquo;s see how far I get.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>National Novel Generation Month -- Day 4</title>
@@ -563,86 +586,6 @@ of NLP and AI in understanding texts and conversing with human beings.&lt;/p&gt;
 or a &lt;a href=&#34;https://en.wikipedia.org/wiki/Laser_(dinghy)&#34;&gt;Laser&lt;/a&gt; at &lt;a href=&#34;https://en.wikipedia.org/wiki/Midland_Sailing_Club&#34;&gt;Midland
 Sailing Club&lt;/a&gt; in the UK. I am also a qualified Dinghy Instructor, and run the
 RYA training centre at the club.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Solving Combinatory Problems with Erlang</title>
-      <link>https://ojmason.github.io/blog/solving-combinatory-problems-with-erlang/</link>
-      <pubDate>Sun, 10 May 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://ojmason.github.io/blog/solving-combinatory-problems-with-erlang/</guid>
-      <description>&lt;p&gt;My daughter had some maths homework the other day:&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;You have 4 bags, each full of the numbers 1, 3, 5, and 7 respectively.
-Take 10 of the numbers that when added up make 37. What numbers are they?&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;So far so good: that sounds easy enough. But a bit of trial and
-error quickly leads nowhere. Something can’t be right. So, let’s
-get the computer to work it out.&lt;/p&gt;
-
-&lt;p&gt;As I haven’t done much Erlang recently I thought I’d give it a go.
-And, during a casual glance at Armstrong’s &lt;em&gt;Programming in Erlang&lt;/em&gt; I
-thought I’d finally understood list comprehensions, so I wrote the
-following program:&lt;/p&gt;
-
-&lt;pre&gt;
--module(comb).
--export([result/0]).
-result() -&gt;
-[{A+B+C+D+E+F+G+H+I+J,A,B,C,D,E,F,G,H,I,J}||
-A &lt;- [1,3,5,7],
-B &lt;- [1,3,5,7],
-C &lt;- [1,3,5,7],
-D &lt;- [1,3,5,7],
-E &lt;- [1,3,5,7],
-F &lt;- [1,3,5,7],
-G &lt;- [1,3,5,7],
-H &lt;- [1,3,5,7],
-I &lt;- [1,3,5,7],
-J &lt;- [1,3,5,7],
-A+B+C+D+E+F+G+H+I+J =:= 37].
-&lt;/pre&gt;
-
-&lt;p&gt;I declare a module with one function, &lt;code&gt;result/0&lt;/code&gt;. This finds me ten
-variables that can take any of the four specified values and add
-up to 37. Simples!&lt;/p&gt;
-
-&lt;p&gt;The list comprehension has ten generators, and one filter; it will
-return a tuple with the sum and the individual variables’ values.&lt;/p&gt;
-
-&lt;pre&gt;
-Erlang R16B01 (erts-5.10.2) [64-bit] [smp:4:4] [async-threads:10] [hipe] [kernel-poll:false]
-Eshell V5.10.2 (abort with ^G)
-1&gt; comb:result().
-[]
-2&gt;
-&lt;/pre&gt;
-
-&lt;p&gt;WTF???! An empty list?! So I try changing the 37 to another value, like 36.&lt;/p&gt;
-
-&lt;pre&gt;
-3&gt; comb:result().
-[{36,1,1,1,1,1,3,7,7,7,7},
-{36,1,1,1,1,1,5,5,7,7,7},
-{36,1,1,1,1,1,5,7,5,7,7},
-{36,1,1,1,1,1,5,7,7,5,7},
-{36,1,1,1,1,1,5,7,7,7,5},
-[etc, etc].
-&lt;/pre&gt;
-
-&lt;p&gt;So it does work! Only, there doesn’t seem to be an answer to the
-question. And with a bit of logical reasoning it is obvious: when
-adding two odd numbers, you get an even number. So adding ten odd
-numbers also yields an even number, but 37 is odd.&lt;/p&gt;
-
-&lt;p&gt;What I learnt from this exercise: thinking about the problem
-beforehand can save you time, as there was no need to write a program
-at all. But then, I did get to use list comprehensions, and have
-learnt how powerful they are. And it neatly shows Erlang’s Prolog
-roots as well.&lt;/p&gt;
 </description>
     </item>
     

@@ -10,6 +10,29 @@
     <atom:link href="https://ojmason.github.io/categories/nlg/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>National Novel Generation Month -- Day 5</title>
+      <link>https://ojmason.github.io/blog/national-novel-generation-month----day-5/</link>
+      <pubDate>Tue, 07 Nov 2017 11:05:29 +0000</pubDate>
+      
+      <guid>https://ojmason.github.io/blog/national-novel-generation-month----day-5/</guid>
+      <description>&lt;p&gt;Today just some minor implementations; a start on basic functions to maintain the world: add and update character
+information, etc. All rather mundane yet necessary stuff. More reading in &lt;em&gt;Inside Computer Understanding&lt;/em&gt; by
+Schank and Riesbeck, and the realisation that I really have to cut down things if I want to get anything done by
+the end of the month. The more interesting part for me is the natural language generation, so I might have to give up
+on generating an interesting world in favour of more trivial events.&lt;/p&gt;
+
+&lt;p&gt;I think back with sentimental feelings to the days of being a student &amp;ndash; no job, no family, but lots of spare time
+to work on interesting stuff like this. I think that is the real benefit of a university education: the freedom to
+research pet projects!&lt;/p&gt;
+
+&lt;p&gt;In order to make it worthwhile, I will develop the world simulator in a modular way, so that more complexity
+can always be added in later on. New plans or goals, new actions, or whatever else is required to make it more
+realistic. I might end up with a version of the Sims&amp;hellip; but with a narrative text interface, rather than a graphical
+one. Let&amp;rsquo;s see how far I get.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>National Novel Generation Month -- Day 4</title>
       <link>https://ojmason.github.io/blog/national-novel-generation-month----day-4/</link>
       <pubDate>Sun, 05 Nov 2017 23:25:33 +0000</pubDate>
