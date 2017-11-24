@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+
+
+
+<meta property="twitter:site" content="@ojmason">
+
+<meta property="twitter:card" content="summary">
+<meta property="twitter:title" content="National Novel Generation Month -- Day 6">
+
+<meta property="twitter:image" content="https://ojmason.github.io//img/cave.jpg">
+
+<meta property="twitter:description" content="Once upon a time...">
+
+<title>
+
+
+     Arguable Intelligence - National Novel Generation Month -- Day 6 
+
+</title>
+<link rel="canonical" href="https://ojmason.github.io/blog/national-novel-generation-month----day-6/">
+
+
+<link rel="stylesheet" href="https://ojmason.github.io/css/main.v0.9.1.css">
+<link rel="stylesheet" href="https://ojmason.github.io/css/ionicons.min.css">
+
+
+
+
+
+
+
+
+<link rel="shortcut icon"
+
+    href="https://ojmason.github.io/img/favicon.ico"
+
+>
+
+
+
+
+</head>
+
+
+<body>
+
+
+<section class="header">
+
+    <div class="container">
+        <a href="https://ojmason.github.io/"><img class="logo" src="https://ojmason.github.io/img/cave.jpg" alt="logo" /></a>
+        <div class="content">
+            <a href="https://ojmason.github.io/"><div class="name"><h1>Arguable Intelligence</h1></div></a>
+            <nav>
+                <ul>
+                    
+                        <a href="https://ojmason.github.io/blog/"><li>Blog</li></a>
+                    
+                    
+                        
+                    
+                        
+                            
+                        
+                    
+                    
+                        
+                    
+                        
+                            <a href="https://ojmason.github.io/about/"><li>about me</li></a>
+                        
+                    
+                </ul>
+            </nav>
+        </div>
+    </div>
+</section>
+
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
+        <div class="content">
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    National Novel Generation Month -- Day 6
+
+</div>
+
+                </div>
+                <div class="meta">
+                    <div class="date" title="Fri, Nov 24, 2017 22:15:48 GMT">Fri, Nov 24, 2017</div>
+                    <div class="reading-time"><div class="middot"></div>2 minutes read</div>
+                </div>
+            </div>
+            <div class="markdown">
+                
+    <p>Day 6 &ndash; but today is November 24th&hellip; this just serves to show how hard it is to combine a side project
+with a full-time job, a family, and other hobbies! The last two weekends I spent sailing at two all-weekend
+races (Northampton and Draycote), and in the evenings I am generally too busy with other things. And I don&rsquo;t
+want to &lsquo;pull an all-nighter&rsquo;, as it&rsquo;s not a sustainable way to do things. However, today I got a few things
+done:</p>
+
+<p>The central element of my project is a &lsquo;world simulator&rsquo;, in which the characters act out their desires, follow
+their goals, and interact in (hopefully) interesting ways, which I will then harvest to generate a story from.
+The core of the simulator is a planner: you feed in the characters&rsquo; goals, and they will then find a way of
+doing what they need to do in order to achieve them. The planning algorithm I&rsquo;m using is called Goal Oriented
+Action Planning (GOAP), basically a back-ward chaining algorithm: Starting from the goal, you work backwards
+to see which actions get you to your goal. Each action has a post-condition (which would be matched to the
+goal), and a pre-condition (which becomes the new goal). You select an action whose post-condition matches
+some of the character&rsquo;s goal conditions, and then see how you get there. Each action also has a cost associated
+with it, which allows you to choose a more efficient path in case there are several options.</p>
+
+<p>I have today managed to implement a very basic version of that in Scheme. I&rsquo;m using atomic conditions, but
+eventually will have more complicated expressions, but it is a first step. For several toy scenarioes the
+planner does indeed find suitable solutions, which are paths through a network of states. Adjusting this to
+the final world representation should not be too much of an issue.</p>
+
+<p>I have resigned myself to not finishing this system by the end of the month. But I&rsquo;ve made a start, and will try
+to get this continued throughout the year, so that I have a novel ready by NaNoGenMo 2018&hellip; On the positive side,
+my Scheme programming is getting better, and I have loads of ideas about what to implement over the coming year.</p>
+
+
+                <br>
+                <p><a href="https://ojmason.github.io/blog">Back to posts</a></p>
+            </div>
+            <br>
+            <div class="disqus">
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="footer">
+    <div class="container">
+        <div class="copyright">
+
+        
+            <a href="https://ojmason.github.io/license">(C) Oliver Mason</a>
+        
+
+        </div>
+        <div class="icons">
+
+        
+
+        
+            <a href="https://twitter.com/ojmason" target="_blank">
+                <i class="icon ion-social-twitter" title="twitter"></i>
+            </a>
+        
+
+        
+
+        
+
+        
+            <a href="https://ojmason.github.io/index.xml">
+                <i class="icon ion-social-rss larger" title="rss"></i>
+            </a>
+        
+
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<script>
+  window.onload = function() {
+    
+    
+  };
+</script>
+
+</body>
+</html>
+

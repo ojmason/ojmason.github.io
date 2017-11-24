@@ -7,8 +7,41 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
     <copyright>(C) Oliver Mason</copyright>
-    <lastBuildDate>Tue, 07 Nov 2017 11:05:29 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 24 Nov 2017 22:15:48 +0000</lastBuildDate>
     <atom:link href="https://ojmason.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>National Novel Generation Month -- Day 6</title>
+      <link>https://ojmason.github.io/blog/national-novel-generation-month----day-6/</link>
+      <pubDate>Fri, 24 Nov 2017 22:15:48 +0000</pubDate>
+      
+      <guid>https://ojmason.github.io/blog/national-novel-generation-month----day-6/</guid>
+      <description>&lt;p&gt;Day 6 &amp;ndash; but today is November 24th&amp;hellip; this just serves to show how hard it is to combine a side project
+with a full-time job, a family, and other hobbies! The last two weekends I spent sailing at two all-weekend
+races (Northampton and Draycote), and in the evenings I am generally too busy with other things. And I don&amp;rsquo;t
+want to &amp;lsquo;pull an all-nighter&amp;rsquo;, as it&amp;rsquo;s not a sustainable way to do things. However, today I got a few things
+done:&lt;/p&gt;
+
+&lt;p&gt;The central element of my project is a &amp;lsquo;world simulator&amp;rsquo;, in which the characters act out their desires, follow
+their goals, and interact in (hopefully) interesting ways, which I will then harvest to generate a story from.
+The core of the simulator is a planner: you feed in the characters&amp;rsquo; goals, and they will then find a way of
+doing what they need to do in order to achieve them. The planning algorithm I&amp;rsquo;m using is called Goal Oriented
+Action Planning (GOAP), basically a back-ward chaining algorithm: Starting from the goal, you work backwards
+to see which actions get you to your goal. Each action has a post-condition (which would be matched to the
+goal), and a pre-condition (which becomes the new goal). You select an action whose post-condition matches
+some of the character&amp;rsquo;s goal conditions, and then see how you get there. Each action also has a cost associated
+with it, which allows you to choose a more efficient path in case there are several options.&lt;/p&gt;
+
+&lt;p&gt;I have today managed to implement a very basic version of that in Scheme. I&amp;rsquo;m using atomic conditions, but
+eventually will have more complicated expressions, but it is a first step. For several toy scenarioes the
+planner does indeed find suitable solutions, which are paths through a network of states. Adjusting this to
+the final world representation should not be too much of an issue.&lt;/p&gt;
+
+&lt;p&gt;I have resigned myself to not finishing this system by the end of the month. But I&amp;rsquo;ve made a start, and will try
+to get this continued throughout the year, so that I have a novel ready by NaNoGenMo 2018&amp;hellip; On the positive side,
+my Scheme programming is getting better, and I have loads of ideas about what to implement over the coming year.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>National Novel Generation Month -- Day 5</title>
@@ -634,63 +667,6 @@ beforehand can save you time, as there was no need to write a program
 at all. But then, I did get to use list comprehensions, and have
 learnt how powerful they are. And it neatly shows Erlang’s Prolog
 roots as well.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Party Politics and the Emperor&#39;s New Clothes</title>
-      <link>https://ojmason.github.io/blog/party-politics-and-the-emperors-new-clothes/</link>
-      <pubDate>Sat, 24 Aug 2013 00:00:00 +0000</pubDate>
-      
-      <guid>https://ojmason.github.io/blog/party-politics-and-the-emperors-new-clothes/</guid>
-      <description>&lt;p&gt;On Twitter I came across a link to the (German) &lt;a href=&#34;http://www.cdu.de/sites/default/files/media/dokumente/regierungsprogramm-in-leichter-sprache-btw13.pdf&#34;&gt;CDU Wahlprogramm in “Leichter Sprache”&lt;/a&gt;.
-This is the conservative party’s election manifesto in a German
-version of &lt;a href=&#34;https://en.wikipedia.org/wiki/Basic_English&#34;&gt;Basic English&lt;/a&gt;,
-to make it more easily comprehensible to
-people who have difficulty understanding standard German.&lt;/p&gt;
-
-&lt;p&gt;At first I thought it was a parody, as it sounded truly ridiculous
-and patronising. As if you had to explain to your 4-year-old what
-the world was like. Then I found out about the “&lt;a href=&#34;http://de.wikipedia.org/wiki/Leichte_Sprache&#34;&gt;Leichte Sprache&lt;/a&gt;”
-(literally: “&lt;a href=&#34;http://en.wikipedia.org/wiki/Plain_language&#34;&gt;easy/plain language&lt;/a&gt;“), which I had not heard of before.
-And in principle it is a noble thing to do, to make your manifesto
-more accessible. I’m sure &lt;a href=&#34;https://www.mtholyoke.edu/acad/intrel/orwell46.htm&#34;&gt;George Orwell&lt;/a&gt; would approve!&lt;/p&gt;
-
-&lt;p&gt;But the real reason why it does seem strange is rooted in the nature
-of political language: normally, language is used to obfuscate and
-manipulate, especially in complex areas such as politics. Fancy
-words are used to disguise true intentions and get people to vote
-for you. But take away the fancy words and complex phrases, and
-suddenly all is out there in the open, plain to see for everybody.
-And it turns out to be pretty meaningless. “Everybody should have
-a good job. And earn enough money. That needs to be written down.”
-But no mention about minimum wage or anything concrete to turn those
-vacuous phrases into reality.&lt;/p&gt;
-
-&lt;p&gt;Some other people on twitter reacted in the same way as I did; often
-I guess out of the same ignorance of the “easy language” concept.
-That’s a shame, but partly rooted in the patronising way the sentences
-come across. But it also shows that the (undesired) outcome of this
-publication is that people tend to not take the content seriously.
-Because there is not much of it.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://en.wikipedia.org/wiki/Critical_discourse_analysis&#34;&gt;Critical Discourse Analysis&lt;/a&gt;
-would lose a big part of its subject
-area if politics would switch wholesale to “easy language”. No more
-subconscious manipulation between the lines, no more obfuscation
-about who does what to whom. So after some reflection I applaud the
-CDU for making their manifesto available in this way, as it unmasks
-them as the patronising right-wingers they are, with their overly
-simplistic world view about pretty much any subject area in current
-politics. No more hiding behind fancy words that foreigners are not
-welcome. No more vague claims about surveillance cameras stopping
-crime. It’s all there, in plain language. And other parties seem
-to have done the same.&lt;/p&gt;
-
-&lt;p&gt;Now the only thing that needs to go is the disclaimer at the
-beginning: that this plain version is not the real manifesto, and
-only the real one does count. I would prefer it to be the other way
-round.&lt;/p&gt;
 </description>
     </item>
     
