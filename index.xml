@@ -7,8 +7,37 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
     <copyright>(C) Oliver Mason</copyright>
-    <lastBuildDate>Fri, 24 Nov 2017 22:15:48 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 01 Dec 2017 22:29:24 +0000</lastBuildDate>
     <atom:link href="https://ojmason.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>National Novel Generation Month -- Day 7</title>
+      <link>https://ojmason.github.io/blog/national-novel-generation-month----day-7/</link>
+      <pubDate>Fri, 01 Dec 2017 22:29:24 +0000</pubDate>
+      
+      <guid>https://ojmason.github.io/blog/national-novel-generation-month----day-7/</guid>
+      <description>&lt;p&gt;Know your limits. My next step was going to be the setting, ie the locations that I was going
+to use for my characters to wander around in. So, off I went to research procedurally generated
+maps. As it turns out, there is some great stuff out there, and one approach has even been used to generate
+a &lt;a href=&#34;https://mewo2.com/notes/terrain/&#34;&gt;fantasy world atlas/travel guide&lt;/a&gt; for NaNoGenMo 2015. I duly downloaded
+the code, but of course it didn&amp;rsquo;t work because of unresolved dependencies. I looked further, and found other
+nice examples, and then realised I&amp;rsquo;ve gone down a rabbit hole. My main priority currently is to get something
+together that works, and procedurally generated maps with realistic climate models are not what I need to
+achieve that. Instead, I&amp;rsquo;m currently using a very simple map borrowed from a multi-player version of the
+80s computer game &lt;a href=&#34;https://en.wikipedia.org/wiki/The_Lords_of_Midnight&#34;&gt;Lords of Midnight&lt;/a&gt;. The system is
+flexible enough that it just needs a basic ASCII version of a map, so if I later get a procedurally generated
+one in the right format, it should work fine. A routine picks out points of interest, like villages etc, and assigns
+them names.&lt;/p&gt;
+
+&lt;p&gt;Names are another rabbit hole, so for now I use a prefab list that I created using some on-line name generators.
+I have a list of more names than I need, and just pick some randomly off there. Name generation is a sideshow for
+later.&lt;/p&gt;
+
+&lt;p&gt;And, November is finished now. I don&amp;rsquo;t actually have much to show, but have done a lot of reading and thinking
+about what I want to do. I will quietly continue chipping away at it, and perhaps will have something working
+by NaNoGenMo next year. So, more like NaNoGenYear!&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>National Novel Generation Month -- Day 6</title>
@@ -582,27 +611,6 @@ a logical consequence we have a proliferation of software projects, mostly doing
 in different ways. And few of them are of a high enough standard to be properly usable.&lt;/p&gt;
 
 &lt;p&gt;I really wanted to end this post on a constructive note, but I don&amp;rsquo;t think I&amp;rsquo;m able to.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title> First Post</title>
-      <link>https://ojmason.github.io/blog/first-post/</link>
-      <pubDate>Mon, 27 Mar 2017 14:40:17 +0100</pubDate>
-      
-      <guid>https://ojmason.github.io/blog/first-post/</guid>
-      <description>
-
-&lt;h1 id=&#34;first-post&#34;&gt;First Post&lt;/h1&gt;
-
-&lt;p&gt;I&amp;rsquo;m trying blogging again &amp;ndash; twitter is a bit too sparse for longer rants. And this seems
-to be a time for rants. Lots happening in politics.&lt;/p&gt;
-
-&lt;p&gt;Anyway, here we go again.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Update:&lt;/em&gt; I&amp;rsquo;m also going through my previous WordPress log to gather some articles that
-might still be interesting, so there will be older articles going back almost a decade
-appearing here.&lt;/p&gt;
 </description>
     </item>
     
